@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "project": {
+    "root": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+    "repository": "/Users/jiahongli/workspace/justinsun/jsp-000690-lean",
+    "commit": "16775f11a809a49fcd6822add9895eb104966994",
+    "toolchain": "leanprover/lean4:v4.32.0"
+  },
+  "problems": [
+    {
+      "id": "JSP-000690",
+      "source": "https://github.com/TheJustinSunPrize/awards/blob/bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2/problems/catalog-0601-0700.md#JSP-000690 ; https://arxiv.org/html/2512.24850v1",
+      "requirements": [
+        {
+          "id": "ordinary-set-hypergraph-semantics",
+          "description": "The fixed submission theorem entails the independently defined conventional set-valued hypergraph target, with exactly three distinct vertices per edge, literal least chromatic number three, all arbitrary proper subhypergraphs colored on their retained vertex subtype, and seven distinct incident edge sets at every vertex.",
+          "targets": [
+            "external-target",
+            "proper-iff",
+            "hasColoring-iff",
+            "family-selected-iff",
+            "critical-bridge",
+            "chromatic-number-bridge",
+            "sorted-edge-injective",
+            "three-uniform-bridge",
+            "degree-bridge"
+          ],
+          "coverage": "pending"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "external-target",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.external_target"
+    },
+    {
+      "id": "proper-iff",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.proper_iff"
+    },
+    {
+      "id": "hasColoring-iff",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.hasColoring_iff"
+    },
+    {
+      "id": "family-selected-iff",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.family_selected_iff"
+    },
+    {
+      "id": "critical-bridge",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.critical_bridge"
+    },
+    {
+      "id": "chromatic-number-bridge",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.chromatic_number_bridge"
+    },
+    {
+      "id": "sorted-edge-injective",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.sorted_edge_injective"
+    },
+    {
+      "id": "three-uniform-bridge",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.three_uniform_bridge"
+    },
+    {
+      "id": "degree-bridge",
+      "problem": "JSP-000690",
+      "role": "bridge",
+      "module": "JSP690.AuditBridge",
+      "source": "JSP690/AuditBridge.lean",
+      "declaration": "AuditBridge.degree_bridge"
+    }
+  ]
+}

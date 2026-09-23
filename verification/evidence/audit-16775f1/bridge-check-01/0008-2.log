@@ -1,0 +1,337 @@
+@AuditBridge.degree_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n) (hs : @JSP690.IsSimple n H)
+  (hd :
+    ∀ (v : Fin n),
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) (@JSP690.degree n H v)),
+  @AuditBridge.DegreeAtLeastSeven n (@AuditBridge.family n H)
+theorem AuditBridge.degree_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n) (hs : @JSP690.IsSimple n H)
+  (hd :
+    ∀ (v : Fin n),
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) (@JSP690.degree n H v)),
+  @AuditBridge.DegreeAtLeastSeven n (@AuditBridge.family n H) :=
+fun {n : Nat} (H : JSP690.Hypergraph n) (hs : @JSP690.IsSimple n H)
+    (hd :
+      ∀ (v : Fin n),
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) (@JSP690.degree n H v))
+    (v : Fin n) =>
+  let incident : List.{0} (JSP690.Edge n) :=
+    @List.filter.{0} (JSP690.Edge n)
+      (fun (e : JSP690.Edge n) =>
+        @Decidable.decide (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+          (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+            (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+      H;
+  have hlength :
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+      (@List.length.{0} (JSP690.Edge n) incident) :=
+    @id.{0}
+      (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+        (@List.length.{0} (JSP690.Edge n) incident))
+      (@Eq.mp.{0}
+        (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) (@JSP690.degree n H v))
+        (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+          (@List.length.{0} (JSP690.Edge n)
+            (@List.filter.{0} (JSP690.Edge n)
+              (fun (e : JSP690.Edge n) =>
+                @Decidable.decide
+                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n)) (@JSP690.degree._proof_1 n) v e))
+              H)))
+        (@congrArg.{1, 1} Nat Prop (@JSP690.degree n H v)
+          (@List.length.{0} (JSP690.Edge n)
+            (@List.filter.{0} (JSP690.Edge n)
+              (fun (e : JSP690.Edge n) =>
+                @Decidable.decide
+                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n)) (@JSP690.degree._proof_1 n) v e))
+              H))
+          (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+          (@List.countP_eq_length_filter.{0} (JSP690.Edge n)
+            (fun (e : JSP690.Edge n) =>
+              @Decidable.decide (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                  (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n)) (@JSP690.degree._proof_1 n) v e))
+            H))
+        (hd v));
+  have hnodup : @List.Nodup.{0} (JSP690.Edge n) incident :=
+    @List.Pairwise.filter.{0} (JSP690.Edge n) (fun (x1 x2 : JSP690.Edge n) => @Ne.{1} (JSP690.Edge n) x1 x2) H
+      (fun (e : JSP690.Edge n) =>
+        @Decidable.decide (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+          (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+            (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+      (@And.left (@List.Nodup.{0} (JSP690.Edge n) H)
+        (∀ (e : JSP690.Edge n),
+          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e →
+            @List.Pairwise.{0} (Fin n) (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w)) e)
+        hs);
+  let incidentEdge : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) → JSP690.Edge n :=
+    fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+    @GetElem.getElem.{0, 0, 0} (List.{0} (JSP690.Edge n)) Nat (JSP690.Edge n)
+      (fun (as : List.{0} (JSP690.Edge n)) (i : Nat) =>
+        @LT.lt.{0} Nat instLTNat i (@List.length.{0} (JSP690.Edge n) as))
+      (@List.instGetElemNatLtLength.{0} (JSP690.Edge n)) incident
+      (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+      (@Decidable.byContradiction
+        (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+          (@List.length.{0} (JSP690.Edge n) incident))
+        (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+          (@List.length.{0} (JSP690.Edge n) incident))
+        fun
+          (a :
+            Not
+              (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                (@List.length.{0} (JSP690.Edge n) incident))) =>
+        @AuditBridge.degree_bridge._proof_1_2 n H v hlength i a);
+  have hincidentEdge :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))),
+      And
+        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+          (incidentEdge i))
+        (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v) :=
+    fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+    have hm :
+      @Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n))
+        incident (incidentEdge i) :=
+      @List.getElem_mem.{0} (JSP690.Edge n) incident
+        (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+        (@Decidable.byContradiction
+          (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+            (@List.length.{0} (JSP690.Edge n) incident))
+          (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+            (@List.length.{0} (JSP690.Edge n) incident))
+          fun
+            (a :
+              Not
+                (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                  (@List.length.{0} (JSP690.Edge n) incident))) =>
+          @AuditBridge.degree_bridge._proof_1_2 n H v hlength i a);
+    @Eq.mp.{0}
+      (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n))
+        incident (incidentEdge i))
+      (And
+        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n)) H
+          (incidentEdge i))
+        (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v))
+      (@Eq.trans.{1} Prop
+        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n))
+          (@List.filter.{0} (JSP690.Edge n)
+            (fun (e : JSP690.Edge n) =>
+              @Decidable.decide (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                  (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                  (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+            H)
+          (incidentEdge i))
+        (And
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n))
+            H (incidentEdge i))
+          (@Eq.{1} Bool
+            (@Decidable.decide
+              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v (incidentEdge i)))
+            Bool.true))
+        (And
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n)) (@List.instMembership.{0} (JSP690.Edge n))
+            H (incidentEdge i))
+          (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v))
+        (@List.mem_filter._simp_1.{0} (JSP690.Edge n)
+          (fun (e : JSP690.Edge n) =>
+            @Decidable.decide (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+          H (incidentEdge i))
+        (@congrArg.{1, 1} Prop Prop
+          (@Eq.{1} Bool
+            (@Decidable.decide
+              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v (incidentEdge i)))
+            Bool.true)
+          (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+          (And
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+              (@List.instMembership.{0} (JSP690.Edge n)) H (incidentEdge i)))
+          (@decide_eq_true_eq
+            (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+            (@List.instDecidableMemOfLawfulBEq.{0} (Fin n) (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+              (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v (incidentEdge i)))))
+      hm;
+  @Exists.intro.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) → AuditBridge.VertexSet n)
+    (fun (edges : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) → AuditBridge.VertexSet n) =>
+      And
+        (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))),
+          And (@AuditBridge.family n H (edges i)) (edges i v))
+        (∀ (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))),
+          @Eq.{1} (AuditBridge.VertexSet n) (edges i) (edges j) →
+            @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) i j))
+    (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+      @AuditBridge.edgeSet n (incidentEdge i))
+    (@And.intro
+      (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))),
+        And
+          (@AuditBridge.family n H
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              i))
+          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+              @AuditBridge.edgeSet n (incidentEdge i))
+            i v))
+      (∀ (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))),
+        @Eq.{1} (AuditBridge.VertexSet n)
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              i)
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              j) →
+          @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) i j)
+      (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+        @And.intro
+          (@AuditBridge.family n H
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              i))
+          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+              @AuditBridge.edgeSet n (incidentEdge i))
+            i v)
+          (@Exists.intro.{1} (JSP690.Edge n)
+            (fun (e : JSP690.Edge n) =>
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+                (@Eq.{1} (AuditBridge.VertexSet n)
+                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                      @AuditBridge.edgeSet n (incidentEdge i))
+                    i)
+                  (@AuditBridge.edgeSet n e)))
+            (incidentEdge i)
+            (@And.intro
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                (incidentEdge i))
+              (@Eq.{1} (AuditBridge.VertexSet n)
+                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                    @AuditBridge.edgeSet n (incidentEdge i))
+                  i)
+                (@AuditBridge.edgeSet n (incidentEdge i)))
+              (@And.left
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H (incidentEdge i))
+                (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+                (hincidentEdge i))
+              (@rfl.{1} (AuditBridge.VertexSet n)
+                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                    @AuditBridge.edgeSet n (incidentEdge i))
+                  i))))
+          (@And.right
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+              (incidentEdge i))
+            (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+            (hincidentEdge i)))
+      fun (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (h :
+          @Eq.{1} (AuditBridge.VertexSet n)
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              i)
+            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) =>
+                @AuditBridge.edgeSet n (incidentEdge i))
+              j)) =>
+      have heq : @Eq.{1} (JSP690.Edge n) (incidentEdge i) (incidentEdge j) :=
+        @AuditBridge.sorted_edge_injective n (incidentEdge i) (incidentEdge j)
+          (@And.right (@List.Nodup.{0} (JSP690.Edge n) H)
+            (∀ (e : JSP690.Edge n),
+              @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                  e →
+                @List.Pairwise.{0} (Fin n) (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                  e)
+            hs (incidentEdge i)
+            (@And.left
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                (incidentEdge i))
+              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge i) v)
+              (hincidentEdge i)))
+          (@And.right (@List.Nodup.{0} (JSP690.Edge n) H)
+            (∀ (e : JSP690.Edge n),
+              @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                  e →
+                @List.Pairwise.{0} (Fin n) (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                  e)
+            hs (incidentEdge j)
+            (@And.left
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                (incidentEdge j))
+              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) (incidentEdge j) v)
+              (hincidentEdge j)))
+          h;
+      have hij :
+        @Eq.{1} Nat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+          (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j) :=
+        @Iff.mp
+          (@Eq.{1} (JSP690.Edge n)
+            (@GetElem.getElem.{0, 0, 0} (List.{0} (JSP690.Edge n)) Nat (JSP690.Edge n)
+              (fun (as : List.{0} (JSP690.Edge n)) (i : Nat) =>
+                @LT.lt.{0} Nat instLTNat i (@List.length.{0} (JSP690.Edge n) as))
+              (@List.instGetElemNatLtLength.{0} (JSP690.Edge n)) incident
+              (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+              (@Decidable.byContradiction
+                (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                  (@List.length.{0} (JSP690.Edge n) incident))
+                (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                  (@List.length.{0} (JSP690.Edge n) incident))
+                fun
+                  (a :
+                    Not
+                      (@LT.lt.{0} Nat instLTNat
+                        (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                        (@List.length.{0} (JSP690.Edge n) incident))) =>
+                @AuditBridge.degree_bridge._proof_1_2 n H v hlength i a))
+            (@GetElem.getElem.{0, 0, 0} (List.{0} (JSP690.Edge n)) Nat (JSP690.Edge n)
+              (fun (as : List.{0} (JSP690.Edge n)) (i : Nat) =>
+                @LT.lt.{0} Nat instLTNat i (@List.length.{0} (JSP690.Edge n) as))
+              (@List.instGetElemNatLtLength.{0} (JSP690.Edge n)) incident
+              (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+              (@Decidable.byContradiction
+                (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                  (@List.length.{0} (JSP690.Edge n) incident))
+                (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                  (@List.length.{0} (JSP690.Edge n) incident))
+                fun
+                  (a :
+                    Not
+                      (@LT.lt.{0} Nat instLTNat
+                        (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                        (@List.length.{0} (JSP690.Edge n) incident))) =>
+                @AuditBridge.degree_bridge._proof_1_2 n H v hlength j a)))
+          (@Eq.{1} Nat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+            (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j))
+          (@List.getElem_inj.{0} (JSP690.Edge n)
+            (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+            (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j) incident
+            (@Decidable.byContradiction
+              (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                (@List.length.{0} (JSP690.Edge n) incident))
+              (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                (@List.length.{0} (JSP690.Edge n) incident))
+              fun
+                (a :
+                  Not
+                    (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i)
+                      (@List.length.{0} (JSP690.Edge n) incident))) =>
+              @AuditBridge.degree_bridge._proof_1_2 n H v hlength i a)
+            (@Decidable.byContradiction
+              (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                (@List.length.{0} (JSP690.Edge n) incident))
+              (Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                (@List.length.{0} (JSP690.Edge n) incident))
+              fun
+                (a :
+                  Not
+                    (@LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) j)
+                      (@List.length.{0} (JSP690.Edge n) incident))) =>
+              @AuditBridge.degree_bridge._proof_1_2 n H v hlength j a)
+            hnodup)
+          heq;
+      @Fin.ext (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))) i j hij)
+'AuditBridge.degree_bridge' depends on axioms: [propext, Quot.sound]

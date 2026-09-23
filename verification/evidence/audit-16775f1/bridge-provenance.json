@@ -1,0 +1,8 @@
+{
+  "original_path": "/Users/jiahongli/workspace/justinsun/jsp-000690-lean/verification/AuditBridge.lean",
+  "isolated_path": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean",
+  "sha256": "f9cd54adccb1e807a00d1819e49d71942e3978ddbf2cbe91acf90649b32a7072",
+  "proof_commit": "16775f11a809a49fcd6822add9895eb104966994",
+  "status": "untracked auditor-created semantic bridge; original proof sources and Lake configuration unchanged",
+  "module_relocation": "Content unchanged; placed under existing JSP690 library so explicit Lake module builds work."
+}

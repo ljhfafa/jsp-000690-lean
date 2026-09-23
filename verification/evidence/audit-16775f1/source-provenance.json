@@ -1,0 +1,35 @@
+{
+  "source_repository": "/Users/jiahongli/workspace/justinsun/jsp-000690-lean",
+  "repository_publication": "local only; public authenticated publication not established",
+  "proof_commit": "16775f11a809a49fcd6822add9895eb104966994",
+  "source_branch": "main",
+  "is_ancestor_of_current_main_exit_code": 0,
+  "isolated_clone": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+  "clone_method": "git clone --no-local --no-checkout, then detached checkout of exact SHA",
+  "head": "16775f11a809a49fcd6822add9895eb104966994",
+  "tracked_file_sha256": {
+    ".gitignore": "5b94714c0cf4121ffd0b05af22464b7289d334f8a9a96f6598fdb63b0a73b37c",
+    "JSP690.lean": "254f1897c014dc62bfc0656db3fd3f3ddba57aded53fd2206097e9be1732e183",
+    "JSP690/Construction.lean": "637855ce2ae072ac618f1b87dbae0019eed63cb91930923a15cb907d709b6cb7",
+    "JSP690/Definitions.lean": "3e09061bed18bed691d297582c3893c1e723c2c98dfcb2463446c98ca9f4e572",
+    "JSP690/General.lean": "53009cd81968b76cbd5953c5c5b65e4bcd285ee948d0a728db83304aad859064",
+    "JSP690/Main.lean": "8d0c489fb07e7a9a3fcfb57e0fc46405b945588c57af2b533227abba987a9997",
+    "MATHEMATICAL_SPEC.md": "99e41f6d56377f6c868531a7791e8e2390a4a9ae70ee44c2930ebd9be67f4d69",
+    "PROGRESS.md": "3c3d1daac6577079a14dcf812f323edd2011fa0a83aa3dfed3a15a29e0ef6414",
+    "README.md": "45ff88c4535f046bc72f7c4986db781a7dbc2407c2d2dc509d786bc5c197a371",
+    "lake-manifest.json": "c141985151b9d243375c219746b0ec4341c1b87717cc9e71e0f3285b42a7114d",
+    "lakefile.toml": "f42b066fa1a12d235449828f72e7e1c238f3fa7dfc0eb63696b4253ad6cab4c2",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+    "verification/Check.lean": "41ce544a34b74d923131f7c3f1b592615a58acb8f4fb3f60a11d272345501fcf",
+    "verification/construction.json": "f53f519bdededc113db0b3b100f2636867d04355696bbfe697de3c17dbc560c8",
+    "verification/python-results.txt": "e0e7a0e1c960e62f448c6a9a4fe9bb2148091ccb20949787b6c92b8ad410b794",
+    "verification/python_verify.py": "fc882a961ae3663261b74aecc67ecc2cf514bcd941facfc9e584109fa818fc8d"
+  },
+  "dependency_packages": [],
+  "standard_library": "Trusted official Lean v4.32.0 release archive, SHA256 recorded in toolchain-manifest.json",
+  "platform": {
+    "system": "Darwin",
+    "release": "25.3.0",
+    "machine": "arm64"
+  }
+}

@@ -1,0 +1,21 @@
+JSP690.construction_vertex_critical : ∀ (v : JSP690.Vertex),
+  @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+    (@JSP690.deleteVertex (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v)
+theorem JSP690.construction_vertex_critical : ∀ (v : JSP690.Vertex),
+  @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+    (@JSP690.deleteVertex (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v) :=
+fun (v : JSP690.Vertex) =>
+  @Exists.intro.{1}
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) →
+      Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+    (fun
+        (c :
+          Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) →
+            Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) =>
+      @JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+        (@JSP690.deleteVertex (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v) c)
+    (JSP690.binaryColor (JSP690.vertexCertificate v)) (JSP690.vertex_certificates_checked v)
+'JSP690.construction_vertex_critical' depends on axioms: [propext, Quot.sound]

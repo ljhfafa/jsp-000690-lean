@@ -1,0 +1,1176 @@
+JSP690.tupleColor_complete : ∀ (c : JSP690.Vertex → Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))),
+  @Eq.{1} ((v : JSP690.Vertex) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+    (JSP690.tupleColor
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8)))))
+    c
+theorem JSP690.tupleColor_complete : ∀
+  (c : JSP690.Vertex → Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))),
+  @Eq.{1} ((v : JSP690.Vertex) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+    (JSP690.tupleColor
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8)))))
+    c :=
+fun (c : ⋯) =>
+  @funext.{1, 1} JSP690.Vertex
+    (fun (x : JSP690.Vertex) => Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+    (JSP690.tupleColor
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+      (c
+        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8)))))
+    c fun (v : ⋯) =>
+    @Fin.casesOn.{0} (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+      (fun (x : JSP690.Vertex) =>
+        @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (JSP690.tupleColor
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+            (c
+              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8))))
+            x)
+          (c x))
+      v fun (v : ⋯) (hv : ⋯) =>
+      have h : ⋯ :=
+        @Decidable.byContradiction
+          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))))
+          (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))))
+            (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+            (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))
+              (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))
+                (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))
+                  (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))
+                    (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                    (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))
+                      (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                      (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))
+                        (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                        (@instDecidableOr (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                          (instDecidableEqNat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))))
+          fun
+            (a :
+              Not
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                                (@Eq.{1} Nat v
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))))) =>
+          JSP690.tupleColor_complete._proof_1_1 v hv a;
+      @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))))
+        (fun
+            (x :
+              Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))))) =>
+          @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+            (JSP690.tupleColor
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+              (c
+                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8))))
+              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+            (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+        h
+        (fun (h : @Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))) =>
+          @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+            (fun (v : Nat) =>
+              ∀ (hv : @LT.lt.{0} Nat instLTNat v (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (JSP690.tupleColor
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 0))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 1))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 2))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 3))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 4))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 5))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 6))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 7))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 8))))
+                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                  (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+            (fun
+                (hv :
+                  @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+              @Eq.refl.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (JSP690.tupleColor
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 0))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 1))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 2))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 3))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 4))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 5))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 6))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 7))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 8))))
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) hv)))
+            v (@Eq.symm.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) h) hv)
+        fun (h : ⋯) =>
+        @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))
+          (fun
+              (x :
+                Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))))) =>
+            @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (JSP690.tupleColor
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 0))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 1))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 2))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 3))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 4))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 5))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 6))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 7))))
+                (c
+                  (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                    (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) (nat_lit 8))))
+                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+              (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+          h
+          (fun (h : @Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) =>
+            @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+              (fun (v : Nat) =>
+                ∀ (hv : @LT.lt.{0} Nat instLTNat v (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (JSP690.tupleColor
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 0))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 1))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 2))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 3))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 4))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 5))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 6))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 7))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 8))))
+                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                    (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+              (fun
+                  (hv :
+                    @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                @Eq.refl.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (JSP690.tupleColor
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 0))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 1))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 2))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 3))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 4))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 5))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 6))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 7))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 8))))
+                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) hv)))
+              v (@Eq.symm.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) h) hv)
+          fun (h : ⋯) =>
+          @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))
+            (fun
+                (x :
+                  Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))))) =>
+              @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (JSP690.tupleColor
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 0))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 1))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 2))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 3))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 4))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 5))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 6))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 7))))
+                  (c
+                    (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                      (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                        (nat_lit 8))))
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+            h
+            (fun (h : @Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) =>
+              @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+                (fun (v : Nat) =>
+                  ∀ (hv : @LT.lt.{0} Nat instLTNat v (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                    @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (JSP690.tupleColor
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 0))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 1))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 2))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 3))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 4))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 5))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 6))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 7))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 8))))
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                      (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+                (fun
+                    (hv :
+                      @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+                        (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                  @Eq.refl.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (JSP690.tupleColor
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 0))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 1))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 2))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 3))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 4))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 5))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 6))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 7))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 8))))
+                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) hv)))
+                v (@Eq.symm.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h) hv)
+            fun (h : ⋯) =>
+            @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+              (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))
+              (fun
+                  (x :
+                    Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                      (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))))) =>
+                @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (JSP690.tupleColor
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 0))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 1))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 2))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 3))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 4))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 5))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 6))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 7))))
+                    (c
+                      (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                          (nat_lit 8))))
+                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                  (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+              h
+              (fun (h : @Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) =>
+                @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                  (fun (v : Nat) =>
+                    ∀ (hv : @LT.lt.{0} Nat instLTNat v (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                      @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (JSP690.tupleColor
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 0))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 1))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 2))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 3))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 4))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 5))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 6))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 7))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 8))))
+                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                        (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+                  (fun
+                      (hv :
+                        @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                          (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                    @Eq.refl.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (JSP690.tupleColor
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 0))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 1))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 2))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 3))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 4))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 5))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 6))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 7))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 8))))
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) hv)))
+                  v (@Eq.symm.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) h) hv)
+              fun (h : ⋯) =>
+              @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))
+                (fun
+                    (x :
+                      Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+                        (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))))))) =>
+                  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (JSP690.tupleColor
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 0))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 1))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 2))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 3))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 4))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 5))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 6))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 7))))
+                      (c
+                        (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                            (nat_lit 8))))
+                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                    (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+                h
+                (fun (h : @Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))) =>
+                  @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))
+                    (fun (v : Nat) =>
+                      ∀ (hv : @LT.lt.{0} Nat instLTNat v (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                        @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (JSP690.tupleColor
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 0))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 1))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 2))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 3))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 4))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 5))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 6))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 7))))
+                            (c
+                              (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                  (nat_lit 8))))
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                          (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+                    (fun
+                        (hv :
+                          @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))
+                            (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                      @Eq.refl.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (JSP690.tupleColor
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 0))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 1))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 2))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 3))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 4))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 5))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 6))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 7))))
+                          (c
+                            (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                (nat_lit 8))))
+                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                            (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))) hv)))
+                    v (@Eq.symm.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))) h) hv)
+                fun (h : ⋯) =>
+                @Or.casesOn (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                  (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                    (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                      (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))
+                  (fun
+                      (x :
+                        Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5))))
+                          (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))))
+                            (Or (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+                              (@Eq.{1} Nat v (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))))) =>
+                    @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (JSP690.tupleColor
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 0))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 1))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 2))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 3)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 3))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 4)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 4))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 5)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 5))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 6)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 6))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 7)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 7))))
+                        (c
+                          (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 8)
+                            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                              (nat_lit 8))))
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv))
+                      (c (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v hv)))
+                  h
+                  (fun (h : ⋯) =>
+                    @Eq.ndrec.{0, 1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5)))
+                      (fun (v : ⋯) =>
+                        ∀ (hv : ⋯),
+                          @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (JSP690.tupleColor
+                              (c
+                                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 0)
+                                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                    (nat_lit 0))))
+                              (c
+                                (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 1)
+                                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8))))
+                                    (nat_lit 1))))
+                              (c (@OfNat.ofNat.{0} JSP690.Vertex (nat_lit 2) ⋯)) ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯)
+                            ⋯)
+                      ⋯ ⋯ ⋯ ⋯)
+                  ⋯
+'JSP690.tupleColor_complete' depends on axioms: [propext, Quot.sound]

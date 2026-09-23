@@ -1,0 +1,261 @@
+AuditBridge.external_target : @Exists.{1} Nat fun (n : Nat) =>
+  @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+    And (@AuditBridge.ThreeUniform n E)
+      (And
+        (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+          (∀ (j : Nat),
+            @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+              Not (@AuditBridge.HasColoring n j E)))
+        (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E)))
+theorem AuditBridge.external_target : @Exists.{1} Nat fun (n : Nat) =>
+  @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+    And (@AuditBridge.ThreeUniform n E)
+      (And
+        (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+          (∀ (j : Nat),
+            @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+              Not (@AuditBridge.HasColoring n j E)))
+        (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))) :=
+@Exists.casesOn.{1} Nat
+  (fun (n : Nat) =>
+    @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+      And (@JSP690.IsSimple n H)
+        (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticCritical n H)
+              (∀ (v : Fin n),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                  (@JSP690.degree n H v))))))
+  (fun
+      (x :
+        @Exists.{1} Nat fun (n : Nat) =>
+          @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+            And (@JSP690.IsSimple n H)
+              (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                  (And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v)))))) =>
+    @Exists.{1} Nat fun (n : Nat) =>
+      @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+        And (@AuditBridge.ThreeUniform n E)
+          (And
+            (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+              (∀ (j : Nat),
+                @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                  Not (@AuditBridge.HasColoring n j E)))
+            (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+  JSP690.exists_three_uniform_three_chromatic_critical
+  fun (n : Nat)
+    (h :
+      @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+        And (@JSP690.IsSimple n H)
+          (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+              (And (@JSP690.ChromaticCritical n H)
+                (∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v)))))) =>
+  @Exists.casesOn.{1} (JSP690.Hypergraph n)
+    (fun (H : JSP690.Hypergraph n) =>
+      And (@JSP690.IsSimple n H)
+        (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticCritical n H)
+              (∀ (v : Fin n),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                  (@JSP690.degree n H v))))))
+    (fun
+        (x :
+          @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+            And (@JSP690.IsSimple n H)
+              (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                  (And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v)))))) =>
+      @Exists.{1} Nat fun (n : Nat) =>
+        @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+          And (@AuditBridge.ThreeUniform n E)
+            (And
+              (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                (∀ (j : Nat),
+                  @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                    Not (@AuditBridge.HasColoring n j E)))
+              (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+    h
+    fun (H : JSP690.Hypergraph n)
+      (h :
+        And (@JSP690.IsSimple n H)
+          (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+              (And (@JSP690.ChromaticCritical n H)
+                (∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v)))))) =>
+    @And.casesOn.{0} (@JSP690.IsSimple n H)
+      (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+        (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v)))))
+      (fun
+          (x :
+            And (@JSP690.IsSimple n H)
+              (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                  (And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v)))))) =>
+        @Exists.{1} Nat fun (n : Nat) =>
+          @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+            And (@AuditBridge.ThreeUniform n E)
+              (And
+                (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                  (∀ (j : Nat),
+                    @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                      Not (@AuditBridge.HasColoring n j E)))
+                (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+      h
+      fun (hs : @JSP690.IsSimple n H)
+        (right :
+          And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+              (And (@JSP690.ChromaticCritical n H)
+                (∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v))))) =>
+      @And.casesOn.{0} (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+        (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v))))
+        (fun
+            (x :
+              And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                  (And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v))))) =>
+          @Exists.{1} Nat fun (n : Nat) =>
+            @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+              And (@AuditBridge.ThreeUniform n E)
+                (And
+                  (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                    (∀ (j : Nat),
+                      @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                        Not (@AuditBridge.HasColoring n j E)))
+                  (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+        right
+        fun (hu : @JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (right :
+            And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+              (And (@JSP690.ChromaticCritical n H)
+                (∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v)))) =>
+        @And.casesOn.{0} (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v)))
+          (fun
+              (x :
+                And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+                  (And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v)))) =>
+            @Exists.{1} Nat fun (n : Nat) =>
+              @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+                And (@AuditBridge.ThreeUniform n E)
+                  (And
+                    (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                      (∀ (j : Nat),
+                        @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                          Not (@AuditBridge.HasColoring n j E)))
+                    (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+          right
+          fun (hc : @JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (right :
+              And (@JSP690.ChromaticCritical n H)
+                (∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v))) =>
+          @And.casesOn.{0} (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v))
+            (fun
+                (x :
+                  And (@JSP690.ChromaticCritical n H)
+                    (∀ (v : Fin n),
+                      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                        (@JSP690.degree n H v))) =>
+              @Exists.{1} Nat fun (n : Nat) =>
+                @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+                  And (@AuditBridge.ThreeUniform n E)
+                    (And
+                      (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                        (∀ (j : Nat),
+                          @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                            Not (@AuditBridge.HasColoring n j E)))
+                      (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+            right
+            fun (hcrit : @JSP690.ChromaticCritical n H)
+              (hd :
+                ∀ (v : Fin n),
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                    (@JSP690.degree n H v)) =>
+            @Exists.intro.{1} Nat
+              (fun (n : Nat) =>
+                @Exists.{1} (AuditBridge.EdgeFamily n) fun (E : AuditBridge.EdgeFamily n) =>
+                  And (@AuditBridge.ThreeUniform n E)
+                    (And
+                      (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                        (∀ (j : Nat),
+                          @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                            Not (@AuditBridge.HasColoring n j E)))
+                      (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+              n
+              (@Exists.intro.{1} (AuditBridge.EdgeFamily n)
+                (fun (E : AuditBridge.EdgeFamily n) =>
+                  And (@AuditBridge.ThreeUniform n E)
+                    (And
+                      (And (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) E)
+                        (∀ (j : Nat),
+                          @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                            Not (@AuditBridge.HasColoring n j E)))
+                      (And (@AuditBridge.Critical n E) (@AuditBridge.DegreeAtLeastSeven n E))))
+                (@AuditBridge.family n H)
+                (@And.intro (@AuditBridge.ThreeUniform n (@AuditBridge.family n H))
+                  (And
+                    (And
+                      (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                        (@AuditBridge.family n H))
+                      (∀ (j : Nat),
+                        @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                          Not (@AuditBridge.HasColoring n j (@AuditBridge.family n H))))
+                    (And (@AuditBridge.Critical n (@AuditBridge.family n H))
+                      (@AuditBridge.DegreeAtLeastSeven n (@AuditBridge.family n H))))
+                  (@AuditBridge.three_uniform_bridge n H hs hu)
+                  (@And.intro
+                    (And
+                      (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                        (@AuditBridge.family n H))
+                      (∀ (j : Nat),
+                        @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+                          Not (@AuditBridge.HasColoring n j (@AuditBridge.family n H))))
+                    (And (@AuditBridge.Critical n (@AuditBridge.family n H))
+                      (@AuditBridge.DegreeAtLeastSeven n (@AuditBridge.family n H)))
+                    (@AuditBridge.chromatic_number_bridge n H hc)
+                    (@And.intro (@AuditBridge.Critical n (@AuditBridge.family n H))
+                      (@AuditBridge.DegreeAtLeastSeven n (@AuditBridge.family n H))
+                      (@AuditBridge.critical_bridge n H hcrit) (@AuditBridge.degree_bridge n H hs hd)))))
+'AuditBridge.external_target' depends on axioms: [propext, Classical.choice, Quot.sound]

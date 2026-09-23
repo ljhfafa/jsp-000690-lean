@@ -1,0 +1,10 @@
+ℹ [6/6] Built JSP690.AuditBridge (324ms)
+info: JSP690/AuditBridge.lean:246:0: 'AuditBridge.proper_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP690/AuditBridge.lean:247:0: 'AuditBridge.family_selected_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP690/AuditBridge.lean:248:0: 'AuditBridge.critical_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP690/AuditBridge.lean:249:0: 'AuditBridge.chromatic_number_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP690/AuditBridge.lean:250:0: 'AuditBridge.sorted_edge_injective' depends on axioms: [propext, Quot.sound]
+info: JSP690/AuditBridge.lean:251:0: 'AuditBridge.three_uniform_bridge' depends on axioms: [propext, Quot.sound]
+info: JSP690/AuditBridge.lean:252:0: 'AuditBridge.degree_bridge' depends on axioms: [propext, Quot.sound]
+info: JSP690/AuditBridge.lean:253:0: 'AuditBridge.external_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (6 jobs).

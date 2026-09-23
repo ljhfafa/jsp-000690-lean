@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-D",
+    "TOOLCHAIN=/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64",
+    "-D",
+    "SOURCE=/private/tmp/jsp-competition",
+    "-D",
+    "RUN=/Users/jiahongli/workspace/justinsun/tools/competition-run",
+    "-f",
+    "/Users/jiahongli/workspace/justinsun/tools/lean-sandbox.sb",
+    "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lean",
+    "-R",
+    "/private/tmp/jsp-competition",
+    "-M",
+    "4096",
+    "-j",
+    "2",
+    "-o",
+    "/Users/jiahongli/workspace/justinsun/tools/competition-run/Issue15.olean",
+    "/private/tmp/jsp-competition/Issue15.lean"
+  ],
+  "cwd": "/Users/jiahongli/workspace/justinsun/tools/competition-run",
+  "environment": {
+    "PATH": "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin:/usr/bin:/bin",
+    "HOME": "/nonexistent",
+    "TMPDIR": "/Users/jiahongli/workspace/justinsun/tools/competition-run",
+    "LANG": "C",
+    "LEAN_PATH": "/Users/jiahongli/workspace/justinsun/tools/competition-run"
+  },
+  "profile_sha256": "b577c01abfeac6ec989efa196a1c2c9ce9e142a756331d881282ba636417bd8f",
+  "started_unix": 1790147486.270668,
+  "elapsed_seconds": 1.5384299755096436,
+  "returncode": 0,
+  "timed_out": false,
+  "limits": {
+    "wall_seconds": 300,
+    "cpu_seconds_per_process": 300,
+    "file_bytes": 1073741824,
+    "open_files": 256,
+    "memory_note": "Specify Lean -M separately; no OS-level RAM cap is claimed."
+  },
+  "log": "/Users/jiahongli/workspace/justinsun/tools/competition-run/Issue15-lean.log"
+}

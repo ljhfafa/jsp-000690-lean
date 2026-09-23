@@ -1,0 +1,1 @@
+'JSP000690.exists_critical_min_degree_seven' depends on axioms: [propext, Quot.sound]

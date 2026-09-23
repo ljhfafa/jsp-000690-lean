@@ -1,0 +1,7 @@
+JSP690.construction_critical : @JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  JSP690.construction
+theorem JSP690.construction_critical : @JSP690.ChromaticCritical
+  (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction :=
+@JSP690.chromaticCritical_of_deletions (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction
+  JSP690.construction_edge_critical JSP690.construction_vertex_critical
+'JSP690.construction_critical' depends on axioms: [propext, Quot.sound]

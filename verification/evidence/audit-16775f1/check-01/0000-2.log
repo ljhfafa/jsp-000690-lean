@@ -1,0 +1,88 @@
+JSP690.exists_three_uniform_three_chromatic_critical : @Exists.{1} Nat fun (n : Nat) =>
+  @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+    And (@JSP690.IsSimple n H)
+      (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+        (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v)))))
+theorem JSP690.exists_three_uniform_three_chromatic_critical : @Exists.{1} Nat fun (n : Nat) =>
+  @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+    And (@JSP690.IsSimple n H)
+      (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+        (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticCritical n H)
+            (∀ (v : Fin n),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree n H v))))) :=
+@Exists.intro.{1} Nat
+  (fun (n : Nat) =>
+    @Exists.{1} (JSP690.Hypergraph n) fun (H : JSP690.Hypergraph n) =>
+      And (@JSP690.IsSimple n H)
+        (And (@JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And (@JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticCritical n H)
+              (∀ (v : Fin n),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                  (@JSP690.degree n H v))))))
+  (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  (@Exists.intro.{1} (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+    (fun (H : JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+      And (@JSP690.IsSimple (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) H)
+        (And
+          (@JSP690.IsUniform (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+          (And
+            (@JSP690.ChromaticNumberEq (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+            (And (@JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) H)
+              (∀ (v : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                  (@JSP690.degree (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) H v))))))
+    JSP690.construction
+    (@And.intro (@JSP690.IsSimple (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction)
+      (And
+        (@JSP690.IsUniform (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction)
+        (And
+          (@JSP690.ChromaticNumberEq (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction)
+          (And
+            (@JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              JSP690.construction)
+            (∀ (v : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v)))))
+      JSP690.construction_simple
+      (@And.intro
+        (@JSP690.IsUniform (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction)
+        (And
+          (@JSP690.ChromaticNumberEq (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction)
+          (And
+            (@JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              JSP690.construction)
+            (∀ (v : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v))))
+        JSP690.construction_uniform
+        (@And.intro
+          (@JSP690.ChromaticNumberEq (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction)
+          (And
+            (@JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              JSP690.construction)
+            (∀ (v : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v)))
+          JSP690.construction_chromatic_number
+          (@And.intro
+            (@JSP690.ChromaticCritical (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              JSP690.construction)
+            (∀ (v : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))
+                (@JSP690.degree (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction v))
+            JSP690.construction_critical JSP690.construction_min_degree)))))
+'JSP690.exists_three_uniform_three_chromatic_critical' depends on axioms: [propext, Quot.sound]

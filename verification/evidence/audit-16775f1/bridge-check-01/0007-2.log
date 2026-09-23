@@ -1,0 +1,1037 @@
+@AuditBridge.three_uniform_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n) (hs : @JSP690.IsSimple n H)
+  (hu : @JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H),
+  @AuditBridge.ThreeUniform n (@AuditBridge.family n H)
+theorem AuditBridge.three_uniform_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n) (hs : @JSP690.IsSimple n H)
+  (hu : @JSP690.IsUniform n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H),
+  @AuditBridge.ThreeUniform n (@AuditBridge.family n H) :=
+fun {n : ⋯} (H : ⋯) (hs : ⋯) (hu : ⋯) (S : ⋯) (hS : ⋯) =>
+  @Exists.casesOn.{1} (JSP690.Edge n)
+    (fun (e : JSP690.Edge n) =>
+      And (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+        (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)))
+    (fun (x : @AuditBridge.family n H S) =>
+      @Exists.{1} (Fin n) fun (a : Fin n) =>
+        @Exists.{1} (Fin n) fun (b : Fin n) =>
+          @Exists.{1} (Fin n) fun (c : Fin n) =>
+            And (@Ne.{1} (Fin n) a b)
+              (And (@Ne.{1} (Fin n) a c)
+                (And (@Ne.{1} (Fin n) b c)
+                  (∀ (v : Fin n),
+                    Iff (S v) (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+    hS fun (e : ⋯) (h : ⋯) =>
+    @And.casesOn.{0}
+      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+      (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))
+      (fun
+          (x :
+            And
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                e)
+              (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+        @Exists.{1} (Fin n) fun (a : Fin n) =>
+          @Exists.{1} (Fin n) fun (b : Fin n) =>
+            @Exists.{1} (Fin n) fun (c : Fin n) =>
+              And (@Ne.{1} (Fin n) a b)
+                (And (@Ne.{1} (Fin n) a c)
+                  (And (@Ne.{1} (Fin n) b c)
+                    (∀ (v : Fin n),
+                      Iff (S v) (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+      h fun (he : ⋯) (right : ⋯) =>
+      @Eq.ndrec.{0, 1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e)
+        (fun (S : AuditBridge.VertexSet n) =>
+          @Exists.{1} (Fin n) fun (a : Fin n) =>
+            @Exists.{1} (Fin n) fun (b : Fin n) =>
+              @Exists.{1} (Fin n) fun (c : Fin n) =>
+                And (@Ne.{1} (Fin n) a b)
+                  (And (@Ne.{1} (Fin n) a c)
+                    (And (@Ne.{1} (Fin n) b c)
+                      (∀ (v : Fin n),
+                        Iff (S v) (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+        (have hlength : ⋯ := hu e he;
+        have hsort : ⋯ :=
+          @And.right (@List.Nodup.{0} (JSP690.Edge n) H)
+            (∀ (e : JSP690.Edge n),
+              @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                  e →
+                @List.Pairwise.{0} (Fin n) (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                  e)
+            hs e he;
+        @List.casesOn.{0, 0} (Fin n)
+          (fun (t : List.{0} (Fin n)) =>
+            ∀ (h : @Eq.{1} (JSP690.Edge n) e t),
+              @Exists.{1} (Fin n) fun (a : Fin n) =>
+                @Exists.{1} (Fin n) fun (b : Fin n) =>
+                  @Exists.{1} (Fin n) fun (c : Fin n) =>
+                    And (@Ne.{1} (Fin n) a b)
+                      (And (@Ne.{1} (Fin n) a c)
+                        (And (@Ne.{1} (Fin n) b c)
+                          (∀ (v : Fin n),
+                            Iff (@AuditBridge.edgeSet n e v)
+                              (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+          e
+          (fun (h : @Eq.{1} (JSP690.Edge n) e (@List.nil.{0} (Fin n))) =>
+            @Eq.ndrec.{0, 1} (JSP690.Edge n) (@List.nil.{0} (Fin n))
+              (fun (e : JSP690.Edge n) =>
+                ∀
+                  (he :
+                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                  (hlength :
+                    @Eq.{1} Nat (@List.length.{0} (Fin n) e)
+                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (hsort :
+                    @List.Pairwise.{0} (Fin n)
+                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w)) e),
+                  @Exists.{1} (Fin n) fun (a : Fin n) =>
+                    @Exists.{1} (Fin n) fun (b : Fin n) =>
+                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                        And (@Ne.{1} (Fin n) a b)
+                          (And (@Ne.{1} (Fin n) a c)
+                            (And (@Ne.{1} (Fin n) b c)
+                              (∀ (v : Fin n),
+                                Iff (@AuditBridge.edgeSet n e v)
+                                  (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+              (fun
+                  (he :
+                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H (@List.nil.{0} (Fin n)))
+                  (hlength :
+                    @Eq.{1} Nat (@List.length.{0} (Fin n) (@List.nil.{0} (Fin n)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (hsort :
+                    @List.Pairwise.{0} (Fin n)
+                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                      (@List.nil.{0} (Fin n))) =>
+                @False.elim.{0}
+                  (@Exists.{1} (Fin n) fun (a : Fin n) =>
+                    @Exists.{1} (Fin n) fun (b : Fin n) =>
+                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                        And (@Ne.{1} (Fin n) a b)
+                          (And (@Ne.{1} (Fin n) a c)
+                            (And (@Ne.{1} (Fin n) b c)
+                              (∀ (v : Fin n),
+                                Iff (@AuditBridge.edgeSet n (@List.nil.{0} (Fin n)) v)
+                                  (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+                  (@Eq.mp.{0}
+                    (@Eq.{1} Nat (@List.length.{0} (Fin n) (@List.nil.{0} (Fin n)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                    False
+                    (@eq_false'
+                      (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                      fun
+                        (h :
+                          @Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+                            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) =>
+                      @False.elim.{0} False
+                        (@noConfusion_of_Nat.{1} Nat Nat.ctorIdx
+                          (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) h))
+                    hlength))
+              e (@Eq.symm.{1} (JSP690.Edge n) e (@List.nil.{0} (Fin n)) h) he hlength hsort)
+          (fun (a : ⋯) (t : ⋯) (h : ⋯) =>
+            @Eq.ndrec.{0, 1} (JSP690.Edge n) (@List.cons.{0} (Fin n) a t)
+              (fun (e : JSP690.Edge n) =>
+                ∀
+                  (he :
+                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                  (hlength :
+                    @Eq.{1} Nat (@List.length.{0} (Fin n) e)
+                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  (hsort :
+                    @List.Pairwise.{0} (Fin n)
+                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w)) e),
+                  @Exists.{1} (Fin n) fun (a : Fin n) =>
+                    @Exists.{1} (Fin n) fun (b : Fin n) =>
+                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                        And (@Ne.{1} (Fin n) a b)
+                          (And (@Ne.{1} (Fin n) a c)
+                            (And (@Ne.{1} (Fin n) b c)
+                              (∀ (v : Fin n),
+                                Iff (@AuditBridge.edgeSet n e v)
+                                  (Or (@Eq.{1} (Fin n) v a) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+              (fun (he : ⋯) (hlength : ⋯) (hsort : ⋯) =>
+                @List.casesOn.{0, 0} (Fin n)
+                  (fun (t_1 : List.{0} (Fin n)) =>
+                    ∀ (h : @Eq.{1} (List.{0} (Fin n)) t t_1),
+                      @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                        @Exists.{1} (Fin n) fun (b : Fin n) =>
+                          @Exists.{1} (Fin n) fun (c : Fin n) =>
+                            And (@Ne.{1} (Fin n) a_1 b)
+                              (And (@Ne.{1} (Fin n) a_1 c)
+                                (And (@Ne.{1} (Fin n) b c)
+                                  (∀ (v : Fin n),
+                                    Iff (@AuditBridge.edgeSet n (@List.cons.{0} (Fin n) a t) v)
+                                      (Or (@Eq.{1} (Fin n) v a_1) (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+                  t
+                  (fun (h : @Eq.{1} (List.{0} (Fin n)) t (@List.nil.{0} (Fin n))) =>
+                    @Eq.ndrec.{0, 1} (List.{0} (Fin n)) (@List.nil.{0} (Fin n))
+                      (fun (t : List.{0} (Fin n)) =>
+                        ∀
+                          (he :
+                            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                              (@List.instMembership.{0} (JSP690.Edge n)) H (@List.cons.{0} (Fin n) a t))
+                          (hlength :
+                            @Eq.{1} Nat (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a t))
+                              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                          (hsort :
+                            @List.Pairwise.{0} (Fin n)
+                              (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                              (@List.cons.{0} (Fin n) a t)),
+                          @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                            @Exists.{1} (Fin n) fun (b : Fin n) =>
+                              @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                And (@Ne.{1} (Fin n) a_1 b)
+                                  (And (@Ne.{1} (Fin n) a_1 c)
+                                    (And (@Ne.{1} (Fin n) b c)
+                                      (∀ (v : Fin n),
+                                        Iff (@AuditBridge.edgeSet n (@List.cons.{0} (Fin n) a t) v)
+                                          (Or (@Eq.{1} (Fin n) v a_1)
+                                            (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+                      (fun
+                          (he :
+                            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                              (@List.instMembership.{0} (JSP690.Edge n)) H
+                              (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))
+                          (hlength :
+                            @Eq.{1} Nat (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))
+                              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                          (hsort :
+                            @List.Pairwise.{0} (Fin n)
+                              (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                              (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n)))) =>
+                        @False.elim.{0}
+                          (@Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                            @Exists.{1} (Fin n) fun (b : Fin n) =>
+                              @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                And (@Ne.{1} (Fin n) a_1 b)
+                                  (And (@Ne.{1} (Fin n) a_1 c)
+                                    (And (@Ne.{1} (Fin n) b c)
+                                      (∀ (v : Fin n),
+                                        Iff
+                                          (@AuditBridge.edgeSet n (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))) v)
+                                          (Or (@Eq.{1} (Fin n) v a_1)
+                                            (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+                          (@Eq.mp.{0}
+                            (@Eq.{1} Nat (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))
+                              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                            False
+                            (@Eq.trans.{1} Prop
+                              (@Eq.{1} Nat (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))
+                                (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                              (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                              False
+                              (@congrFun'.{1, 1} Nat Prop
+                                (@Eq.{1} Nat
+                                  (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n)))))
+                                (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                                (@congrArg.{1, 1} Nat (Nat → Prop)
+                                  (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) (@Eq.{1} Nat)
+                                  (Nat.zero_add (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                              (@eq_false_of_decide
+                                (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                (instDecidableEqNat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                (@Eq.refl.{1} Bool Bool.false)))
+                            hlength))
+                      t (@Eq.symm.{1} (List.{0} (Fin n)) t (@List.nil.{0} (Fin n)) h) he hlength hsort)
+                  (fun (b : ⋯) (t_1 : ⋯) (h : ⋯) =>
+                    @Eq.ndrec.{0, 1} (List.{0} (Fin n)) (@List.cons.{0} (Fin n) b t_1)
+                      (fun (t : List.{0} (Fin n)) =>
+                        ∀
+                          (he :
+                            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                              (@List.instMembership.{0} (JSP690.Edge n)) H (@List.cons.{0} (Fin n) a t))
+                          (hlength :
+                            @Eq.{1} Nat (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a t))
+                              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                          (hsort :
+                            @List.Pairwise.{0} (Fin n)
+                              (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                              (@List.cons.{0} (Fin n) a t)),
+                          @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                            @Exists.{1} (Fin n) fun (b : Fin n) =>
+                              @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                And (@Ne.{1} (Fin n) a_1 b)
+                                  (And (@Ne.{1} (Fin n) a_1 c)
+                                    (And (@Ne.{1} (Fin n) b c)
+                                      (∀ (v : Fin n),
+                                        Iff (@AuditBridge.edgeSet n (@List.cons.{0} (Fin n) a t) v)
+                                          (Or (@Eq.{1} (Fin n) v a_1)
+                                            (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))))
+                      (fun (he : ⋯) (hlength : ⋯) (hsort : ⋯) =>
+                        @List.casesOn.{0, 0} (Fin n)
+                          (fun (t : List.{0} (Fin n)) =>
+                            ∀ (h : @Eq.{1} (List.{0} (Fin n)) t_1 t),
+                              @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                                @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                  @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                    And (@Ne.{1} (Fin n) a_1 b_1)
+                                      (And (@Ne.{1} (Fin n) a_1 c)
+                                        (And (@Ne.{1} (Fin n) b_1 c)
+                                          (∀ (v : Fin n),
+                                            Iff
+                                              (@AuditBridge.edgeSet n
+                                                (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t_1)) v)
+                                              (Or (@Eq.{1} (Fin n) v a_1)
+                                                (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c)))))))
+                          t_1
+                          (fun (h : @Eq.{1} (List.{0} (Fin n)) t_1 (@List.nil.{0} (Fin n))) =>
+                            @Eq.ndrec.{0, 1} (List.{0} (Fin n)) (@List.nil.{0} (Fin n))
+                              (fun (t : List.{0} (Fin n)) =>
+                                ∀
+                                  (he :
+                                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                      (@List.instMembership.{0} (JSP690.Edge n)) H
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)))
+                                  (hlength :
+                                    @Eq.{1} Nat
+                                      (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)))
+                                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                  (hsort :
+                                    @List.Pairwise.{0} (Fin n)
+                                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t))),
+                                  @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                                    @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                        And (@Ne.{1} (Fin n) a_1 b_1)
+                                          (And (@Ne.{1} (Fin n) a_1 c)
+                                            (And (@Ne.{1} (Fin n) b_1 c)
+                                              (∀ (v : Fin n),
+                                                Iff
+                                                  (@AuditBridge.edgeSet n
+                                                    (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)) v)
+                                                  (Or (@Eq.{1} (Fin n) v a_1)
+                                                    (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c)))))))
+                              (fun
+                                  (he :
+                                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                      (@List.instMembership.{0} (JSP690.Edge n)) H
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                  (hlength :
+                                    @Eq.{1} Nat
+                                      (@List.length.{0} (Fin n)
+                                        (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                  (hsort :
+                                    @List.Pairwise.{0} (Fin n)
+                                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))) =>
+                                @False.elim.{0}
+                                  (@Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                                    @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                        And (@Ne.{1} (Fin n) a_1 b_1)
+                                          (And (@Ne.{1} (Fin n) a_1 c)
+                                            (And (@Ne.{1} (Fin n) b_1 c)
+                                              (∀ (v : Fin n),
+                                                Iff
+                                                  (@AuditBridge.edgeSet n
+                                                    (@List.cons.{0} (Fin n) a
+                                                      (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))
+                                                    v)
+                                                  (Or (@Eq.{1} (Fin n) v a_1)
+                                                    (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c)))))))
+                                  (@Eq.mp.{0}
+                                    (@Eq.{1} Nat
+                                      (@List.length.{0} (Fin n)
+                                        (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                    False
+                                    (@Eq.trans.{1} Prop
+                                      (@Eq.{1} Nat
+                                        (@List.length.{0} (Fin n)
+                                          (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                      (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                      False
+                                      (@congrFun'.{1, 1} Nat Prop
+                                        (@Eq.{1} Nat
+                                          (@List.length.{0} (Fin n)
+                                            (@List.cons.{0} (Fin n) a
+                                              (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))))
+                                        (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                                        (@congrArg.{1, 1} Nat (Nat → Prop)
+                                          (@List.length.{0} (Fin n)
+                                            (@List.cons.{0} (Fin n) a
+                                              (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@Eq.{1} Nat)
+                                          (@congrFun'.{1, 1} Nat Nat
+                                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)
+                                              (@List.length.{0} (Fin n)
+                                                (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n)))))
+                                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                                            (@congrArg.{1, 1} Nat (Nat → Nat)
+                                              (@List.length.{0} (Fin n)
+                                                (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat))
+                                              (Nat.zero_add
+                                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                            (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                      (@eq_false_of_decide
+                                        (@Eq.{1} Nat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                        (instDecidableEqNat
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                        (@Eq.refl.{1} Bool Bool.false)))
+                                    hlength))
+                              t_1 (@Eq.symm.{1} (List.{0} (Fin n)) t_1 (@List.nil.{0} (Fin n)) h) he hlength hsort)
+                          (fun (c : ⋯) (t : ⋯) (h : ⋯) =>
+                            @Eq.ndrec.{0, 1} (List.{0} (Fin n)) (@List.cons.{0} (Fin n) c t)
+                              (fun (t : List.{0} (Fin n)) =>
+                                ∀
+                                  (he :
+                                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                      (@List.instMembership.{0} (JSP690.Edge n)) H
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)))
+                                  (hlength :
+                                    @Eq.{1} Nat
+                                      (@List.length.{0} (Fin n) (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)))
+                                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                  (hsort :
+                                    @List.Pairwise.{0} (Fin n)
+                                      (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                      (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t))),
+                                  @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                                    @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                      @Exists.{1} (Fin n) fun (c : Fin n) =>
+                                        And (@Ne.{1} (Fin n) a_1 b_1)
+                                          (And (@Ne.{1} (Fin n) a_1 c)
+                                            (And (@Ne.{1} (Fin n) b_1 c)
+                                              (∀ (v : Fin n),
+                                                Iff
+                                                  (@AuditBridge.edgeSet n
+                                                    (@List.cons.{0} (Fin n) a (@List.cons.{0} (Fin n) b t)) v)
+                                                  (Or (@Eq.{1} (Fin n) v a_1)
+                                                    (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c)))))))
+                              (fun (he : ⋯) (hlength : ⋯) (hsort : ⋯) =>
+                                have ht : ⋯ :=
+                                  @Eq.mp.{0}
+                                    (@Eq.{1} Nat
+                                      (@List.length.{0} (Fin n)
+                                        (@List.cons.{0} (Fin n) a
+                                          (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c t))))
+                                      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                    (@Eq.{1} (List.{0} (Fin n)) t (@List.nil.{0} (Fin n)))
+                                    (@Eq.trans.{1} Prop
+                                      (@Eq.{1} Nat
+                                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)
+                                          (@List.length.{0} (Fin n) t)
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                      (@Eq.{1} Nat (@List.length.{0} (Fin n) t)
+                                        (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat)
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+                                      (@Eq.{1} (List.{0} (Fin n)) t (@List.nil.{0} (Fin n)))
+                                      (@Nat.Simproc.add_eq_le (@List.length.{0} (Fin n) t)
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                                        (@of_decide_eq_true
+                                          (@LE.le.{0} Nat instLENat
+                                            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                                            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                          (Nat.decLe (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                                            (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                          (@Eq.refl.{1} Bool Bool.true)))
+                                      (@List.length_eq_zero_iff._simp_1.{0} (Fin n) t))
+                                    hlength;
+                                @Eq.ndrec.{0, 1} (List.{0} (Fin n)) (@List.nil.{0} (Fin n))
+                                  (fun (t : List.{0} (Fin n)) =>
+                                    ∀
+                                      (he :
+                                        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                          (@List.instMembership.{0} (JSP690.Edge n)) H
+                                          (@List.cons.{0} (Fin n) a
+                                            (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c t))))
+                                      (hlength :
+                                        @Eq.{1} Nat
+                                          (@List.length.{0} (Fin n)
+                                            (@List.cons.{0} (Fin n) a
+                                              (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c t))))
+                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                      (hsort :
+                                        @List.Pairwise.{0} (Fin n)
+                                          (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                          (@List.cons.{0} (Fin n) a
+                                            (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c t)))),
+                                      @Exists.{1} (Fin n) fun (a_1 : Fin n) =>
+                                        @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                          @Exists.{1} (Fin n) fun (c_1 : Fin n) =>
+                                            And (@Ne.{1} (Fin n) a_1 b_1)
+                                              (And (@Ne.{1} (Fin n) a_1 c_1)
+                                                (And (@Ne.{1} (Fin n) b_1 c_1)
+                                                  (∀ (v : Fin n),
+                                                    Iff
+                                                      (@AuditBridge.edgeSet n
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c t)))
+                                                        v)
+                                                      (Or (@Eq.{1} (Fin n) v a_1)
+                                                        (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c_1)))))))
+                                  (fun (he : ⋯) (hlength : ⋯) (hsort : ⋯) =>
+                                    have hab : ⋯ :=
+                                      @And.left
+                                        (∀ (a' : Fin n),
+                                          @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                              a' →
+                                            @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                        (@List.Pairwise.{0} (Fin n)
+                                          (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                          (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                        (@Iff.mp
+                                          (@List.Pairwise.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            (@List.cons.{0} (Fin n) a
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                          (And
+                                            (∀ (a' : Fin n),
+                                              @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) b
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                                  a' →
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                            (@List.Pairwise.{0} (Fin n)
+                                              (fun (v w : Fin n) =>
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                          (@List.pairwise_cons.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            a
+                                            (@List.cons.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                          hsort)
+                                        b
+                                        (@of_eq_true
+                                          (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                            (@List.instMembership.{0} (Fin n))
+                                            (@List.cons.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                            b)
+                                          (@Eq.trans.{1} Prop
+                                            (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                              b)
+                                            (Or (@Eq.{1} (Fin n) b b)
+                                              (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                (@List.instMembership.{0} (Fin n))
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) b))
+                                            True
+                                            (@List.mem_cons._simp_1.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) b)
+                                            (@Eq.trans.{1} Prop
+                                              (Or (@Eq.{1} (Fin n) b b)
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) b))
+                                              (Or True (@Eq.{1} (Fin n) b c)) True
+                                              (@congr.{1, 1} Prop Prop (Or (@Eq.{1} (Fin n) b b)) (Or True)
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) b)
+                                                (@Eq.{1} (Fin n) b c)
+                                                (@congrArg.{1, 1} Prop ((b : Prop) → Prop) (@Eq.{1} (Fin n) b b) True Or
+                                                  (@eq_self.{1} (Fin n) b))
+                                                (@Eq.trans.{1} Prop
+                                                  (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                    (@List.instMembership.{0} (Fin n))
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) b)
+                                                  (Or (@Eq.{1} (Fin n) b c)
+                                                    (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                      (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) b))
+                                                  (@Eq.{1} (Fin n) b c)
+                                                  (@List.mem_cons._simp_1.{0} (Fin n) c (@List.nil.{0} (Fin n)) b)
+                                                  (@Eq.trans.{1} Prop
+                                                    (Or (@Eq.{1} (Fin n) b c)
+                                                      (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                        (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) b))
+                                                    (Or (@Eq.{1} (Fin n) b c) False) (@Eq.{1} (Fin n) b c)
+                                                    (@congrArg.{1, 1} Prop Prop
+                                                      (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                        (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) b)
+                                                      False (Or (@Eq.{1} (Fin n) b c))
+                                                      (@List.not_mem_nil._simp_1.{0} (Fin n) b))
+                                                    (or_false (@Eq.{1} (Fin n) b c)))))
+                                              (true_or (@Eq.{1} (Fin n) b c)))));
+                                    have hac : ⋯ :=
+                                      @And.left
+                                        (∀ (a' : Fin n),
+                                          @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                              a' →
+                                            @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                        (@List.Pairwise.{0} (Fin n)
+                                          (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                          (@List.cons.{0} (Fin n) b (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                        (@Iff.mp
+                                          (@List.Pairwise.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            (@List.cons.{0} (Fin n) a
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                          (And
+                                            (∀ (a' : Fin n),
+                                              @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) b
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                                  a' →
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                            (@List.Pairwise.{0} (Fin n)
+                                              (fun (v w : Fin n) =>
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                          (@List.pairwise_cons.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            a
+                                            (@List.cons.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                          hsort)
+                                        c
+                                        (@of_eq_true
+                                          (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                            (@List.instMembership.{0} (Fin n))
+                                            (@List.cons.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                            c)
+                                          (@Eq.trans.{1} Prop
+                                            (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                              c)
+                                            (Or (@Eq.{1} (Fin n) c b)
+                                              (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                (@List.instMembership.{0} (Fin n))
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c))
+                                            True
+                                            (@List.mem_cons._simp_1.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c)
+                                            (@Eq.trans.{1} Prop
+                                              (Or (@Eq.{1} (Fin n) c b)
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c))
+                                              (Or (@Eq.{1} (Fin n) c b) True) True
+                                              (@congrArg.{1, 1} Prop Prop
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c)
+                                                True (Or (@Eq.{1} (Fin n) c b))
+                                                (@Eq.trans.{1} Prop
+                                                  (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                    (@List.instMembership.{0} (Fin n))
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c)
+                                                  (Or (@Eq.{1} (Fin n) c c)
+                                                    (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                      (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c))
+                                                  True (@List.mem_cons._simp_1.{0} (Fin n) c (@List.nil.{0} (Fin n)) c)
+                                                  (@Eq.trans.{1} Prop
+                                                    (Or (@Eq.{1} (Fin n) c c)
+                                                      (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                        (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c))
+                                                    (Or True False) True
+                                                    (@congr.{1, 1} Prop Prop (Or (@Eq.{1} (Fin n) c c)) (Or True)
+                                                      (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                        (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c)
+                                                      False
+                                                      (@congrArg.{1, 1} Prop ((b : Prop) → Prop) (@Eq.{1} (Fin n) c c)
+                                                        True Or (@eq_self.{1} (Fin n) c))
+                                                      (@List.not_mem_nil._simp_1.{0} (Fin n) c))
+                                                    (or_false True))))
+                                              (or_true (@Eq.{1} (Fin n) c b)))));
+                                    have hbc : ⋯ :=
+                                      @And.left
+                                        (∀ (a' : Fin n),
+                                          @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) a' →
+                                            @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n a'))
+                                        (@List.Pairwise.{0} (Fin n)
+                                          (fun (v w : Fin n) => @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                          (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                        (@Iff.mp
+                                          (@List.Pairwise.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            (@List.cons.{0} (Fin n) b
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                          (And
+                                            (∀ (a' : Fin n),
+                                              @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) a' →
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n a'))
+                                            (@List.Pairwise.{0} (Fin n)
+                                              (fun (v w : Fin n) =>
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                          (@List.pairwise_cons.{0} (Fin n)
+                                            (fun (v w : Fin n) =>
+                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                            b (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                          (@And.right
+                                            (∀ (a' : Fin n),
+                                              @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n))
+                                                  (@List.cons.{0} (Fin n) b
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                                  a' →
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                            (@List.Pairwise.{0} (Fin n)
+                                              (fun (v w : Fin n) =>
+                                                @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                              (@List.cons.{0} (Fin n) b
+                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                            (@Iff.mp
+                                              (@List.Pairwise.{0} (Fin n)
+                                                (fun (v w : Fin n) =>
+                                                  @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                (@List.cons.{0} (Fin n) a
+                                                  (@List.cons.{0} (Fin n) b
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                              (And
+                                                (∀ (a' : Fin n),
+                                                  @Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                      (@List.instMembership.{0} (Fin n))
+                                                      (@List.cons.{0} (Fin n) b
+                                                        (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))
+                                                      a' →
+                                                    @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a'))
+                                                (@List.Pairwise.{0} (Fin n)
+                                                  (fun (v w : Fin n) =>
+                                                    @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                  (@List.cons.{0} (Fin n) b
+                                                    (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                              (@List.pairwise_cons.{0} (Fin n)
+                                                (fun (v w : Fin n) =>
+                                                  @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                a
+                                                (@List.cons.{0} (Fin n) b
+                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                              hsort)))
+                                        c
+                                        (@of_eq_true
+                                          (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                            (@List.instMembership.{0} (Fin n))
+                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c)
+                                          (@Eq.trans.{1} Prop
+                                            (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                              (@List.instMembership.{0} (Fin n))
+                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))) c)
+                                            (Or (@Eq.{1} (Fin n) c c)
+                                              (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c))
+                                            True (@List.mem_cons._simp_1.{0} (Fin n) c (@List.nil.{0} (Fin n)) c)
+                                            (@Eq.trans.{1} Prop
+                                              (Or (@Eq.{1} (Fin n) c c)
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c))
+                                              (Or True False) True
+                                              (@congr.{1, 1} Prop Prop (Or (@Eq.{1} (Fin n) c c)) (Or True)
+                                                (@Membership.mem.{0, 0} (Fin n) (List.{0} (Fin n))
+                                                  (@List.instMembership.{0} (Fin n)) (@List.nil.{0} (Fin n)) c)
+                                                False
+                                                (@congrArg.{1, 1} Prop ((b : Prop) → Prop) (@Eq.{1} (Fin n) c c) True Or
+                                                  (@eq_self.{1} (Fin n) c))
+                                                (@List.not_mem_nil._simp_1.{0} (Fin n) c))
+                                              (or_false True))));
+                                    @Exists.intro.{1} (Fin n)
+                                      (fun (a_1 : Fin n) =>
+                                        @Exists.{1} (Fin n) fun (b_1 : Fin n) =>
+                                          @Exists.{1} (Fin n) fun (c_1 : Fin n) =>
+                                            And (@Ne.{1} (Fin n) a_1 b_1)
+                                              (And (@Ne.{1} (Fin n) a_1 c_1)
+                                                (And (@Ne.{1} (Fin n) b_1 c_1)
+                                                  (∀ (v : Fin n),
+                                                    Iff
+                                                      (@AuditBridge.edgeSet n
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                        v)
+                                                      (Or (@Eq.{1} (Fin n) v a_1)
+                                                        (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c_1)))))))
+                                      a
+                                      (@Exists.intro.{1} (Fin n)
+                                        (fun (b_1 : Fin n) =>
+                                          @Exists.{1} (Fin n) fun (c_1 : Fin n) =>
+                                            And (@Ne.{1} (Fin n) a b_1)
+                                              (And (@Ne.{1} (Fin n) a c_1)
+                                                (And (@Ne.{1} (Fin n) b_1 c_1)
+                                                  (∀ (v : Fin n),
+                                                    Iff
+                                                      (@AuditBridge.edgeSet n
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                        v)
+                                                      (Or (@Eq.{1} (Fin n) v a)
+                                                        (Or (@Eq.{1} (Fin n) v b_1) (@Eq.{1} (Fin n) v c_1)))))))
+                                        b
+                                        (@Exists.intro.{1} (Fin n)
+                                          (fun (c_1 : Fin n) =>
+                                            And (@Ne.{1} (Fin n) a b)
+                                              (And (@Ne.{1} (Fin n) a c_1)
+                                                (And (@Ne.{1} (Fin n) b c_1)
+                                                  (∀ (v : Fin n),
+                                                    Iff
+                                                      (@AuditBridge.edgeSet n
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                        v)
+                                                      (Or (@Eq.{1} (Fin n) v a)
+                                                        (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c_1)))))))
+                                          c
+                                          (@And.intro (@Ne.{1} (Fin n) a b)
+                                            (And (@Ne.{1} (Fin n) a c)
+                                              (And (@Ne.{1} (Fin n) b c)
+                                                (∀ (v : Fin n),
+                                                  Iff
+                                                    (@AuditBridge.edgeSet n
+                                                      (@List.cons.{0} (Fin n) a
+                                                        (@List.cons.{0} (Fin n) b
+                                                          (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                      v)
+                                                    (Or (@Eq.{1} (Fin n) v a)
+                                                      (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c))))))
+                                            (fun (h : @Eq.{1} (Fin n) a b) =>
+                                              @Eq.ndrec.{0, 1} (Fin n) a
+                                                (fun (b : Fin n) =>
+                                                  ∀
+                                                    (he :
+                                                      @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                        (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                    (hlength :
+                                                      @Eq.{1} Nat
+                                                        (@List.length.{0} (Fin n)
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) b
+                                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                                    (hsort :
+                                                      @List.Pairwise.{0} (Fin n)
+                                                        (fun (v w : Fin n) =>
+                                                          @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                    (hab : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n b))
+                                                    (hbc : @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n c)),
+                                                    False)
+                                                (fun
+                                                    (he :
+                                                      @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                        (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                    (hlength :
+                                                      @Eq.{1} Nat
+                                                        (@List.length.{0} (Fin n)
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                                    (hsort :
+                                                      @List.Pairwise.{0} (Fin n)
+                                                        (fun (v w : Fin n) =>
+                                                          @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                    (hab : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a))
+                                                    (hbc : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n c)) =>
+                                                  @AuditBridge.three_uniform_bridge._proof_1_1 n a c hab)
+                                                b h he hlength hsort hab hbc)
+                                            (@And.intro (@Ne.{1} (Fin n) a c)
+                                              (And (@Ne.{1} (Fin n) b c)
+                                                (∀ (v : Fin n),
+                                                  Iff
+                                                    (@AuditBridge.edgeSet n
+                                                      (@List.cons.{0} (Fin n) a
+                                                        (@List.cons.{0} (Fin n) b
+                                                          (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                      v)
+                                                    (Or (@Eq.{1} (Fin n) v a)
+                                                      (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c)))))
+                                              (fun (h : @Eq.{1} (Fin n) a c) =>
+                                                @Eq.ndrec.{0, 1} (Fin n) a
+                                                  (fun (c : Fin n) =>
+                                                    ∀
+                                                      (he :
+                                                        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                          (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) b
+                                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                      (hlength :
+                                                        @Eq.{1} Nat
+                                                          (@List.length.{0} (Fin n)
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                                      (hsort :
+                                                        @List.Pairwise.{0} (Fin n)
+                                                          (fun (v w : Fin n) =>
+                                                            @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) b
+                                                              (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                      (hac : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n c))
+                                                      (hbc : @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n c)),
+                                                      False)
+                                                  (fun
+                                                      (he :
+                                                        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                          (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) b
+                                                              (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))))
+                                                      (hlength :
+                                                        @Eq.{1} Nat
+                                                          (@List.length.{0} (Fin n)
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))))
+                                                          (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                                                      (hsort :
+                                                        @List.Pairwise.{0} (Fin n)
+                                                          (fun (v w : Fin n) =>
+                                                            @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                          (@List.cons.{0} (Fin n) a
+                                                            (@List.cons.{0} (Fin n) b
+                                                              (@List.cons.{0} (Fin n) a (@List.nil.{0} (Fin n))))))
+                                                      (hac : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n a))
+                                                      (hbc : @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n a)) =>
+                                                    @AuditBridge.three_uniform_bridge._proof_1_1 n a b hac)
+                                                  c h he hlength hsort hac hbc)
+                                              (@And.intro (@Ne.{1} (Fin n) b c)
+                                                (∀ (v : Fin n),
+                                                  Iff
+                                                    (@AuditBridge.edgeSet n
+                                                      (@List.cons.{0} (Fin n) a
+                                                        (@List.cons.{0} (Fin n) b
+                                                          (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                      v)
+                                                    (Or (@Eq.{1} (Fin n) v a)
+                                                      (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c))))
+                                                (fun (h : @Eq.{1} (Fin n) b c) =>
+                                                  @Eq.ndrec.{0, 1} (Fin n) b
+                                                    (fun (c : Fin n) =>
+                                                      ∀
+                                                        (he :
+                                                          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                            (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                        (hlength :
+                                                          @Eq.{1} Nat
+                                                            (@List.length.{0} (Fin n)
+                                                              (@List.cons.{0} (Fin n) a
+                                                                (@List.cons.{0} (Fin n) b
+                                                                  (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                            (@OfNat.ofNat.{0} Nat (nat_lit 3)
+                                                              (instOfNatNat (nat_lit 3))))
+                                                        (hsort :
+                                                          @List.Pairwise.{0} (Fin n)
+                                                            (fun (v w : Fin n) =>
+                                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n))))))
+                                                        (hac : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n c))
+                                                        (hbc : @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n c)),
+                                                        False)
+                                                    (fun
+                                                        (he :
+                                                          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                                                            (@List.instMembership.{0} (JSP690.Edge n)) H
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))))
+                                                        (hlength :
+                                                          @Eq.{1} Nat
+                                                            (@List.length.{0} (Fin n)
+                                                              (@List.cons.{0} (Fin n) a
+                                                                (@List.cons.{0} (Fin n) b
+                                                                  (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))))
+                                                            (@OfNat.ofNat.{0} Nat (nat_lit 3)
+                                                              (instOfNatNat (nat_lit 3))))
+                                                        (hsort :
+                                                          @List.Pairwise.{0} (Fin n)
+                                                            (fun (v w : Fin n) =>
+                                                              @LT.lt.{0} Nat instLTNat (@Fin.val n v) (@Fin.val n w))
+                                                            (@List.cons.{0} (Fin n) a
+                                                              (@List.cons.{0} (Fin n) b
+                                                                (@List.cons.{0} (Fin n) b (@List.nil.{0} (Fin n))))))
+                                                        (hac : @LT.lt.{0} Nat instLTNat (@Fin.val n a) (@Fin.val n b))
+                                                        (hbc :
+                                                          @LT.lt.{0} Nat instLTNat (@Fin.val n b) (@Fin.val n b)) =>
+                                                      @AuditBridge.three_uniform_bridge._proof_1_2 n a b hbc)
+                                                    c h he hlength hsort hac hbc)
+                                                fun (v : ⋯) =>
+                                                @of_eq_true
+                                                  (Iff
+                                                    (@AuditBridge.edgeSet n
+                                                      (@List.cons.{0} (Fin n) a
+                                                        (@List.cons.{0} (Fin n) b
+                                                          (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                      v)
+                                                    (Or (@Eq.{1} (Fin n) v a)
+                                                      (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c))))
+                                                  (@Eq.trans.{1} Prop
+                                                    (Iff
+                                                      (@AuditBridge.edgeSet n
+                                                        (@List.cons.{0} (Fin n) a
+                                                          (@List.cons.{0} (Fin n) b
+                                                            (@List.cons.{0} (Fin n) c (@List.nil.{0} (Fin n)))))
+                                                        v)
+                                                      (Or (@Eq.{1} (Fin n) v a)
+                                                        (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v c))))
+                                                    (Iff
+                                                      (Or (@Eq.{1} (Fin n) v a)
+                                                        (Or (@Eq.{1} (Fin n) v b) (@Eq.{1} (Fin n) v ⋯)))
+                                                      ⋯)
+                                                    ⋯ ⋯ ⋯)))))))
+                                  ⋯ ⋯ ⋯ ⋯ ⋯)
+                              ⋯ ⋯ ⋯ ⋯ ⋯)
+                          ⋯)
+                      ⋯ ⋯ ⋯ ⋯ ⋯)
+                  ⋯)
+              ⋯ ⋯ ⋯ ⋯ ⋯)
+          ⋯)
+        ⋯ ⋯
+'AuditBridge.three_uniform_bridge' depends on axioms: [propext, Quot.sound]

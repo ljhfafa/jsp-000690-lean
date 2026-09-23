@@ -1,0 +1,408 @@
+{
+  "date": "2026-09-23",
+  "query": "repo:TheJustinSunPrize/awards \"JSP-000690\" in:title,body",
+  "total_count": 50,
+  "incomplete_results": false,
+  "items": [
+    {
+      "number": 144,
+      "title": "JSP-000936, JSP-000937, JSP-000958: migrate existing submission to catalog-only Lean references",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/144",
+      "created_at": "2026-09-16T16:23:03Z",
+      "updated_at": "2026-09-23T07:18:15Z"
+    },
+    {
+      "number": 4071,
+      "title": "JSP-000690: register Lean formalization (plby/lean-proofs)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/4071",
+      "created_at": "2026-09-23T04:09:22Z",
+      "updated_at": "2026-09-23T04:09:22Z"
+    },
+    {
+      "number": 2878,
+      "title": "JSP-000690: register Lean formalization",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/2878",
+      "created_at": "2026-09-22T00:39:07Z",
+      "updated_at": "2026-09-23T04:09:15Z"
+    },
+    {
+      "number": 3828,
+      "title": "JSP-000690: add Lean 4 formalization (3-uniform critically 3-chromatic 3-graph with minimum degree 7)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/3828",
+      "created_at": "2026-09-22T15:43:14Z",
+      "updated_at": "2026-09-22T20:39:03Z"
+    },
+    {
+      "number": 133,
+      "title": "JSP-001007: catalog Lean evidence and formalization attribution",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/133",
+      "created_at": "2026-09-16T15:54:26Z",
+      "updated_at": "2026-09-22T09:35:41Z"
+    },
+    {
+      "number": 95,
+      "title": "JSP-000692: catalog Lean evidence and formalization attribution",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/95",
+      "created_at": "2026-09-16T14:50:10Z",
+      "updated_at": "2026-09-22T07:51:57Z"
+    },
+    {
+      "number": 2007,
+      "title": "catalog: record Lean formalization for JSP-000690",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/2007",
+      "created_at": "2026-09-20T02:39:50Z",
+      "updated_at": "2026-09-22T00:39:03Z"
+    },
+    {
+      "number": 1152,
+      "title": "JSP-000690: record complete Lean formalization of Li's hypergraph",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1152",
+      "created_at": "2026-09-18T09:57:53Z",
+      "updated_at": "2026-09-21T10:06:33Z"
+    },
+    {
+      "number": 41,
+      "title": "JSP-000622: catalog Lean evidence and formalization attribution",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/41",
+      "created_at": "2026-09-16T11:48:26Z",
+      "updated_at": "2026-09-21T08:05:37Z"
+    },
+    {
+      "number": 40,
+      "title": "docs: register existing Lean evidence for 78 catalog records",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/40",
+      "created_at": "2026-09-16T11:46:42Z",
+      "updated_at": "2026-09-21T08:00:52Z"
+    },
+    {
+      "number": 2545,
+      "title": "JSP-000690: complete chromatic formalization with global size bounds",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/2545",
+      "created_at": "2026-09-21T06:42:45Z",
+      "updated_at": "2026-09-21T06:42:45Z"
+    },
+    {
+      "number": 1023,
+      "title": "[Award claim] JSP-000690: Lean formalization contribution",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1023",
+      "created_at": "2026-09-18T04:38:04Z",
+      "updated_at": "2026-09-21T04:48:05Z"
+    },
+    {
+      "number": 498,
+      "title": "JSP-000883: catalog reference draft pending original-problem scope review",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/498",
+      "created_at": "2026-09-17T05:33:08Z",
+      "updated_at": "2026-09-21T04:48:02Z"
+    },
+    {
+      "number": 458,
+      "title": "JSP-000078: catalog Lean evidence and formalization attribution",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/458",
+      "created_at": "2026-09-17T04:17:27Z",
+      "updated_at": "2026-09-21T04:47:54Z"
+    },
+    {
+      "number": 39,
+      "title": "JSP-000690: catalog Lean evidence and formalization attribution",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/39",
+      "created_at": "2026-09-16T11:40:48Z",
+      "updated_at": "2026-09-21T04:47:30Z"
+    },
+    {
+      "number": 35,
+      "title": "JSP-000690: submit Lean formalization of the 3-critical hypergraph construction",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/35",
+      "created_at": "2026-09-16T10:55:07Z",
+      "updated_at": "2026-09-21T04:08:55Z"
+    },
+    {
+      "number": 1868,
+      "title": "[Award claim] JSP-000690 \u2014 CN-F90 independent Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1868",
+      "created_at": "2026-09-19T11:38:48Z",
+      "updated_at": "2026-09-20T11:17:32Z"
+    },
+    {
+      "number": 1895,
+      "title": "catalog: record independent Lean formalization for JSP-000690 (@CN-F90)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1895",
+      "created_at": "2026-09-19T11:44:46Z",
+      "updated_at": "2026-09-20T09:26:08Z"
+    },
+    {
+      "number": 2186,
+      "title": "[Award claim] JSP-000690 \u2014 zjukop3 Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/2186",
+      "created_at": "2026-09-20T09:10:43Z",
+      "updated_at": "2026-09-20T09:21:14Z"
+    },
+    {
+      "number": 2185,
+      "title": "catalog: record Lean formalization for JSP-000690 (Erd\u0151s 690)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/2185",
+      "created_at": "2026-09-20T09:10:24Z",
+      "updated_at": "2026-09-20T09:10:24Z"
+    },
+    {
+      "number": 1099,
+      "title": "feat(catalog): record Lean formalization for JSP-000690",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1099",
+      "created_at": "2026-09-18T07:23:43Z",
+      "updated_at": "2026-09-20T07:28:24Z"
+    },
+    {
+      "number": 21,
+      "title": "JSP-000690: submit Lean proof of the chromatic-critical hypergraph construction",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/21",
+      "created_at": "2026-09-16T09:57:15Z",
+      "updated_at": "2026-09-20T05:26:21Z"
+    },
+    {
+      "number": 2108,
+      "title": "JSP-000690: register Lean proof of the chromatic-critical hypergraph construction",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/2108",
+      "created_at": "2026-09-20T05:26:09Z",
+      "updated_at": "2026-09-20T05:26:09Z"
+    },
+    {
+      "number": 2044,
+      "title": "[Question] Solver-first registration for historically-solved entries (JSP-000840 / JSP-000690)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/2044",
+      "created_at": "2026-09-20T02:45:58Z",
+      "updated_at": "2026-09-20T02:45:58Z"
+    },
+    {
+      "number": 1947,
+      "title": "Record Lean formalization for JSP-000690",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1947",
+      "created_at": "2026-09-19T14:27:11Z",
+      "updated_at": "2026-09-19T14:27:11Z"
+    },
+    {
+      "number": 1610,
+      "title": "[Award claim] JSP-000690 \u2014 Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1610",
+      "created_at": "2026-09-19T01:29:22Z",
+      "updated_at": "2026-09-19T02:11:00Z"
+    },
+    {
+      "number": 1609,
+      "title": "JSP-000690: record the Lean formalization of Erd\u0151s #834 (Li's 9-vertex critically 3-chromatic 3-uniform hypergraph of minimum degree 7)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1609",
+      "created_at": "2026-09-19T01:28:54Z",
+      "updated_at": "2026-09-19T02:10:57Z"
+    },
+    {
+      "number": 1613,
+      "title": "JSP-000690: record the Lean formalization of both readings of Erd\u0151s #834 (supersedes #1609)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1613",
+      "created_at": "2026-09-19T02:10:14Z",
+      "updated_at": "2026-09-19T02:10:55Z"
+    },
+    {
+      "number": 1614,
+      "title": "[Award claim] JSP-000690 \u2014 Lean formalization (transversal reading)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1614",
+      "created_at": "2026-09-19T02:10:35Z",
+      "updated_at": "2026-09-19T02:10:35Z"
+    },
+    {
+      "number": 1383,
+      "title": "JSP-000690: record existing Lean formalization (plby/lean-proofs)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1383",
+      "created_at": "2026-09-18T17:32:59Z",
+      "updated_at": "2026-09-18T18:58:11Z"
+    },
+    {
+      "number": 1292,
+      "title": "[Award claim] JSP-000690 \u2014 Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1292",
+      "created_at": "2026-09-18T16:28:34Z",
+      "updated_at": "2026-09-18T16:28:34Z"
+    },
+    {
+      "number": 717,
+      "title": "docs(problems): add Lean proof attribution for JSP-000690",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/717",
+      "created_at": "2026-09-17T13:07:19Z",
+      "updated_at": "2026-09-18T08:44:52Z"
+    },
+    {
+      "number": 1113,
+      "title": "[Award claim] JSP-000690: KunHcz regular critical hypergraph formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1113",
+      "created_at": "2026-09-18T08:05:45Z",
+      "updated_at": "2026-09-18T08:05:45Z"
+    },
+    {
+      "number": 15,
+      "title": "[Problem] JSP-000690: Lean verification of Li\u2019s 9-vertex chromatic-critical hypergraph",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/15",
+      "created_at": "2026-09-16T09:32:21Z",
+      "updated_at": "2026-09-18T07:59:42Z"
+    },
+    {
+      "number": 1097,
+      "title": "JSP-000690: regular 21-edge witness and complete chromatic proof",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/1097",
+      "created_at": "2026-09-18T07:21:17Z",
+      "updated_at": "2026-09-18T07:21:17Z"
+    },
+    {
+      "number": 1066,
+      "title": "[Award claim] JSP-000690 \u2014 Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/1066",
+      "created_at": "2026-09-18T06:13:39Z",
+      "updated_at": "2026-09-18T06:13:39Z"
+    },
+    {
+      "number": 882,
+      "title": "[Correction] JSP-000690: state whether the record covers one or both readings of \"3-critical\"",
+      "state": "closed",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/882",
+      "created_at": "2026-09-17T20:43:40Z",
+      "updated_at": "2026-09-17T20:46:21Z"
+    },
+    {
+      "number": 879,
+      "title": "JSP-000690: credit Ruiliang Li and record a Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/879",
+      "created_at": "2026-09-17T20:42:57Z",
+      "updated_at": "2026-09-17T20:43:55Z"
+    },
+    {
+      "number": 880,
+      "title": "[Award claim] JSP-000690 \u2014 Lean formalization",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/880",
+      "created_at": "2026-09-17T20:43:05Z",
+      "updated_at": "2026-09-17T20:43:53Z"
+    },
+    {
+      "number": 842,
+      "title": "JSP-000690: complete chromatic Lean proof with exhaustive kernel certificates",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/842",
+      "created_at": "2026-09-17T17:42:49Z",
+      "updated_at": "2026-09-17T18:36:35Z"
+    },
+    {
+      "number": 845,
+      "title": "JSP-000690: independent standalone Lean 4 formalization (zero imports, no Mathlib, axiom footprint [propext] only)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/845",
+      "created_at": "2026-09-17T17:49:36Z",
+      "updated_at": "2026-09-18T16:14:15Z"
+    },
+    {
+      "number": 823,
+      "title": "JSP-000690: Lean proof of the 3-critical 3-graph with minimum degree 7",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/823",
+      "created_at": "2026-09-17T16:46:36Z",
+      "updated_at": "2026-09-17T16:50:16Z"
+    },
+    {
+      "number": 794,
+      "title": "Add JSP-000690 chromatic observation candidate (under verification)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/794",
+      "created_at": "2026-09-17T15:10:49Z",
+      "updated_at": "2026-09-17T15:15:57Z"
+    },
+    {
+      "number": 737,
+      "title": "JSP-000690: complete Lean proof (attributed verification)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/737",
+      "created_at": "2026-09-17T13:25:23Z",
+      "updated_at": "2026-09-17T14:54:44Z"
+    },
+    {
+      "number": 747,
+      "title": "JSP-000690: kernel-checked critical hypergraph certificates",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/747",
+      "created_at": "2026-09-17T13:46:59Z",
+      "updated_at": "2026-09-17T13:46:59Z"
+    },
+    {
+      "number": 697,
+      "title": "[Correction] JSP-000690 Lean proof and claim eligibility",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/697",
+      "created_at": "2026-09-17T12:29:57Z",
+      "updated_at": "2026-09-17T12:39:45Z"
+    },
+    {
+      "number": 704,
+      "title": "[Recipient] JSP-000690 formalization \u2014 RECIPIENT-JSP-000690-A",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/704",
+      "created_at": "2026-09-17T12:39:00Z",
+      "updated_at": "2026-09-17T12:39:00Z"
+    },
+    {
+      "number": 157,
+      "title": "[Recipient] JSP-000690 \u2014 Lean 4 formalization (RECIPIENT-JSP-000690-B)",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/157",
+      "created_at": "2026-09-16T17:16:39Z",
+      "updated_at": "2026-09-17T08:52:00Z"
+    },
+    {
+      "number": 427,
+      "title": "Add observation candidate jsp-000690-critical-3chromatic-hypergraph",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/pull/427",
+      "created_at": "2026-09-17T03:18:36Z",
+      "updated_at": "2026-09-17T06:20:48Z"
+    },
+    {
+      "number": 126,
+      "title": "[Recipient] JSP-000690 Lean formalization of Li 3-critical 3-graph",
+      "state": "open",
+      "url": "https://github.com/TheJustinSunPrize/awards/issues/126",
+      "created_at": "2026-09-16T15:42:38Z",
+      "updated_at": "2026-09-16T15:42:38Z"
+    }
+  ]
+}

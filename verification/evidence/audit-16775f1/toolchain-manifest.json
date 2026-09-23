@@ -1,0 +1,27 @@
+{
+  "platform": "Darwin arm64",
+  "retrieved_date": "2026-09-23",
+  "lean_source_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+  "lean_version": "4.32.0",
+  "lake_version": "5.0.0-src+8c9756b",
+  "gh_version": "2.78.0",
+  "gh_authenticated": false,
+  "downloads": [
+    {
+      "tool": "v4.32.0",
+      "release_url": "https://github.com/leanprover/lean4/releases/tag/v4.32.0",
+      "asset_url": "https://github.com/leanprover/lean4/releases/download/v4.32.0/lean-4.32.0-darwin_aarch64.tar.zst",
+      "size": 550037866,
+      "expected_digest": "sha256:4faa4757f7ca5e7d9588a9de779550fa58bdf01498edb966f15029e2ea117e4e",
+      "verified_digest": "sha256:4faa4757f7ca5e7d9588a9de779550fa58bdf01498edb966f15029e2ea117e4e"
+    },
+    {
+      "tool": "v2.78.0",
+      "release_url": "https://github.com/cli/cli/releases/tag/v2.78.0",
+      "asset_url": "https://github.com/cli/cli/releases/download/v2.78.0/gh_2.78.0_macOS_arm64.zip",
+      "size": 17396485,
+      "expected_digest": "sha256:62290b0dbc9965ebbc20d2b481fe83aa167fadc28e0d81a5d93eec6efc9d3b72",
+      "verified_digest": "sha256:62290b0dbc9965ebbc20d2b481fe83aa167fadc28e0d81a5d93eec6efc9d3b72"
+    }
+  ]
+}

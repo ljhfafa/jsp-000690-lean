@@ -1,0 +1,22 @@
+@AuditBridge.hasColoring_iff : ∀ {n : Nat} (k : Nat) (H : JSP690.Hypergraph n),
+  Iff (@AuditBridge.HasColoring n k (@AuditBridge.family n H)) (@JSP690.Colorable n k H)
+theorem AuditBridge.hasColoring_iff : ∀ {n : Nat} (k : Nat) (H : JSP690.Hypergraph n),
+  Iff (@AuditBridge.HasColoring n k (@AuditBridge.family n H)) (@JSP690.Colorable n k H) :=
+fun {n : Nat} (k : Nat) (H : JSP690.Hypergraph n) =>
+  @Iff.intro (@AuditBridge.HasColoring n k (@AuditBridge.family n H)) (@JSP690.Colorable n k H)
+    (fun (h : @AuditBridge.HasColoring n k (@AuditBridge.family n H)) =>
+      @AuditBridge.hasColoring_iff.match_1_1 n k H
+        (fun (h : @AuditBridge.HasColoring n k (@AuditBridge.family n H)) => @JSP690.Colorable n k H) h
+        fun (c : Fin n → Fin k) (hc : @AuditBridge.Proper n (Fin k) (@AuditBridge.family n H) c) =>
+        @Exists.intro.{1} (Fin n → Fin k) (fun (c : Fin n → Fin k) => @JSP690.ProperColoring n (Fin k) H c) c
+          (@Iff.mp (@AuditBridge.Proper n (Fin k) (@AuditBridge.family n H) c) (@JSP690.ProperColoring n (Fin k) H c)
+            (@AuditBridge.proper_iff n (Fin k) H c) hc))
+    fun (h : @JSP690.Colorable n k H) =>
+    @AuditBridge.hasColoring_iff.match_1_3 n k H
+      (fun (h : @JSP690.Colorable n k H) => @AuditBridge.HasColoring n k (@AuditBridge.family n H)) h
+      fun (c : Fin n → Fin k) (hc : @JSP690.ProperColoring n (Fin k) H c) =>
+      @Exists.intro.{1} (Fin n → Fin k)
+        (fun (c : Fin n → Fin k) => @AuditBridge.Proper n (Fin k) (@AuditBridge.family n H) c) c
+        (@Iff.mpr (@AuditBridge.Proper n (Fin k) (@AuditBridge.family n H) c) (@JSP690.ProperColoring n (Fin k) H c)
+          (@AuditBridge.proper_iff n (Fin k) H c) hc)
+'AuditBridge.hasColoring_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

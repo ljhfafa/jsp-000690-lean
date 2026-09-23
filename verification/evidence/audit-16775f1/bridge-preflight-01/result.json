@@ -1,0 +1,25 @@
+{
+  "ready_for_target_checks": true,
+  "issues": [],
+  "head": "16775f11a809a49fcd6822add9895eb104966994",
+  "git_status": "?? JSP690/AuditBridge.lean",
+  "toolchain_file": "leanprover/lean4:v4.32.0",
+  "file_sha256": {
+    "JSP690/AuditBridge.lean": "f9cd54adccb1e807a00d1819e49d71942e3978ddbf2cbe91acf90649b32a7072",
+    "lake-manifest.json": "c141985151b9d243375c219746b0ec4341c1b87717cc9e71e0f3285b42a7114d",
+    "lakefile.lean": null,
+    "lakefile.toml": "f42b066fa1a12d235449828f72e7e1c238f3fa7dfc0eb63696b4253ad6cab4c2",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "manual_preconditions": [
+    "isolation and resource limits established",
+    "clean source build and trusted cache provenance recorded",
+    "actual dependency SHAs match fixed evidence",
+    "tool binaries are trusted and match the pinned toolchain",
+    "all untracked inputs and module/source mappings reviewed"
+  ],
+  "checker_compatibility": "not_probed; inspect pinned checker separately",
+  "manifest_sha256": "fa1466eee0016b787610a4ebd37ace47a5a6225341870dc1da3ba6b67435a7ae",
+  "script_sha256": "5db45dddcb4d588bc27e7c7161fbca5cedaa3e73e1c40843d21f5a214323cd07",
+  "exit_code": 0
+}

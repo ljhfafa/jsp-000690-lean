@@ -1,0 +1,986 @@
+[
+  {
+    "sha": "5518bf83860bab48e8d53f1f447cdd6c50c30c3f",
+    "node_id": "C_kwDOKfseddoAKDU1MThiZjgzODYwYmFiNDhlOGQ1M2YxZjQ0N2NkZDZjNTBjMzBjM2Y",
+    "commit": {
+      "author": {
+        "name": "Kim Morrison",
+        "email": "477956+kim-em@users.noreply.github.com",
+        "date": "2026-08-04T06:21:54Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-08-04T06:21:54Z"
+      },
+      "message": "chore: bump Lean toolchain to v4.33.0-rc2 (#34)\n\n* chore: bump Lean toolchain to v4.33.0-rc2\n\n* chore: clarify projection comparison names\n\n* review: drop speculative kernel checks and document the divergences\n\nThe kernel hardening in the v4.32.2..v4.33.0-rc2 range splits into fixes for\nreachable bugs and checks that defend against mistakes elsewhere in the kernel.\nLean4lean keeps the former and declines the latter: a check that establishes no\nprecondition of a later step adds proof obligations without contributing an\ninvariant, and the correctness proof is what discharges \"we might have a bug\".\n\nRemoved, each with a `divergences.md` entry:\n\n* The projection structure-name comparison in `isEquiv`, `isDefEqCore'` and\n  `reduceProj` (lean4#14631). `inferProj` already rejects `.proj S i e` unless\n  the type of `e` whnfs to an application of `S`, so comparison and reduction\n  only ever see projections that have been through inference. Upstream's own\n  test has to plant the declaration under `debug.skipKernelTC` to reach the\n  difference.\n\n* The kernel exceptions in `restoreNested` and `restoreCtorName` (lean4#14632),\n  back to `unreachable!` and `assert!`. Upstream states that nothing in that PR\n  is reachable from ordinary Lean code, and the motivation given there -- out of\n  bounds reads once the assertions vanish in a release build -- does not apply\n  to total `Array`/`Option` accesses.\n\n* The `_nested` scan on inductive types (lean4#14616). The rewrite touches\n  constructor types only, and an auxiliary is neither in scope while the block's\n  own types are checked nor present afterwards. The constructor scan is kept: it\n  guards a hole that is reachable.\n\n* The recheck of the restored constructor and recursor declarations\n  (lean4#14621), which upstream describes as redundant sanity checking.\n\n`Lean4Lean.Tests.KernelHardening` now runs the counterexamples upstream shipped\nwith the fixes -- #14577, #14607, #14608, #14613 and the duplicate mutual name --\nand replaces the ported `_nested` case with one naming an auxiliary the kernel\nreally generates, so it fails when the check is removed instead of passing\neither way.\n\nAlso simplifies the v4.33.0-rc2 compatibility workarounds in `ShapeLogRel`,\n`Verify/Axioms`, `Verify/Expr`, `Verify/Level` and `Level`.\n\nCo-authored-by: Mario Carneiro <di.gama@gmail.com>\nCo-authored-by: Claude Opus 5 <noreply@anthropic.com>",
+      "tree": {
+        "sha": "f6dc8afe8c916c03f89fe94a4ae7150da28f9e37",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/f6dc8afe8c916c03f89fe94a4ae7150da28f9e37"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/5518bf83860bab48e8d53f1f447cdd6c50c30c3f",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqcYUCCRC1aQ7uu5UhlAAAKo4QAF13vYn1wLC7ynSOSbC/VZo7\nq4KxBc9en9Z1CawEynZIwmZSdsDlywpoQJAVUMGC8RjX6t+RkrVLPRri9/gCI/7p\npYwlInF4aaQrkADisgm77C65B2cpTezWu3FgSCZjcmx8mjjN7yHXY7Noa1W+YMDW\n/E4hlJES0MbzO1LT+Dy9w9QiuMvyl+p2b2A+34nI9dI/cDdJNLwEIaMwxDVYRYLS\nVnSeQaQ984+sAJykfpn2ClJB6XXaCow+XHmZQR2qM0EnsNlnQPxClehJVZyJ3UmE\nDObwHMQBOl+57V6Uds2s89oVZASnDWVhe/dX+ObWI5GhhjvoaGu5K1YjZeuZe6po\nwEtItPBHphVW5kTNonOjINUwJ7JSAD+a8cQNGsjg5bNOCBTvIbEjPzZvy4B7ZZkv\nYKzo9PDQ3tN4l7Ym1tbJuTMXYtt7k6BwU0aSvKgk8hMjROQlI0eCHYQvU+b434c9\ntrecu7qnfno1EIBbQKc5UgfjumiaatAZ83bSgMp47HO4+nsLU5xmHjbHUcKOFyPK\nL4kwnnrbFV3IbBp6sbK+yVIW+h4P4QrysLtgP+iTdxNVJCLrYB6u46XaniNg3WWp\nltHDIOkdgrtZpuiuBmreHHAk6Ko5cOxCP6l8OpZX/s2wE2yh0hJnxlHGoPOCytgs\n1dq2lUVg1dliFKDMHIIK\n=fyIb\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree f6dc8afe8c916c03f89fe94a4ae7150da28f9e37\nparent 408edad8930c1d9d974f93fcbe4a304a174b2b6f\nauthor Kim Morrison <477956+kim-em@users.noreply.github.com> 1785824514 +1000\ncommitter GitHub <noreply@github.com> 1785824514 -0700\n\nchore: bump Lean toolchain to v4.33.0-rc2 (#34)\n\n* chore: bump Lean toolchain to v4.33.0-rc2\n\n* chore: clarify projection comparison names\n\n* review: drop speculative kernel checks and document the divergences\n\nThe kernel hardening in the v4.32.2..v4.33.0-rc2 range splits into fixes for\nreachable bugs and checks that defend against mistakes elsewhere in the kernel.\nLean4lean keeps the former and declines the latter: a check that establishes no\nprecondition of a later step adds proof obligations without contributing an\ninvariant, and the correctness proof is what discharges \"we might have a bug\".\n\nRemoved, each with a `divergences.md` entry:\n\n* The projection structure-name comparison in `isEquiv`, `isDefEqCore'` and\n  `reduceProj` (lean4#14631). `inferProj` already rejects `.proj S i e` unless\n  the type of `e` whnfs to an application of `S`, so comparison and reduction\n  only ever see projections that have been through inference. Upstream's own\n  test has to plant the declaration under `debug.skipKernelTC` to reach the\n  difference.\n\n* The kernel exceptions in `restoreNested` and `restoreCtorName` (lean4#14632),\n  back to `unreachable!` and `assert!`. Upstream states that nothing in that PR\n  is reachable from ordinary Lean code, and the motivation given there -- out of\n  bounds reads once the assertions vanish in a release build -- does not apply\n  to total `Array`/`Option` accesses.\n\n* The `_nested` scan on inductive types (lean4#14616). The rewrite touches\n  constructor types only, and an auxiliary is neither in scope while the block's\n  own types are checked nor present afterwards. The constructor scan is kept: it\n  guards a hole that is reachable.\n\n* The recheck of the restored constructor and recursor declarations\n  (lean4#14621), which upstream describes as redundant sanity checking.\n\n`Lean4Lean.Tests.KernelHardening` now runs the counterexamples upstream shipped\nwith the fixes -- #14577, #14607, #14608, #14613 and the duplicate mutual name --\nand replaces the ported `_nested` case with one naming an auxiliary the kernel\nreally generates, so it fails when the check is removed instead of passing\neither way.\n\nAlso simplifies the v4.33.0-rc2 compatibility workarounds in `ShapeLogRel`,\n`Verify/Axioms`, `Verify/Expr`, `Verify/Level` and `Level`.\n\nCo-authored-by: Mario Carneiro <di.gama@gmail.com>\nCo-authored-by: Claude Opus 5 <noreply@anthropic.com>",
+        "verified_at": "2026-08-04T07:05:37Z"
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/5518bf83860bab48e8d53f1f447cdd6c50c30c3f",
+    "html_url": "https://github.com/digama0/lean4lean/commit/5518bf83860bab48e8d53f1f447cdd6c50c30c3f",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/5518bf83860bab48e8d53f1f447cdd6c50c30c3f/comments",
+    "author": {
+      "login": "kim-em",
+      "id": 477956,
+      "node_id": "MDQ6VXNlcjQ3Nzk1Ng==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/477956?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kim-em",
+      "html_url": "https://github.com/kim-em",
+      "followers_url": "https://api.github.com/users/kim-em/followers",
+      "following_url": "https://api.github.com/users/kim-em/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kim-em/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kim-em/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kim-em/subscriptions",
+      "organizations_url": "https://api.github.com/users/kim-em/orgs",
+      "repos_url": "https://api.github.com/users/kim-em/repos",
+      "events_url": "https://api.github.com/users/kim-em/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kim-em/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "408edad8930c1d9d974f93fcbe4a304a174b2b6f",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/408edad8930c1d9d974f93fcbe4a304a174b2b6f",
+        "html_url": "https://github.com/digama0/lean4lean/commit/408edad8930c1d9d974f93fcbe4a304a174b2b6f"
+      }
+    ]
+  },
+  {
+    "sha": "779c51fdea49c57c60f8039703605faae126b17f",
+    "node_id": "C_kwDOKfseddoAKDc3OWM1MWZkZWE0OWM1N2M2MGY4MDM5NzAzNjA1ZmFhZTEyNmIxN2Y",
+    "commit": {
+      "author": {
+        "name": "Kim Morrison",
+        "email": "477956+kim-em@users.noreply.github.com",
+        "date": "2026-08-04T00:51:37Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-08-04T00:51:37Z"
+      },
+      "message": "chore: bump Lean toolchain to v4.32.2 (#30)\n\n* chore: bump Lean toolchain to v4.32.2\n\nExactly two commits touch `src/kernel` in v4.31.0..v4.32.2, and both are fixes:\n\n* leanprover/lean4#14498, \"fix: kernel to check opaque values for fvars\", adds a\n  `check_no_metavar_no_fvar` call to `environment::add_opaque`. `addOpaque` now\n  makes the same call in the same position, between `checkConstantVal` and the\n  `checkType` of the value.\n* leanprover/lean4#14577, \"fix: missing check at kernel inductive declaration\",\n  is already mirrored: `Lean4Lean/Inductive/Add.lean` type checks the nested\n  applications against the post-declaration environment, covered by\n  `Lean4Lean.Tests.NestedInductive`.\n\nlean4lean had the #14498 bug verbatim, not merely by transcription. `addOpaque`\nruns `checkConstantVal` and the value's `checkType` inside one `M.run`, so they\nshare one `TypeChecker.State` exactly as C++ shares one `type_checker`. A type\nthat beta-reduces to `False` but whose inference pushes a free variable through\nthe local context leaves that variable in `inferTypeI`; the value can then name\nit, inference answers from the cache rather than the popped local context, and\nthe declaration is accepted. The leaked variable is `_kernel_fresh.2`, the same\nname as in the lean4 test for this issue, since `TypeChecker.State.ngen` uses the\nsame prefix and starts at the same index.\n\n`Lean4Lean.Tests.OpaqueFVar` pins both directions and is a real regression test:\nwith the `checkNoMVarNoFVar` line removed it fails with \"opaque value containing\na free variable was accepted\".\n\nThe rest of the diff is not a kernel change. leanprover/lean4#13305 made the new\n`do` elaborator the default in v4.32.0, which reshapes the terms that `do`\nnotation produces. The `Verify` proofs are written against the legacy shape, and\n`Lean4Lean/Experimental/ShapeLogRel.lean` proves things about `Option`-monad\n`do`/`return` definitions the same way, so those four files pin\n`backward.do.legacy true` with a comment saying why. That keeps the elaborated\nimplementation identical to v4.31.0, which is the conservative choice for a\nkernel. Migrating the proofs to the new elaborator is follow-up work.\n\nAlso refresh the toolchain-pinned `Lean.Level` divergence link, and make\n`stringProof` a `theorem` for the new `linter.defProp`.\n\nValidated with `lake build`, `lake build Lean4Lean.Experimental`, and both CI\nreplay commands: `lean4lean Init.Core` checked 1036 declarations and\n`lean4lean --fresh Init.System.IO` checked 43721. No statement changes and no new\n`sorry`s.\n\nCo-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01RFCAQgoGN4ndJA1rxNx9RE\n\n* fix: check declaration values for free variables in all three places\n\n`check_no_metavar_no_fvar` is called on the value in three places in the C++ kernel:\n`add_definition` (safe branch, environment.cpp:184), `add_theorem` (:203), and, since\nleanprover/lean4#14498, `add_opaque` (:217). This branch added the third; the first two\nwere removed deliberately, and `divergences.md` recorded them as redundant.\n\nThat argument is wrong, and all three are soundness bugs. A free variable in the value is\nharmless only while inference always consults the local context, and inference also answers\nfrom its cache: the type and then the value are checked by the same `TypeChecker.State`,\nexactly as C++ shares one `type_checker`, so a declaration whose *type* is inferred by\npushing a free variable through the local context leaves that variable's type in\n`inferTypeI`. The value can then name the variable, inference answers from the cache\ninstead of the already popped local context, and the declaration is accepted. With a type\nthat beta-reduces to `False`, the result is a proof of `False` -- confirmed against the\nv4.31.0 tree, where `theorem Bad : (fun _ => False) id := _kernel_fresh.2` was accepted and\n`theorem FalseFromBad : False := Bad` then went through on top of it.\n\n`addTheorem` is the more serious of the two, being both the common path and, unlike the\nopaque case, not an upstream bug: lean4 has always had this call.\n\n`Lean4Lean.Tests.DeclFVar` replaces `Tests.OpaqueFVar` and pins all three sites, in both\ndirections, and asserts that the rejection comes from the free variable check rather than\nfrom some other path, so that it cannot quietly stop testing the cache route.\n\nCo-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>\nCo-authored-by: Mario Carneiro <di.gama@gmail.com>",
+      "tree": {
+        "sha": "8173a65772f3dc2c3f02bcdd43a1bc45c67a62b0",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/8173a65772f3dc2c3f02bcdd43a1bc45c67a62b0"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/779c51fdea49c57c60f8039703605faae126b17f",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqcTeZCRC1aQ7uu5UhlAAAM28QAEJhEoYVTCWPEttqlkwIJZ7/\nV3lEXNwuovJcx10TTeUOs8NEl/rX0gesI08JjzShxsvLEaOFJGURaBG+DwRaINM5\nbYKTOPYGD//2yXtMpzMizZKjXhvUFMdINkNA7+lD91uaKeebC8NkLGP3OTY/2CNa\nCITeGaIII1btKzpFQ2H6exHz7tKaZydMLqEAsocCZKFy2TAi5ID0JzBeg4iUc+x/\nPszguQjvM+lrgqO6oOYL2EdODBQj3aUJZWJQ5e0OSUexdoJy26FG/3xeeUuawRkJ\n1hiZp6r6KcfTDvDjKWopPHwrr1fV9UHA1yfBAAGVm4Q2RjKy0xBz1FMCXOeBFQT2\nqmlgVB9gF/7bDn0opNEN39aHm0+Y//VdQWOR6Y45gOnb9jmHuC0MIViCvQwlSF+E\n2oOYVU7Q6kgzAwxF9UWJCmGXHgxWY/Q/LZgQWAIdQQodL0qKxvRR74ss7bPmvnjT\npA8AQkpC8R0dopdtfvyHbIS7KB0//FgujVyfjDWe8p0E6mApu0s4gdD3dSpBC7Hh\noLSoI5h39Pcnr7ge5Lx0gU4tG2ZI71b3deJbxB6jLARDoYpZksa8pDvgjpEyZb8V\nRK3gElxq1mKDeVlp5vV/dQLmmXoqSN7UOuAiPo9Ati1QlQRFm2YFMZDF6sfipARW\nqcEhMJ/G5r2kTFwmV0Mp\n=taBl\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8173a65772f3dc2c3f02bcdd43a1bc45c67a62b0\nparent ef849dfbd94ab5a6f3ad2793a57b8a1cbe19d923\nauthor Kim Morrison <477956+kim-em@users.noreply.github.com> 1785804697 +1000\ncommitter GitHub <noreply@github.com> 1785804697 -0700\n\nchore: bump Lean toolchain to v4.32.2 (#30)\n\n* chore: bump Lean toolchain to v4.32.2\n\nExactly two commits touch `src/kernel` in v4.31.0..v4.32.2, and both are fixes:\n\n* leanprover/lean4#14498, \"fix: kernel to check opaque values for fvars\", adds a\n  `check_no_metavar_no_fvar` call to `environment::add_opaque`. `addOpaque` now\n  makes the same call in the same position, between `checkConstantVal` and the\n  `checkType` of the value.\n* leanprover/lean4#14577, \"fix: missing check at kernel inductive declaration\",\n  is already mirrored: `Lean4Lean/Inductive/Add.lean` type checks the nested\n  applications against the post-declaration environment, covered by\n  `Lean4Lean.Tests.NestedInductive`.\n\nlean4lean had the #14498 bug verbatim, not merely by transcription. `addOpaque`\nruns `checkConstantVal` and the value's `checkType` inside one `M.run`, so they\nshare one `TypeChecker.State` exactly as C++ shares one `type_checker`. A type\nthat beta-reduces to `False` but whose inference pushes a free variable through\nthe local context leaves that variable in `inferTypeI`; the value can then name\nit, inference answers from the cache rather than the popped local context, and\nthe declaration is accepted. The leaked variable is `_kernel_fresh.2`, the same\nname as in the lean4 test for this issue, since `TypeChecker.State.ngen` uses the\nsame prefix and starts at the same index.\n\n`Lean4Lean.Tests.OpaqueFVar` pins both directions and is a real regression test:\nwith the `checkNoMVarNoFVar` line removed it fails with \"opaque value containing\na free variable was accepted\".\n\nThe rest of the diff is not a kernel change. leanprover/lean4#13305 made the new\n`do` elaborator the default in v4.32.0, which reshapes the terms that `do`\nnotation produces. The `Verify` proofs are written against the legacy shape, and\n`Lean4Lean/Experimental/ShapeLogRel.lean` proves things about `Option`-monad\n`do`/`return` definitions the same way, so those four files pin\n`backward.do.legacy true` with a comment saying why. That keeps the elaborated\nimplementation identical to v4.31.0, which is the conservative choice for a\nkernel. Migrating the proofs to the new elaborator is follow-up work.\n\nAlso refresh the toolchain-pinned `Lean.Level` divergence link, and make\n`stringProof` a `theorem` for the new `linter.defProp`.\n\nValidated with `lake build`, `lake build Lean4Lean.Experimental`, and both CI\nreplay commands: `lean4lean Init.Core` checked 1036 declarations and\n`lean4lean --fresh Init.System.IO` checked 43721. No statement changes and no new\n`sorry`s.\n\nCo-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01RFCAQgoGN4ndJA1rxNx9RE\n\n* fix: check declaration values for free variables in all three places\n\n`check_no_metavar_no_fvar` is called on the value in three places in the C++ kernel:\n`add_definition` (safe branch, environment.cpp:184), `add_theorem` (:203), and, since\nleanprover/lean4#14498, `add_opaque` (:217). This branch added the third; the first two\nwere removed deliberately, and `divergences.md` recorded them as redundant.\n\nThat argument is wrong, and all three are soundness bugs. A free variable in the value is\nharmless only while inference always consults the local context, and inference also answers\nfrom its cache: the type and then the value are checked by the same `TypeChecker.State`,\nexactly as C++ shares one `type_checker`, so a declaration whose *type* is inferred by\npushing a free variable through the local context leaves that variable's type in\n`inferTypeI`. The value can then name the variable, inference answers from the cache\ninstead of the already popped local context, and the declaration is accepted. With a type\nthat beta-reduces to `False`, the result is a proof of `False` -- confirmed against the\nv4.31.0 tree, where `theorem Bad : (fun _ => False) id := _kernel_fresh.2` was accepted and\n`theorem FalseFromBad : False := Bad` then went through on top of it.\n\n`addTheorem` is the more serious of the two, being both the common path and, unlike the\nopaque case, not an upstream bug: lean4 has always had this call.\n\n`Lean4Lean.Tests.DeclFVar` replaces `Tests.OpaqueFVar` and pins all three sites, in both\ndirections, and asserts that the rejection comes from the free variable check rather than\nfrom some other path, so that it cannot quietly stop testing the cache route.\n\nCo-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>\nCo-authored-by: Mario Carneiro <di.gama@gmail.com>",
+        "verified_at": "2026-08-04T00:51:40Z"
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/779c51fdea49c57c60f8039703605faae126b17f",
+    "html_url": "https://github.com/digama0/lean4lean/commit/779c51fdea49c57c60f8039703605faae126b17f",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/779c51fdea49c57c60f8039703605faae126b17f/comments",
+    "author": {
+      "login": "kim-em",
+      "id": 477956,
+      "node_id": "MDQ6VXNlcjQ3Nzk1Ng==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/477956?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kim-em",
+      "html_url": "https://github.com/kim-em",
+      "followers_url": "https://api.github.com/users/kim-em/followers",
+      "following_url": "https://api.github.com/users/kim-em/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kim-em/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kim-em/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kim-em/subscriptions",
+      "organizations_url": "https://api.github.com/users/kim-em/orgs",
+      "repos_url": "https://api.github.com/users/kim-em/repos",
+      "events_url": "https://api.github.com/users/kim-em/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kim-em/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ef849dfbd94ab5a6f3ad2793a57b8a1cbe19d923",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/ef849dfbd94ab5a6f3ad2793a57b8a1cbe19d923",
+        "html_url": "https://github.com/digama0/lean4lean/commit/ef849dfbd94ab5a6f3ad2793a57b8a1cbe19d923"
+      }
+    ]
+  },
+  {
+    "sha": "095c0a947ab870a5dcf0797725a4caec66624285",
+    "node_id": "C_kwDOKfseddoAKDA5NWMwYTk0N2FiODcwYTVkY2YwNzk3NzI1YTRjYWVjNjY2MjQyODU",
+    "commit": {
+      "author": {
+        "name": "Kim Morrison",
+        "email": "477956+kim-em@users.noreply.github.com",
+        "date": "2026-08-03T04:07:05Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-08-03T04:07:05Z"
+      },
+      "message": "chore: bump Lean toolchain to v4.31.0 (#29)\n\nThe v4.30.0..v4.31.0 src/kernel diff has no semantic changes: it fixes one comment typo and adds noexcept to the type_checker move constructor declaration and definition.\n\nRename the non-portable Variable! module and make simplifier-dependent proofs explicit for Lean 4.31. Refresh the versioned Lean.Level divergence link.\n\nValidated with lake build and both CI replay commands.",
+      "tree": {
+        "sha": "1bafa48b4dd35b1415fe4dfff307824f087ee8b7",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/1bafa48b4dd35b1415fe4dfff307824f087ee8b7"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/095c0a947ab870a5dcf0797725a4caec66624285",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqcBPpCRC1aQ7uu5UhlAAA44YQABQV7wFqK3L1SEbqQkZCZaz8\ny/smI+JgaCrIoN/2fHXe2gUsruCKJPLMMTVj/4YcpDDiKUGdFh4Wppjpqiqy6Jz1\nctMHYp7CpVHkkAJ7jyNaDj5JmWybdv1FuQOmaTBWkNA9EyHyR2NPDPx5iBjHadBJ\nEX2lhY+1QlVTfSwYMsjSUOOW2CbudJjB3Q1wFIaErf2LBhKRzso97ayySqaytVM2\nOuWBGw1pF8YRLjG876fifJ2dzgmAXWJwcQtRZfdgUE0SDi0Kpq/Cqkv8HeKwhT8W\nCY32wNjOiPrnL/OaQlH7lUqslv8JWKVandSO04ywYL8ZtjvHnd+Qb93+6GEKsDBd\nssnaJwGsHHSsRixyPHZ6R+jqr23BPWuxq6eNz0cVQwLSyk7PyXycH89yDL6+diDs\nZL0P1V8Z16kBjOwQfNXhqxgcLWqnxX9ocD2PiVS7RG9eh5tEFK2+4BlTM4dpzqFU\ncE648f7NyTbyyolDTV4uwQa0NdwKWdTJlLXJYpOmOmrG4duznUvvK8o5/+E1gPkt\nwQupS7MmjmnLHALc9uxSA25yzxPIp3eiyvkHjoHhbbCxaQtoZD9P5Zi4pdFB2/6R\n0rNOqjKUAA1AiaXldyGaxHyWIixUCScGFBTG839nQFn7VtqOBOCCg+kbytDh5w+W\nALEO5oD1PlFo/QpWgYjJ\n=yjSL\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 1bafa48b4dd35b1415fe4dfff307824f087ee8b7\nparent 6ff169050a687a4155ab1c80e03cfdc81a31e088\nauthor Kim Morrison <477956+kim-em@users.noreply.github.com> 1785730025 +1000\ncommitter GitHub <noreply@github.com> 1785730025 -0700\n\nchore: bump Lean toolchain to v4.31.0 (#29)\n\nThe v4.30.0..v4.31.0 src/kernel diff has no semantic changes: it fixes one comment typo and adds noexcept to the type_checker move constructor declaration and definition.\n\nRename the non-portable Variable! module and make simplifier-dependent proofs explicit for Lean 4.31. Refresh the versioned Lean.Level divergence link.\n\nValidated with lake build and both CI replay commands.",
+        "verified_at": "2026-08-03T04:07:05Z"
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/095c0a947ab870a5dcf0797725a4caec66624285",
+    "html_url": "https://github.com/digama0/lean4lean/commit/095c0a947ab870a5dcf0797725a4caec66624285",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/095c0a947ab870a5dcf0797725a4caec66624285/comments",
+    "author": {
+      "login": "kim-em",
+      "id": 477956,
+      "node_id": "MDQ6VXNlcjQ3Nzk1Ng==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/477956?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kim-em",
+      "html_url": "https://github.com/kim-em",
+      "followers_url": "https://api.github.com/users/kim-em/followers",
+      "following_url": "https://api.github.com/users/kim-em/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kim-em/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kim-em/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kim-em/subscriptions",
+      "organizations_url": "https://api.github.com/users/kim-em/orgs",
+      "repos_url": "https://api.github.com/users/kim-em/repos",
+      "events_url": "https://api.github.com/users/kim-em/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kim-em/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6ff169050a687a4155ab1c80e03cfdc81a31e088",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/6ff169050a687a4155ab1c80e03cfdc81a31e088",
+        "html_url": "https://github.com/digama0/lean4lean/commit/6ff169050a687a4155ab1c80e03cfdc81a31e088"
+      }
+    ]
+  },
+  {
+    "sha": "54a532a1e33e2de95efae8f24f4523df697e6880",
+    "node_id": "C_kwDOKfseddoAKDU0YTUzMmExZTMzZTJkZTk1ZWZhZThmMjRmNDUyM2RmNjk3ZTY4ODA",
+    "commit": {
+      "author": {
+        "name": "Kim Morrison",
+        "email": "477956+kim-em@users.noreply.github.com",
+        "date": "2026-08-02T02:19:09Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-08-02T03:25:40Z"
+      },
+      "message": "Bump Lean toolchain to v4.30.0 (#20)\n\n* fix: mirror Lean v4.30 kernel changes\n\n* chore: bump Lean toolchain to v4.30.0\n\n* test: cover Lean v4.30 kernel migration\n\n* follow the kernel on theorem delta-reduction; rename isStructureLike\n\nlean4#12973 changed `declaration::has_value()` to be definitions-only, but that\nmethod has no callers in `src/kernel`. `type_checker::is_delta` consults\n`constant_info::has_value()`, which the PR left untouched:\n\n    bool has_value(bool allow_opaque = false) const {\n        return is_theorem() || is_definition() || (allow_opaque && is_opaque());\n    }\n\nstill identical at v4.30.0, v4.31.0 and v4.32.0-rc1. So the kernel does still\ndelta-unfold theorems, and keying `isDelta` off `ConstantInfo.hasValue` made\nlean4lean reject declarations the kernel accepts -- e.g. `Acc.rec` large\neliminating over a theorem-proved `Acc`, where the proof must be unfolded to\nexpose the constructor.\n\n`ConstantInfo.hasValue` cannot express the kernel's predicate: its `allowOpaque`\nflag selects {defn} or {defn, thm, opaque}, never {defn, thm}. Add\n`ConstantInfo.deltaValue?` naming that set directly, which also carries the value\n(`value!` panics on theorems without `allowOpaque`, and admits opaque bodies with\nit). `isDelta` keeps the arity check from lean4#12817.\n\nThe Verify layer follows mechanically; the `sorry` set is unchanged. `TrEnv'` has\nno theorem case at all, so `of_value`'s opaque/axiom branches stay vacuous.\n\nAlso:\n* rename `isStructureLike` to `isNonRecStructure` (lean4#12749 renamed the\n  Lean-side `Lean.isStructureLike` too, not just the C++ helper)\n* `Tests/Toolchain.lean` asserted the opposite invariant; it now checks that\n  `isDelta` accepts a theorem\n* declare `Main` as a library so lake has a dependency edge for the test\n  module's `import Main` -- `lake build Lean4Lean.Tests` failed outright, and\n  the default build only worked when `Main.olean` already happened to exist\n\nCo-authored-by: Mario Carneiro <di.gama@gmail.com>\nCo-authored-by: Claude Opus 5 <noreply@anthropic.com>",
+      "tree": {
+        "sha": "47fd2056048b7e79fd6df5d5249e01f46caadaad",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/47fd2056048b7e79fd6df5d5249e01f46caadaad"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/54a532a1e33e2de95efae8f24f4523df697e6880",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/54a532a1e33e2de95efae8f24f4523df697e6880",
+    "html_url": "https://github.com/digama0/lean4lean/commit/54a532a1e33e2de95efae8f24f4523df697e6880",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/54a532a1e33e2de95efae8f24f4523df697e6880/comments",
+    "author": {
+      "login": "kim-em",
+      "id": 477956,
+      "node_id": "MDQ6VXNlcjQ3Nzk1Ng==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/477956?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kim-em",
+      "html_url": "https://github.com/kim-em",
+      "followers_url": "https://api.github.com/users/kim-em/followers",
+      "following_url": "https://api.github.com/users/kim-em/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kim-em/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kim-em/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kim-em/subscriptions",
+      "organizations_url": "https://api.github.com/users/kim-em/orgs",
+      "repos_url": "https://api.github.com/users/kim-em/repos",
+      "events_url": "https://api.github.com/users/kim-em/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kim-em/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3dc52e0cd8a218e09de9ead031f52a2675734fe7",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/3dc52e0cd8a218e09de9ead031f52a2675734fe7",
+        "html_url": "https://github.com/digama0/lean4lean/commit/3dc52e0cd8a218e09de9ead031f52a2675734fe7"
+      }
+    ]
+  },
+  {
+    "sha": "9e068dc21e6bebb8642e00c91305d03794355c46",
+    "node_id": "C_kwDOKfseddoAKDllMDY4ZGMyMWU2YmViYjg2NDJlMDBjOTEzMDVkMDM3OTQzNTVjNDY",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-04-13T04:08:49Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-04-13T04:08:49Z"
+      },
+      "message": "chore: update lean v4.29.0",
+      "tree": {
+        "sha": "2d98d89244599afbe434c873ef77410cca517bc0",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/2d98d89244599afbe434c873ef77410cca517bc0"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/9e068dc21e6bebb8642e00c91305d03794355c46",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/9e068dc21e6bebb8642e00c91305d03794355c46",
+    "html_url": "https://github.com/digama0/lean4lean/commit/9e068dc21e6bebb8642e00c91305d03794355c46",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/9e068dc21e6bebb8642e00c91305d03794355c46/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a52c906753527bbf7af784a810e574c35cdfcdac",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/a52c906753527bbf7af784a810e574c35cdfcdac",
+        "html_url": "https://github.com/digama0/lean4lean/commit/a52c906753527bbf7af784a810e574c35cdfcdac"
+      }
+    ]
+  },
+  {
+    "sha": "a52c906753527bbf7af784a810e574c35cdfcdac",
+    "node_id": "C_kwDOKfseddoAKGE1MmM5MDY3NTM1MjdiYmY3YWY3ODRhODEwZTU3NGMzNWNkZmNkYWM",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-01-21T00:15:22Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-04-13T02:00:44Z"
+      },
+      "message": "chore: update lean",
+      "tree": {
+        "sha": "aa90963ef14d42e2aa74b22cd2fcc504c87a8706",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/aa90963ef14d42e2aa74b22cd2fcc504c87a8706"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/a52c906753527bbf7af784a810e574c35cdfcdac",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/a52c906753527bbf7af784a810e574c35cdfcdac",
+    "html_url": "https://github.com/digama0/lean4lean/commit/a52c906753527bbf7af784a810e574c35cdfcdac",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/a52c906753527bbf7af784a810e574c35cdfcdac/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f37aeabb8cc0f0bfd9aca9744167a608235f3a6a",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/f37aeabb8cc0f0bfd9aca9744167a608235f3a6a",
+        "html_url": "https://github.com/digama0/lean4lean/commit/f37aeabb8cc0f0bfd9aca9744167a608235f3a6a"
+      }
+    ]
+  },
+  {
+    "sha": "6bca7f6fd61bcea09266303e75c437ba9745a32b",
+    "node_id": "C_kwDOKfseddoAKDZiY2E3ZjZmZDYxYmNlYTA5MjY2MzAzZTc1YzQzN2JhOTc0NWEzMmI",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-01-09T20:48:18Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2026-01-09T21:11:19Z"
+      },
+      "message": "chore: update lean",
+      "tree": {
+        "sha": "31035098531761504265a81a76f2602972d74560",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/31035098531761504265a81a76f2602972d74560"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/6bca7f6fd61bcea09266303e75c437ba9745a32b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/6bca7f6fd61bcea09266303e75c437ba9745a32b",
+    "html_url": "https://github.com/digama0/lean4lean/commit/6bca7f6fd61bcea09266303e75c437ba9745a32b",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/6bca7f6fd61bcea09266303e75c437ba9745a32b/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4faf51403bc4cb35cf6666d91fc9c938ae46d3aa",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/4faf51403bc4cb35cf6666d91fc9c938ae46d3aa",
+        "html_url": "https://github.com/digama0/lean4lean/commit/4faf51403bc4cb35cf6666d91fc9c938ae46d3aa"
+      }
+    ]
+  },
+  {
+    "sha": "93abda080b30139fa84ae92a16367cfeff5639f5",
+    "node_id": "C_kwDOKfseddoAKDkzYWJkYTA4MGIzMDEzOWZhODRhZTkyYTE2MzY3Y2ZlZmY1NjM5ZjU",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-09-14T19:21:39Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-09-14T23:07:35Z"
+      },
+      "message": "chore: update lean",
+      "tree": {
+        "sha": "102a9d53fe4396c0fd72c33d5d82bc42365e483c",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/102a9d53fe4396c0fd72c33d5d82bc42365e483c"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/93abda080b30139fa84ae92a16367cfeff5639f5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/93abda080b30139fa84ae92a16367cfeff5639f5",
+    "html_url": "https://github.com/digama0/lean4lean/commit/93abda080b30139fa84ae92a16367cfeff5639f5",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/93abda080b30139fa84ae92a16367cfeff5639f5/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "143d58a3e14e1e5e344fd1a18ee506329b48c307",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/143d58a3e14e1e5e344fd1a18ee506329b48c307",
+        "html_url": "https://github.com/digama0/lean4lean/commit/143d58a3e14e1e5e344fd1a18ee506329b48c307"
+      }
+    ]
+  },
+  {
+    "sha": "7cc5a778fd5d3ea7c11c82c2e4a6de7a22b24c7e",
+    "node_id": "C_kwDOKfseddoAKDdjYzVhNzc4ZmQ1ZDNlYTdjMTFjODJjMmU0YTZkZTdhMjJiMjRjN2U",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-06-05T23:02:35Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-06-05T23:02:35Z"
+      },
+      "message": "chore: update lean",
+      "tree": {
+        "sha": "9c31b7084adb03f0ba1568a4527cbd76ecd4704b",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/9c31b7084adb03f0ba1568a4527cbd76ecd4704b"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/7cc5a778fd5d3ea7c11c82c2e4a6de7a22b24c7e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/7cc5a778fd5d3ea7c11c82c2e4a6de7a22b24c7e",
+    "html_url": "https://github.com/digama0/lean4lean/commit/7cc5a778fd5d3ea7c11c82c2e4a6de7a22b24c7e",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/7cc5a778fd5d3ea7c11c82c2e4a6de7a22b24c7e/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c0273e3c2de46a7de695fca618376a5b9aa84489",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/c0273e3c2de46a7de695fca618376a5b9aa84489",
+        "html_url": "https://github.com/digama0/lean4lean/commit/c0273e3c2de46a7de695fca618376a5b9aa84489"
+      }
+    ]
+  },
+  {
+    "sha": "f8cd3d35aef16051be87af9a13721ed1863ea1a0",
+    "node_id": "C_kwDOKfseddoAKGY4Y2QzZDM1YWVmMTYwNTFiZTg3YWY5YTEzNzIxZWQxODYzZWExYTA",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-05-31T15:47:03Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2025-05-31T15:47:03Z"
+      },
+      "message": "chore: update lean",
+      "tree": {
+        "sha": "3e17fd16539211fec89aacdbe5d8f143004ad187",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/3e17fd16539211fec89aacdbe5d8f143004ad187"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/f8cd3d35aef16051be87af9a13721ed1863ea1a0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/f8cd3d35aef16051be87af9a13721ed1863ea1a0",
+    "html_url": "https://github.com/digama0/lean4lean/commit/f8cd3d35aef16051be87af9a13721ed1863ea1a0",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/f8cd3d35aef16051be87af9a13721ed1863ea1a0/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1574d0a43ab730ab25df14e3ef926d51c91383d5",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/1574d0a43ab730ab25df14e3ef926d51c91383d5",
+        "html_url": "https://github.com/digama0/lean4lean/commit/1574d0a43ab730ab25df14e3ef926d51c91383d5"
+      }
+    ]
+  },
+  {
+    "sha": "9787817957f50eafb47702f4d23a482f2d6783c2",
+    "node_id": "C_kwDOKfseddoAKDk3ODc4MTc5NTdmNTBlYWZiNDc3MDJmNGQyM2E0ODJmMmQ2NzgzYzI",
+    "commit": {
+      "author": {
+        "name": "Kim Morrison",
+        "email": "kim@tqft.net",
+        "date": "2025-02-11T01:25:45Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2025-02-11T01:25:45Z"
+      },
+      "message": "chore: bump toolchain to v4.16.0 (#6)",
+      "tree": {
+        "sha": "77cfc8546566579829ce7c76d79cf4234b2543b3",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/77cfc8546566579829ce7c76d79cf4234b2543b3"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/9787817957f50eafb47702f4d23a482f2d6783c2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJnqqcZCRC1aQ7uu5UhlAAANysQAK3Xq++O5M05gU5dr1RNKqK+\nJi4Nq0C9TXNlBVcCPfnjpRC4QNEW2rzQjx/Vg649vAj43kJSbHKQ8GbCAID+AUvP\npBBSew55mYxHFgnpX22+cX1Vq2AazRl9M2SrNyuV81OW/4FDMXjWV+5SCKTzQo8f\n95ji0w1i9U3LH0Ek8BMYh5vh+xnVgSJ9l6iWrQHdD49vye+MBORpZTm7zU1F5PJR\n7VumGhXM3B6FhK/BSrndzEfLK/WgrFvfs3evNM1ukdpDlOrxab1RbOiqtw1R/R9A\nSLf/zN2MiGq+VwpUeNgw/oPTAHVeRWDexHjyUgMc/Y+N6yyh2oIldBt1j4kZPjaW\nOukcctPOtRsWqbPb/XZshv0Ago0Dj9AWVNecvo36J0DjsDZ5sWkcx7v9uMcxpzce\njDm/L4gyOVvXh88BPImv6hRxJRdwdD+QhYBU/oG4i5pZ2bjkkONfcheXV1KLoYyC\nRHqtBbsvA1rvrFbCL/cmj1B3HIgk/YswV8HLLikk5kiewMmr1c0cpEr/URGz6H0H\nUKQh9TykNJEpiwqr9IXvxm7TsyUy7PQe/5ddLfTvXyso7GTxuC0rS7rYoYK+lf8a\n4dxR51tdnnQSLh8hDtznzNdzFNssZQ2xGT6y+uoomwmyz1ZRuix5eIuiBnVatrEc\nJAD0AXl9vL/2SuEB7Ose\n=9tyf\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 77cfc8546566579829ce7c76d79cf4234b2543b3\nparent a86111c30d41b6a9af1981bd7da4f18de7aa43cc\nauthor Kim Morrison <kim@tqft.net> 1739237145 +1100\ncommitter GitHub <noreply@github.com> 1739237145 -0800\n\nchore: bump toolchain to v4.16.0 (#6)\n\n",
+        "verified_at": "2025-02-11T01:26:46Z"
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/9787817957f50eafb47702f4d23a482f2d6783c2",
+    "html_url": "https://github.com/digama0/lean4lean/commit/9787817957f50eafb47702f4d23a482f2d6783c2",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/9787817957f50eafb47702f4d23a482f2d6783c2/comments",
+    "author": {
+      "login": "kim-em",
+      "id": 477956,
+      "node_id": "MDQ6VXNlcjQ3Nzk1Ng==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/477956?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kim-em",
+      "html_url": "https://github.com/kim-em",
+      "followers_url": "https://api.github.com/users/kim-em/followers",
+      "following_url": "https://api.github.com/users/kim-em/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kim-em/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kim-em/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kim-em/subscriptions",
+      "organizations_url": "https://api.github.com/users/kim-em/orgs",
+      "repos_url": "https://api.github.com/users/kim-em/repos",
+      "events_url": "https://api.github.com/users/kim-em/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kim-em/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+        "html_url": "https://github.com/digama0/lean4lean/commit/a86111c30d41b6a9af1981bd7da4f18de7aa43cc"
+      }
+    ]
+  },
+  {
+    "sha": "a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+    "node_id": "C_kwDOKfseddoAKGE4NjExMWMzMGQ0MWI2YTlhZjE5ODFiZDdkYTRmMThkZTdhYTQzY2M",
+    "commit": {
+      "author": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2024-11-02T22:57:59Z"
+      },
+      "committer": {
+        "name": "Mario Carneiro",
+        "email": "di.gama@gmail.com",
+        "date": "2024-11-02T22:57:59Z"
+      },
+      "message": "chore: update to 4.13.0",
+      "tree": {
+        "sha": "96ee637c9251059322b664c97e25e322c434f800",
+        "url": "https://api.github.com/repos/digama0/lean4lean/git/trees/96ee637c9251059322b664c97e25e322c434f800"
+      },
+      "url": "https://api.github.com/repos/digama0/lean4lean/git/commits/a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/digama0/lean4lean/commits/a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+    "html_url": "https://github.com/digama0/lean4lean/commit/a86111c30d41b6a9af1981bd7da4f18de7aa43cc",
+    "comments_url": "https://api.github.com/repos/digama0/lean4lean/commits/a86111c30d41b6a9af1981bd7da4f18de7aa43cc/comments",
+    "author": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digama0",
+      "id": 868588,
+      "node_id": "MDQ6VXNlcjg2ODU4OA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/868588?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digama0",
+      "html_url": "https://github.com/digama0",
+      "followers_url": "https://api.github.com/users/digama0/followers",
+      "following_url": "https://api.github.com/users/digama0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digama0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digama0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digama0/subscriptions",
+      "organizations_url": "https://api.github.com/users/digama0/orgs",
+      "repos_url": "https://api.github.com/users/digama0/repos",
+      "events_url": "https://api.github.com/users/digama0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digama0/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "49ccfa84d1717349296ab105c115e5afe9c3639f",
+        "url": "https://api.github.com/repos/digama0/lean4lean/commits/49ccfa84d1717349296ab105c115e5afe9c3639f",
+        "html_url": "https://github.com/digama0/lean4lean/commit/49ccfa84d1717349296ab105c115e5afe9c3639f"
+      }
+    ]
+  }
+]

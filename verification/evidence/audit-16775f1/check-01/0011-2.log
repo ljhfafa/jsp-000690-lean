@@ -1,0 +1,618 @@
+@JSP690.chromaticCritical_of_deletions : ∀ {n : Nat} {H : JSP690.Hypergraph n}
+  (hedge :
+    ∀ (e : JSP690.Edge n),
+      @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e →
+        @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteEdge n H e))
+  (hvertex :
+    ∀ (v : Fin n),
+      @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteVertex n H v)),
+  @JSP690.ChromaticCritical n H
+theorem JSP690.chromaticCritical_of_deletions : ∀ {n : Nat} {H : JSP690.Hypergraph n}
+  (hedge :
+    ∀ (e : JSP690.Edge n),
+      @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e →
+        @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteEdge n H e))
+  (hvertex :
+    ∀ (v : Fin n),
+      @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteVertex n H v)),
+  @JSP690.ChromaticCritical n H :=
+fun {n : Nat} {H : JSP690.Hypergraph n}
+    (hedge :
+      ∀ (e : JSP690.Edge n),
+        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e →
+          @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteEdge n H e))
+    (hvertex :
+      ∀ (v : Fin n),
+        @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@JSP690.deleteVertex n H v))
+    (W : Fin n → Prop) (F : JSP690.Hypergraph n) (hproper : @JSP690.IsProperSubhypergraph n H W F) =>
+  @And.casesOn.{0} (@JSP690.IsSubhypergraph n H W F)
+    (Or (@Exists.{1} (Fin n) fun (v : Fin n) => Not (W v))
+      (@Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+        And
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+          (Not
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F
+              e))))
+    (fun (x : @JSP690.IsProperSubhypergraph n H W F) =>
+      @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+    hproper
+    fun (left : @JSP690.IsSubhypergraph n H W F)
+      (hmissing :
+        Or (@Exists.{1} (Fin n) fun (v : Fin n) => Not (W v))
+          (@Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+            And
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                e)
+              (Not
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  F e)))) =>
+    @And.casesOn.{0}
+      (∀ (e : JSP690.Edge n),
+        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F e →
+          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+      (∀ (e : JSP690.Edge n),
+        @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F e →
+          ∀ (v : Fin n), @Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v → W v)
+      (fun (x : @JSP690.IsSubhypergraph n H W F) =>
+        @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+      left
+      fun
+        (hFH :
+          ∀ (e : JSP690.Edge n),
+            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F
+                e →
+              @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                e)
+        (hW :
+          ∀ (e : JSP690.Edge n),
+            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F
+                e →
+              ∀ (v : Fin n),
+                @Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v → W v) =>
+      @Or.casesOn (@Exists.{1} (Fin n) fun (v : Fin n) => Not (W v))
+        (@Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+          And
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+              e)
+            (Not
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F
+                e)))
+        (fun
+            (x :
+              Or (@Exists.{1} (Fin n) fun (v : Fin n) => Not (W v))
+                (@Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+                  And
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (Not
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) F e)))) =>
+          @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+        hmissing
+        (fun (h : @Exists.{1} (Fin n) fun (v : Fin n) => Not (W v)) =>
+          @Exists.casesOn.{1} (Fin n) (fun (v : Fin n) => Not (W v))
+            (fun (x : @Exists.{1} (Fin n) fun (v : Fin n) => Not (W v)) =>
+              @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+            h fun (v : Fin n) (hv : Not (W v)) =>
+            @JSP690.colorable_mono n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@JSP690.deleteVertex n H v) F
+              (fun (e : JSP690.Edge n)
+                  (he :
+                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) F e) =>
+                have hve :
+                  Not (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v) :=
+                  fun (hmem : @Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v) =>
+                  hv (hW e he v hmem);
+                @of_eq_true
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteVertex n H v) e)
+                  (@Eq.trans.{1} Prop
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteVertex n H v) e)
+                    (And
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                        (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                      (@Eq.{1} Bool
+                        (Bool.not
+                          (@Decidable.decide
+                            (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                            (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                              (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                              (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                        Bool.true))
+                    True
+                    (@Eq.trans.{1} Prop
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteVertex n H v) e)
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n))
+                        (@List.filter.{0} (JSP690.Edge n)
+                          (fun (e : JSP690.Edge n) =>
+                            Bool.not
+                              (@Decidable.decide
+                                (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                                (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                  (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                  (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                          H)
+                        e)
+                      (And
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                          (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide
+                              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                          Bool.true))
+                      (@congrFun'.{1, 1} (JSP690.Edge n) Prop
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                          (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteVertex n H v))
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                          (@List.instMembership.{0} (JSP690.Edge n))
+                          (@List.filter.{0} (JSP690.Edge n)
+                            (fun (e : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                            H))
+                        (@congrArg.{1, 1} (JSP690.Hypergraph n) (JSP690.Edge n → Prop) (@JSP690.deleteVertex n H v)
+                          (@List.filter.{0} (JSP690.Edge n)
+                            (fun (e : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                            H)
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                            (@List.instMembership.{0} (JSP690.Edge n)))
+                          (@congrFun'.{1, 1} (JSP690.Hypergraph n) (List.{0} (JSP690.Edge n))
+                            (@List.filter.{0} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+                              @Decidable.decide
+                                (Not
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v))
+                                (@instDecidableNot
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@JSP690.degree._proof_1 n) v e)))
+                            (@List.filter.{0} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                            (@congrArg.{1, 1} ((e : JSP690.Edge n) → Bool)
+                              ((l : List.{0} (JSP690.Edge n)) → List.{0} (JSP690.Edge n))
+                              (fun (e : JSP690.Edge n) =>
+                                @Decidable.decide
+                                  (Not
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v))
+                                  (@instDecidableNot
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v)
+                                    (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                      (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                      (@JSP690.degree._proof_1 n) v e)))
+                              (fun (e : JSP690.Edge n) =>
+                                Bool.not
+                                  (@Decidable.decide
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v)
+                                    (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                      (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                      (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                              (@List.filter.{0} (JSP690.Edge n))
+                              (@funext.{1, 1} (JSP690.Edge n) (fun (x : JSP690.Edge n) => Bool)
+                                (fun (x : JSP690.Edge n) =>
+                                  @Decidable.decide
+                                    (Not
+                                      (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n))
+                                        x v))
+                                    (@instDecidableNot
+                                      (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n))
+                                        x v)
+                                      (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                        (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                        (@JSP690.degree._proof_1 n) v x)))
+                                (fun (x : JSP690.Edge n) =>
+                                  Bool.not
+                                    (@Decidable.decide
+                                      (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n))
+                                        x v)
+                                      (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                        (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                        (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v x)))
+                                fun (e : JSP690.Edge n) =>
+                                @decide_not
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)
+                                  (@instDecidableNot
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v)
+                                    (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                      (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                      (@JSP690.degree._proof_1 n) v e))))
+                            H))
+                        e)
+                      (@List.mem_filter._simp_1.{0} (JSP690.Edge n)
+                        (fun (e : JSP690.Edge n) =>
+                          Bool.not
+                            (@Decidable.decide
+                              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                        H e))
+                    (@Eq.trans.{1} Prop
+                      (And
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                          (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide
+                              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                          Bool.true))
+                      (And True True) True
+                      (@congr.{1, 1} Prop Prop
+                        (And
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                            (@List.instMembership.{0} (JSP690.Edge n)) H e))
+                        (And True)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide
+                              (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                              (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                          Bool.true)
+                        True
+                        (@congrArg.{1, 1} Prop ((b : Prop) → Prop)
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                            (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                          True And
+                          (@eq_true
+                            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                              (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                            (hFH e he)))
+                        (@Eq.trans.{1} Prop
+                          (@Eq.{1} Bool
+                            (Bool.not
+                              (@Decidable.decide
+                                (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                                (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                  (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                  (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                            Bool.true)
+                          (@Eq.{1} Bool Bool.true Bool.true) True
+                          (@congrFun'.{1, 1} Bool Prop
+                            (@Eq.{1} Bool
+                              (Bool.not
+                                (@Decidable.decide
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))))
+                            (@Eq.{1} Bool Bool.true)
+                            (@congrArg.{1, 1} Bool (Bool → Prop)
+                              (Bool.not
+                                (@Decidable.decide
+                                  (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                    v)
+                                  (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                    (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                    (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                              Bool.true (@Eq.{1} Bool)
+                              (@Eq.trans.{1} Bool
+                                (Bool.not
+                                  (@Decidable.decide
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v)
+                                    (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                      (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                      (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)))
+                                (Bool.not Bool.false) Bool.true
+                                (@congrArg.{1, 1} Bool Bool
+                                  (@Decidable.decide
+                                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e
+                                      v)
+                                    (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                      (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                      (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+                                  Bool.false Bool.not
+                                  (@Eq.trans.{1} Bool
+                                    (@Decidable.decide
+                                      (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n))
+                                        e v)
+                                      (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                        (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                        (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e))
+                                    (@Decidable.decide False instDecidableFalse) Bool.false
+                                    (@Decidable.decide.congr_simp
+                                      (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n))
+                                        e v)
+                                      False
+                                      (@eq_false
+                                        (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n)
+                                          (@List.instMembership.{0} (Fin n)) e v)
+                                        hve)
+                                      (@List.instDecidableMemOfLawfulBEq.{0} (Fin n)
+                                        (@instBEqOfDecidableEq.{0} (Fin n) (instDecidableEqFin n))
+                                        (@instLawfulBEq.{0} (Fin n) (instDecidableEqFin n)) v e)
+                                      instDecidableFalse)
+                                    (decide_false instDecidableFalse)))
+                                Bool.not_false))
+                            Bool.true)
+                          (@eq_self.{1} Bool Bool.true)))
+                      (and_self True))))
+              (hvertex v))
+        fun
+          (h :
+            @Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+                (Not
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) F e))) =>
+        @Exists.casesOn.{1} (JSP690.Edge n)
+          (fun (e : JSP690.Edge n) =>
+            And
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                e)
+              (Not
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  F e)))
+          (fun
+              (x :
+                @Exists.{1} (JSP690.Edge n) fun (e : JSP690.Edge n) =>
+                  And
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (Not
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) F e))) =>
+            @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+          h
+          fun (e : JSP690.Edge n)
+            (h :
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+                (Not
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) F e))) =>
+          @And.casesOn.{0}
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+              e)
+            (Not
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) F
+                e))
+            (fun
+                (x :
+                  And
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (Not
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) F e))) =>
+              @JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) F)
+            h
+            fun
+              (he :
+                @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+              (heF :
+                Not
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) F e)) =>
+            @JSP690.colorable_mono n (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@JSP690.deleteEdge n H e) F
+              (fun (f : JSP690.Edge n)
+                  (hf :
+                    @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) F f) =>
+                have hfe : @Ne.{1} (JSP690.Edge n) f e := fun (h : @Eq.{1} (JSP690.Edge n) f e) =>
+                  @Eq.ndrec.{0, 1} (JSP690.Edge n) e
+                    (fun (f : JSP690.Edge n) =>
+                      ∀
+                        (hf :
+                          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                            (@List.instMembership.{0} (JSP690.Edge n)) F f),
+                        False)
+                    (fun
+                        (hf :
+                          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                            (@List.instMembership.{0} (JSP690.Edge n)) F e) =>
+                      heF hf)
+                    f (@Eq.symm.{1} (JSP690.Edge n) f e h) hf;
+                @of_eq_true
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteEdge n H e) f)
+                  (@Eq.trans.{1} Prop
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteEdge n H e) f)
+                    (And
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                        (@List.instMembership.{0} (JSP690.Edge n)) H f)
+                      (@Eq.{1} Bool
+                        (Bool.not
+                          (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                            (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                        Bool.true))
+                    True
+                    (@Eq.trans.{1} Prop
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteEdge n H e) f)
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n))
+                        (@List.filter.{0} (JSP690.Edge n)
+                          (fun (f : JSP690.Edge n) =>
+                            Bool.not
+                              (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                          H)
+                        f)
+                      (And
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                          (@List.instMembership.{0} (JSP690.Edge n)) H f)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                              (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                          Bool.true))
+                      (@congrFun'.{1, 1} (JSP690.Edge n) Prop
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                          (@List.instMembership.{0} (JSP690.Edge n)) (@JSP690.deleteEdge n H e))
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                          (@List.instMembership.{0} (JSP690.Edge n))
+                          (@List.filter.{0} (JSP690.Edge n)
+                            (fun (f : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                            H))
+                        (@congrArg.{1, 1} (JSP690.Hypergraph n) (JSP690.Edge n → Prop) (@JSP690.deleteEdge n H e)
+                          (@List.filter.{0} (JSP690.Edge n)
+                            (fun (f : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                            H)
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                            (@List.instMembership.{0} (JSP690.Edge n)))
+                          (@congrFun'.{1, 1} (JSP690.Hypergraph n) (List.{0} (JSP690.Edge n))
+                            (@List.filter.{0} (JSP690.Edge n) fun (f : JSP690.Edge n) =>
+                              @Decidable.decide (@Ne.{1} (JSP690.Edge n) f e)
+                                (@instDecidableNot (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                            (@List.filter.{0} (JSP690.Edge n) fun (f : JSP690.Edge n) =>
+                              Bool.not
+                                (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                            (@congrArg.{1, 1} ((f : JSP690.Edge n) → Bool)
+                              ((l : List.{0} (JSP690.Edge n)) → List.{0} (JSP690.Edge n))
+                              (fun (f : JSP690.Edge n) =>
+                                @Decidable.decide (@Ne.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableNot (@Eq.{1} (JSP690.Edge n) f e)
+                                    (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                              (fun (f : JSP690.Edge n) =>
+                                Bool.not
+                                  (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                    (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                              (@List.filter.{0} (JSP690.Edge n))
+                              (@funext.{1, 1} (JSP690.Edge n) (fun (x : JSP690.Edge n) => Bool)
+                                (fun (x : JSP690.Edge n) =>
+                                  @Decidable.decide (Not (@Eq.{1} (JSP690.Edge n) x e))
+                                    (@instDecidableNot (@Eq.{1} (JSP690.Edge n) x e)
+                                      (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) x e)))
+                                (fun (x : JSP690.Edge n) =>
+                                  Bool.not
+                                    (@Decidable.decide (@Eq.{1} (JSP690.Edge n) x e)
+                                      (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) x e)))
+                                fun (f : JSP690.Edge n) =>
+                                @decide_not (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)
+                                  (@instDecidableNot (@Eq.{1} (JSP690.Edge n) f e)
+                                    (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e))))
+                            H))
+                        f)
+                      (@List.mem_filter._simp_1.{0} (JSP690.Edge n)
+                        (fun (f : JSP690.Edge n) =>
+                          Bool.not
+                            (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                              (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                        H f))
+                    (@Eq.trans.{1} Prop
+                      (And
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                          (@List.instMembership.{0} (JSP690.Edge n)) H f)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                              (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                          Bool.true))
+                      (And True True) True
+                      (@congr.{1, 1} Prop Prop
+                        (And
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                            (@List.instMembership.{0} (JSP690.Edge n)) H f))
+                        (And True)
+                        (@Eq.{1} Bool
+                          (Bool.not
+                            (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                              (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                          Bool.true)
+                        True
+                        (@congrArg.{1, 1} Prop ((b : Prop) → Prop)
+                          (@Membership.mem.{0, 0} (JSP690.Edge n) (List.{0} (JSP690.Edge n))
+                            (@List.instMembership.{0} (JSP690.Edge n)) H f)
+                          True And
+                          (@eq_true
+                            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                              (@List.instMembership.{0} (JSP690.Edge n)) H f)
+                            (hFH f hf)))
+                        (@Eq.trans.{1} Prop
+                          (@Eq.{1} Bool
+                            (Bool.not
+                              (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                            Bool.true)
+                          (@Eq.{1} Bool Bool.true Bool.true) True
+                          (@congrFun'.{1, 1} Bool Prop
+                            (@Eq.{1} Bool
+                              (Bool.not
+                                (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e))))
+                            (@Eq.{1} Bool Bool.true)
+                            (@congrArg.{1, 1} Bool (Bool → Prop)
+                              (Bool.not
+                                (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                  (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                              Bool.true (@Eq.{1} Bool)
+                              (@Eq.trans.{1} Bool
+                                (Bool.not
+                                  (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                    (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e)))
+                                (Bool.not Bool.false) Bool.true
+                                (@congrArg.{1, 1} Bool Bool
+                                  (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                    (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e))
+                                  Bool.false Bool.not
+                                  (@Eq.trans.{1} Bool
+                                    (@Decidable.decide (@Eq.{1} (JSP690.Edge n) f e)
+                                      (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e))
+                                    (@Decidable.decide False instDecidableFalse) Bool.false
+                                    (@Decidable.decide.congr_simp (@Eq.{1} (JSP690.Edge n) f e) False
+                                      (@eq_false (@Eq.{1} (JSP690.Edge n) f e) hfe)
+                                      (@instDecidableEqList.{0} (Fin n) (instDecidableEqFin n) f e) instDecidableFalse)
+                                    (decide_false instDecidableFalse)))
+                                Bool.not_false))
+                            Bool.true)
+                          (@eq_self.{1} Bool Bool.true)))
+                      (and_self True))))
+              (hedge e he)
+'JSP690.chromaticCritical_of_deletions' depends on axioms: [propext, Quot.sound]

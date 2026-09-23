@@ -28,20 +28,30 @@ Final target: `JSP690.exists_three_uniform_three_chromatic_critical`.
 - Executed `verification/Check.lean`; final theorem axioms `[propext, Quot.sound]`.
 - Added mathematical specification, source attribution, and honest AI disclosure.
 
-## Next
-Pin proof commit A. Perform credential-isolated clean rebuild, official audit automation,
-fresh kernel replay, independent statement challenge, and full source scan. Save reports
-at later commit B without changing proof A. Prepare exact official catalog PR and claim
-draft. GitHub publishing requires owner authentication; gh is installed but logged out.
+## Fixed-commit verification and publication
+- Complete immutable proof A: 16775f11a809a49fcd6822add9895eb104966994.
+- Strict credential-isolated clean clone and full build passed.
+- Official audit.py preflight/prepare/run passed: 12 proof targets and 9 semantic
+  bridge targets, standard_axioms_only, stable tracked inputs.
+- Fresh Lean kernel replay passed for Main (58.56s) and semantic bridge (56.15s).
+- Full external semantic formulation proved from A: actual edge sets, three distinct
+  vertices, seven distinct incident sets, exact χ3, all proper retained-vertex subgraphs.
+- Main axioms [propext, Quot.sound]; semantic bridge also Classical.choice.
+- No separate checker implementation run; Lean4Lean exact4.32.0 ref not identified.
+- GitHub owner authenticated as ljhfafa; original public repository created and A
+  pushed to main: https://github.com/ljhfafa/jsp-000690-lean . Remote SHA confirmed.
+- Awards fork https://github.com/ljhfafa/awards created. Catalog-only patch on local
+  codex/jsp-000690-independent-lean branch; PR submission next after report checkpoint B.
 
-## Validation
-Local complete build and axiom audit passed. Isolated fixed-commit verification pending;
-no overall PASS claim yet. Independent Python outputs are in verification/python-results.txt.
+## Next
+Commit verification report/evidence and correspondence as report B; preserve A proof
+sources unchanged. Push B, pin report links in the PR, commit and push the catalog-only
+branch, create real PR, inspect status, and record actual URL. Do not file an award
+claim before merge. Prepared claim is not an assertion of eligibility or priority.
 
 ## Git
-Initial checkpoint d03ea06. Complete proof checkpoint pending. Preserve actual timestamps;
-never rewrite for priority. The official submission must refer to a real public repository
-and the complete immutable proof commit, not an invented URL.
+Proof initial d03ea06; complete proof A 16775f11a809a49fcd6822add9895eb104966994
+published on main. Report checkpoint pending. Do not amend or backdate public history.
 
 ## Resume
 Inspect git status/log, this file, README and Lean tree, then run lake build with the

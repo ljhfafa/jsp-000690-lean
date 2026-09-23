@@ -1,0 +1,4 @@
+Lean edge list matches primary-source JSON after subtracting one: 22/22
+Lean edge deletion certificates match JSON: 22/22
+Lean vertex deletion certificates match JSON: 9/9
+SHA256 of JSP690/Construction.lean: 637855ce2ae072ac618f1b87dbae0019eed63cb91930923a15cb907d709b6cb7

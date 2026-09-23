@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "project": {
+    "root": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+    "repository": "/Users/jiahongli/workspace/justinsun/jsp-000690-lean",
+    "commit": "16775f11a809a49fcd6822add9895eb104966994",
+    "toolchain": "leanprover/lean4:v4.32.0"
+  },
+  "problems": [
+    {
+      "id": "JSP-000690",
+      "source": "https://github.com/TheJustinSunPrize/awards/blob/bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2/problems/catalog-0601-0700.md#JSP-000690 ; https://arxiv.org/html/2512.24850v1",
+      "requirements": [
+        {
+          "id": "finite-existence",
+          "description": "Existence of a finite simple hypergraph meeting all properties of JSP-000690; the verified witness has nine vertices.",
+          "targets": [
+            "main"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "simple-edge-sets",
+          "description": "Edges are finite sets with no repeated vertices, and the edge family contains no duplicate edges.",
+          "targets": [
+            "simple"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "three-uniform",
+          "description": "Every edge contains exactly three distinct vertices.",
+          "targets": [
+            "simple",
+            "uniform"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "minimum-degree-seven",
+          "description": "Every vertex is contained in at least seven different edges.",
+          "targets": [
+            "minimum-degree"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "exactly-three-colors",
+          "description": "Weak hypergraph chromatic number is exactly three, including exclusion of all smaller palettes and exhaustive coverage of all binary assignments.",
+          "targets": [
+            "not-two-colorable",
+            "three-colorable",
+            "chromatic-number",
+            "tuple-complete"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "all-proper-subhypergraphs",
+          "description": "Every proper subhypergraph obtained by deleting any vertices and/or whole edges is two-colorable.",
+          "targets": [
+            "edge-deletion",
+            "vertex-deletion",
+            "critical",
+            "proper-subhypergraph-reduction"
+          ],
+          "coverage": "pending"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "main",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Main",
+      "source": "JSP690/Main.lean",
+      "declaration": "JSP690.exists_three_uniform_three_chromatic_critical"
+    },
+    {
+      "id": "simple",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_simple"
+    },
+    {
+      "id": "uniform",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_uniform"
+    },
+    {
+      "id": "minimum-degree",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_min_degree"
+    },
+    {
+      "id": "not-two-colorable",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_not_two_colorable"
+    },
+    {
+      "id": "three-colorable",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_three_colorable"
+    },
+    {
+      "id": "chromatic-number",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_chromatic_number"
+    },
+    {
+      "id": "edge-deletion",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_edge_critical"
+    },
+    {
+      "id": "vertex-deletion",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_vertex_critical"
+    },
+    {
+      "id": "critical",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.construction_critical"
+    },
+    {
+      "id": "tuple-complete",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.Construction",
+      "source": "JSP690/Construction.lean",
+      "declaration": "JSP690.tupleColor_complete"
+    },
+    {
+      "id": "proper-subhypergraph-reduction",
+      "problem": "JSP-000690",
+      "role": "theorem",
+      "module": "JSP690.General",
+      "source": "JSP690/General.lean",
+      "declaration": "JSP690.chromaticCritical_of_deletions"
+    }
+  ]
+}

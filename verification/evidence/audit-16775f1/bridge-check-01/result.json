@@ -1,0 +1,948 @@
+{
+  "scope": "target_checks_only",
+  "semantic_verdict": "not_determined",
+  "preflight": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "16775f11a809a49fcd6822add9895eb104966994",
+    "git_status": "?? JSP690/AuditBridge.lean",
+    "toolchain_file": "leanprover/lean4:v4.32.0",
+    "file_sha256": {
+      "JSP690/AuditBridge.lean": "f9cd54adccb1e807a00d1819e49d71942e3978ddbf2cbe91acf90649b32a7072",
+      "lake-manifest.json": "c141985151b9d243375c219746b0ec4341c1b87717cc9e71e0f3285b42a7114d",
+      "lakefile.lean": null,
+      "lakefile.toml": "f42b066fa1a12d235449828f72e7e1c238f3fa7dfc0eb63696b4253ad6cab4c2",
+      "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "--version"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/version-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.036,
+      "log_sha256": "674e51ed0c1b0942bc807e63164ad9af7d3f33d2e78d0f6266d153b8e4e563ba"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/version-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.075,
+      "log_sha256": "19dcb94e3b0d87de7ec777bbda05b6f4feeac486445986232b4963f8d1503678"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.448,
+      "log_sha256": "f7e8159afd15e8bd792e4cc1d86d8141fc91c49bc54a38dbd262ea6178091b89"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.35,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0000.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.289,
+      "log_sha256": "4c157e4849540847f337bb1c400b82c4f547b026f1229a49e19bbe222feeb750"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.132,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.342,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0001.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.341,
+      "log_sha256": "f184290542aea9d2f1f7395b5655a325f08cd2ebcbf4eca02792789a5ee2ca16"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.186,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.353,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0002.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.289,
+      "log_sha256": "6fd8ef556b920aa529dedd2c3e3db64cbb73787c7f939224dcf2efe321b9c5f8"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.18,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.351,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0003.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.292,
+      "log_sha256": "a7a07c804eba0e430d9c05b1b62c88245ba40b574b757d4a229b96ef51c01f5d"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.183,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.345,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0004.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.291,
+      "log_sha256": "5031c58d4c82fe39216c49b8bb27a6f9f4f0f08db4de30490427c635ce363fbb"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.175,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.349,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0005.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.286,
+      "log_sha256": "354ab6f316441b1d6f229b92a225923bb18af570f805f0c0296c309ab0836956"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.18,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.349,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0006.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.345,
+      "log_sha256": "bf4ec11d04613fbcab27796756ecff6bea2073baf86afe41d1e72ee697a34826"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.182,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.346,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0007.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.396,
+      "log_sha256": "558268cb43a5c53b02b044b28ebeb68ea98928c8b8d299c1752f2d99e74b1ed7"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "build",
+        "+JSP690.AuditBridge"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.187,
+      "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.347,
+      "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+    },
+    {
+      "argv": [
+        "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+        "env",
+        "lean",
+        "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0008.lean"
+      ],
+      "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+      "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.344,
+      "log_sha256": "db1a46802fa6a8322f207ba8501b2d31f929d7c302b03a85b0089653819ca3ae"
+    }
+  ],
+  "targets": [
+    {
+      "id": "external-target",
+      "declaration": "AuditBridge.external_target",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0000.lean",
+      "audit_sha256": "0f2707182fe1c092758207b75e6625d820b3dcd1dc4e26193bb3f73897aaec23",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.448,
+          "log_sha256": "f7e8159afd15e8bd792e4cc1d86d8141fc91c49bc54a38dbd262ea6178091b89"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.35,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0000.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0000-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.289,
+          "log_sha256": "4c157e4849540847f337bb1c400b82c4f547b026f1229a49e19bbe222feeb750"
+        }
+      ]
+    },
+    {
+      "id": "proper-iff",
+      "declaration": "AuditBridge.proper_iff",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0001.lean",
+      "audit_sha256": "ef36d55445a58910db246235995d11d321f86a7a1c32a8c9fcbaf108f1f59a8d",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.132,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.342,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0001.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0001-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.341,
+          "log_sha256": "f184290542aea9d2f1f7395b5655a325f08cd2ebcbf4eca02792789a5ee2ca16"
+        }
+      ]
+    },
+    {
+      "id": "hasColoring-iff",
+      "declaration": "AuditBridge.hasColoring_iff",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0002.lean",
+      "audit_sha256": "a0b304fc2fd5a752b50d3040a016c6e28080b7f7918c65e7addf0820e284dc81",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.186,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.353,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0002.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0002-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.289,
+          "log_sha256": "6fd8ef556b920aa529dedd2c3e3db64cbb73787c7f939224dcf2efe321b9c5f8"
+        }
+      ]
+    },
+    {
+      "id": "family-selected-iff",
+      "declaration": "AuditBridge.family_selected_iff",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0003.lean",
+      "audit_sha256": "b1608ef318b1e22550b913b080c846a81b5e5bfee2106078027f4e34dc7d0324",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.18,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.351,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0003.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0003-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.292,
+          "log_sha256": "a7a07c804eba0e430d9c05b1b62c88245ba40b574b757d4a229b96ef51c01f5d"
+        }
+      ]
+    },
+    {
+      "id": "critical-bridge",
+      "declaration": "AuditBridge.critical_bridge",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0004.lean",
+      "audit_sha256": "547064d7158329df3480345b15ca5438877f4d0c813ef88ca7e70ecce8e12c3d",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.183,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.345,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0004.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0004-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.291,
+          "log_sha256": "5031c58d4c82fe39216c49b8bb27a6f9f4f0f08db4de30490427c635ce363fbb"
+        }
+      ]
+    },
+    {
+      "id": "chromatic-number-bridge",
+      "declaration": "AuditBridge.chromatic_number_bridge",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0005.lean",
+      "audit_sha256": "0efa4698313023e01138ffaf038c5133ed886006eaf6684753ec13bfa72d328f",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.175,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.349,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0005.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0005-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.286,
+          "log_sha256": "354ab6f316441b1d6f229b92a225923bb18af570f805f0c0296c309ab0836956"
+        }
+      ]
+    },
+    {
+      "id": "sorted-edge-injective",
+      "declaration": "AuditBridge.sorted_edge_injective",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0006.lean",
+      "audit_sha256": "063ac153182f39bf0381ccd4deecdf37d3509eadee7817fe49c4b763f003d0a2",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.18,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.349,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0006.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0006-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.345,
+          "log_sha256": "bf4ec11d04613fbcab27796756ecff6bea2073baf86afe41d1e72ee697a34826"
+        }
+      ]
+    },
+    {
+      "id": "three-uniform-bridge",
+      "declaration": "AuditBridge.three_uniform_bridge",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0007.lean",
+      "audit_sha256": "6da3599c944ec7366696d2a0a1d0c62249c2eb5873f28553e7e4ed4e7bfaba17",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.182,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.346,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0007.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0007-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.396,
+          "log_sha256": "558268cb43a5c53b02b044b28ebeb68ea98928c8b8d299c1752f2d99e74b1ed7"
+        }
+      ]
+    },
+    {
+      "id": "degree-bridge",
+      "declaration": "AuditBridge.degree_bridge",
+      "audit_file": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0008.lean",
+      "audit_sha256": "188e8e8f8fa5d4c1918c199af145b7ba1a14094c9fd9afad4269dc3dc8b67244",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "build",
+            "+JSP690.AuditBridge"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.187,
+          "log_sha256": "3f70935319ab0c9d634e4445b6ca970582e4c50260fd8fd64a010f51ee0e8724"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project/JSP690/AuditBridge.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.347,
+          "log_sha256": "ca70c2f672fb56835b94dabd60dee56db03bd95ad692b83154fcaa4146c3df78"
+        },
+        {
+          "argv": [
+            "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin/lake",
+            "env",
+            "lean",
+            "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/Audit0008.lean"
+          ],
+          "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/project",
+          "log": "/Users/jiahongli/workspace/justinsun/tools/audit-690/run/bridge-check-01/0008-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 0.344,
+          "log_sha256": "db1a46802fa6a8322f207ba8501b2d31f929d7c302b03a85b0089653819ca3ae"
+        }
+      ]
+    }
+  ],
+  "mechanical_status": "standard_axioms_only",
+  "tool_versions": [
+    "Lake version 5.0.0-src+8c9756b (Lean version 4.32.0)\n",
+    "Lean (version 4.32.0, arm64-apple-darwin24.6.0, commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35, Release)\n"
+  ],
+  "after": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "16775f11a809a49fcd6822add9895eb104966994",
+    "git_status": "?? JSP690/AuditBridge.lean",
+    "toolchain_file": "leanprover/lean4:v4.32.0",
+    "file_sha256": {
+      "JSP690/AuditBridge.lean": "f9cd54adccb1e807a00d1819e49d71942e3978ddbf2cbe91acf90649b32a7072",
+      "lake-manifest.json": "c141985151b9d243375c219746b0ec4341c1b87717cc9e71e0f3285b42a7114d",
+      "lakefile.lean": null,
+      "lakefile.toml": "f42b066fa1a12d235449828f72e7e1c238f3fa7dfc0eb63696b4253ad6cab4c2",
+      "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "inputs_stable": true,
+  "manifest_sha256": "fa1466eee0016b787610a4ebd37ace47a5a6225341870dc1da3ba6b67435a7ae",
+  "script_sha256": "5db45dddcb4d588bc27e7c7161fbca5cedaa3e73e1c40843d21f5a214323cd07",
+  "exit_code": 0
+}

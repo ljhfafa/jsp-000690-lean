@@ -1,0 +1,16 @@
+Proof and semantic-harness whole-token scan: no hits for sorry/admit/axiom/TODO/placeholder/unsafe/native_decide/run_cmd/run_tac/implemented_by.
+Additional #print axioms commands in Check.lean and generated audits are observational commands, not axiom declarations.
+Repository-wide textual matches (documents/audit evidence):
+MATHEMATICAL_SPEC.md: 1 matches
+README.md: 2 matches
+submission/PR_BODY.md: 9 matches
+verification/AWARD_CLAIM_DRAFT.md: 1 matches
+verification/COMPETITION.md: 7 matches
+verification/OFFICIAL_RULES.md: 2 matches
+verification/VERIFICATION_REPORT.md: 9 matches
+verification/evidence/audit-16775f1/lean4lean-toolchain-history.json: 4 matches
+verification/final-competition-search.json: 1 matches
+verification/statement-audit.md: 7 matches
+All repository text hits are quoted prohibition/absence statements, official audit metadata, or future award-form fields; none is an unproved Lean declaration. No proof file uses a placeholder.
+Manual source review: imports only Std and project modules; no Lake scripts or external dependencies.
+Proof source and pins unchanged from A.

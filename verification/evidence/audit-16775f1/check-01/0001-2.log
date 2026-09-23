@@ -1,0 +1,102 @@
+JSP690.construction_simple : @JSP690.IsSimple (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  JSP690.construction
+theorem JSP690.construction_simple : @JSP690.IsSimple (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  JSP690.construction :=
+@id.{0} (@JSP690.IsSimple (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction)
+  (@of_decide_eq_true
+    (And
+      (@List.Nodup.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) JSP690.construction)
+      (∀ (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+        @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+            JSP690.construction e →
+          @List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+              @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+            e))
+    (@instDecidableAnd
+      (@List.Nodup.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) JSP690.construction)
+      (∀ (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+        @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+            JSP690.construction e →
+          @List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+              @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+            e)
+      (@List.nodupDecidable.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+        (fun (a b : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+          @instDecidableEqList.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) a b)
+        JSP690.construction)
+      (@List.decidableBAll.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+        (@List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+          fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+          @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+            (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+        (fun (a : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+          @List.instDecidablePairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+              @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+            (fun (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+              Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) a)
+                (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) b))
+            a)
+        JSP690.construction))
+    (@id.{0}
+      (@Eq.{1} Bool
+        (@Decidable.decide
+          (And
+            (@List.Nodup.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              JSP690.construction)
+            (∀ (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+                  JSP690.construction e →
+                @List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                    @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                      (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+                  e))
+          (@instDecidableAnd
+            (@List.Nodup.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              JSP690.construction)
+            (∀ (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+              @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+                  JSP690.construction e →
+                @List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                    @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                      (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+                  e)
+            (@List.nodupDecidable.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (fun (a b : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                @instDecidableEqList.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) a b)
+              JSP690.construction)
+            (@List.decidableBAll.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (@List.Pairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                  (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+              (fun (a : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                @List.instDecidablePairwise.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (fun (v w : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                    @LT.lt.{0} Nat instLTNat (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) v)
+                      (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) w))
+                  (fun (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) =>
+                    Nat.decLt (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) a)
+                      (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) b))
+                  a)
+              JSP690.construction)))
+        Bool.true)
+      (@Eq.refl.{1} Bool Bool.true)))
+'JSP690.construction_simple' depends on axioms: [propext]

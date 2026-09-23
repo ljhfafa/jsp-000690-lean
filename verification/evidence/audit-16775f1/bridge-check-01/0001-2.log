@@ -1,0 +1,166 @@
+@AuditBridge.proper_iff : ∀ {n : Nat} {C : Type} (H : JSP690.Hypergraph n) (c : Fin n → C),
+  Iff (@AuditBridge.Proper n C (@AuditBridge.family n H) c) (@JSP690.ProperColoring n C H c)
+theorem AuditBridge.proper_iff : ∀ {n : Nat} {C : Type} (H : JSP690.Hypergraph n) (c : Fin n → C),
+  Iff (@AuditBridge.Proper n C (@AuditBridge.family n H) c) (@JSP690.ProperColoring n C H c) :=
+fun {n : Nat} {C : Type} (H : JSP690.Hypergraph n) (c : Fin n → C) =>
+  @Iff.intro (@AuditBridge.Proper n C (@AuditBridge.family n H) c) (@JSP690.ProperColoring n C H c)
+    (fun (h : @AuditBridge.Proper n C (@AuditBridge.family n H) c) (e : JSP690.Edge n)
+        (he :
+          @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+            e) =>
+      have hn :
+        Not
+          (∀ (v : Fin n),
+            @AuditBridge.edgeSet n e v → ∀ (w : Fin n), @AuditBridge.edgeSet n e w → @Eq.{1} C (c v) (c w)) :=
+        h (@AuditBridge.edgeSet n e)
+          (@Exists.intro.{1} (JSP690.Edge n)
+            (fun (e_1 : JSP690.Edge n) =>
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e_1)
+                (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e_1)))
+            e
+            (@And.intro
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+                e)
+              (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e)) he
+              (@rfl.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e))));
+      @Classical.byContradiction
+        (@Exists.{1} (Fin n) fun (v : Fin n) =>
+          And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+            (@Exists.{1} (Fin n) fun (w : Fin n) =>
+              And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                (@Ne.{1} C (c v) (c w))))
+        fun
+          (hmissing :
+            Not
+              (@Exists.{1} (Fin n) fun (v : Fin n) =>
+                And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                    And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (@Ne.{1} C (c v) (c w))))) =>
+        hn fun (v : Fin n) (hv : @AuditBridge.edgeSet n e v) (w : Fin n) (hw : @AuditBridge.edgeSet n e w) =>
+          @Classical.byContradiction (@Eq.{1} C (c v) (c w)) fun (hne : Not (@Eq.{1} C (c v) (c w))) =>
+            hmissing
+              (@Exists.intro.{1} (Fin n)
+                (fun (v : Fin n) =>
+                  And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                    (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                        (@Ne.{1} C (c v) (c w))))
+                v
+                (@And.intro (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                    And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (@Ne.{1} C (c v) (c w)))
+                  hv
+                  (@Exists.intro.{1} (Fin n)
+                    (fun (w : Fin n) =>
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                        (@Ne.{1} C (c v) (c w)))
+                    w
+                    (@And.intro (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (@Ne.{1} C (c v) (c w)) hw hne)))))
+    fun (h : @JSP690.ProperColoring n C H c) (S : AuditBridge.VertexSet n) (hS : @AuditBridge.family n H S)
+      (hmono : ∀ (v : Fin n), S v → ∀ (w : Fin n), S w → @Eq.{1} C (c v) (c w)) =>
+    @Exists.casesOn.{1} (JSP690.Edge n)
+      (fun (e : JSP690.Edge n) =>
+        And
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+          (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)))
+      (fun (x : @AuditBridge.family n H S) => False) hS
+      fun (e : JSP690.Edge n)
+        (h_1 :
+          And
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+              e)
+            (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+      @And.casesOn.{0}
+        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+        (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))
+        (fun
+            (x :
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+                (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+          False)
+        h_1
+        fun
+          (he :
+            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+          (right : @Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) =>
+        @Eq.ndrec.{0, 1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e)
+          (fun (S : AuditBridge.VertexSet n) =>
+            ∀ (hmono : ∀ (v : Fin n), S v → ∀ (w : Fin n), S w → @Eq.{1} C (c v) (c w)), False)
+          (fun
+              (hmono :
+                ∀ (v : Fin n),
+                  @AuditBridge.edgeSet n e v → ∀ (w : Fin n), @AuditBridge.edgeSet n e w → @Eq.{1} C (c v) (c w)) =>
+            @Exists.casesOn.{1} (Fin n)
+              (fun (v : Fin n) =>
+                And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                    And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (@Ne.{1} C (c v) (c w))))
+              (fun
+                  (x :
+                    @Exists.{1} (Fin n) fun (v : Fin n) =>
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                        (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                          And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                            (@Ne.{1} C (c v) (c w)))) =>
+                False)
+              (h e he)
+              fun (v : Fin n)
+                (h :
+                  And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                    (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                        (@Ne.{1} C (c v) (c w)))) =>
+              @And.casesOn.{0} (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                  And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                    (@Ne.{1} C (c v) (c w)))
+                (fun
+                    (x :
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                        (@Exists.{1} (Fin n) fun (w : Fin n) =>
+                          And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                            (@Ne.{1} C (c v) (c w)))) =>
+                  False)
+                h
+                fun (hv : @Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e v)
+                  (right :
+                    @Exists.{1} (Fin n) fun (w : Fin n) =>
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                        (@Ne.{1} C (c v) (c w))) =>
+                @Exists.casesOn.{1} (Fin n)
+                  (fun (w : Fin n) =>
+                    And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (@Ne.{1} C (c v) (c w)))
+                  (fun
+                      (x :
+                        @Exists.{1} (Fin n) fun (w : Fin n) =>
+                          And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                            (@Ne.{1} C (c v) (c w))) =>
+                    False)
+                  right
+                  fun (w : Fin n)
+                    (h :
+                      And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                        (@Ne.{1} C (c v) (c w))) =>
+                  @And.casesOn.{0}
+                    (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                    (@Ne.{1} C (c v) (c w))
+                    (fun
+                        (x :
+                          And (@Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                            (@Ne.{1} C (c v) (c w))) =>
+                      False)
+                    h
+                    fun (hw : @Membership.mem.{0, 0} (Fin n) (JSP690.Edge n) (@List.instMembership.{0} (Fin n)) e w)
+                      (hne : @Ne.{1} C (c v) (c w)) =>
+                    hne (hmono v hv w hw))
+          S (@Eq.symm.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e) right) hmono
+'AuditBridge.proper_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

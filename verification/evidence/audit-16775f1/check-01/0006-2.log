@@ -1,0 +1,9 @@
+JSP690.construction_chromatic_number : @JSP690.ChromaticNumberEq
+  (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction
+theorem JSP690.construction_chromatic_number : @JSP690.ChromaticNumberEq
+  (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+  (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) JSP690.construction :=
+@JSP690.chromaticNumberEq_three (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction
+  JSP690.construction_three_colorable JSP690.construction_not_two_colorable
+'JSP690.construction_chromatic_number' depends on axioms: [propext, Quot.sound]

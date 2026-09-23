@@ -1,0 +1,247 @@
+JSP690.construction_edge_critical : ∀ (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+  @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+      (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+      (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+      JSP690.construction e →
+    @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+      (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+theorem JSP690.construction_edge_critical : ∀
+  (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))),
+  @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+      (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+      (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+      JSP690.construction e →
+    @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+      (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e) :=
+fun (e : JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+    (he :
+      @Membership.mem.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+        (JSP690.Hypergraph (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+        (@List.instMembership.{0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))))
+        JSP690.construction e) =>
+  @Exists.casesOn.{1}
+    (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))) (List.{0} JSP690.Vertex))
+    (fun
+        (cert :
+          Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex)) =>
+      And
+        (@Membership.mem.{0, 0}
+          (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex))
+          (List.{0}
+            (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex)))
+          (@List.instMembership.{0}
+            (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex)))
+          JSP690.edgeCertificates cert)
+        (And
+          (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex) cert)
+            e)
+          (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+            (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+            (JSP690.binaryColor
+              (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex) cert)))))
+    (fun
+        (x :
+          @Exists.{1}
+            (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex))
+            fun
+              (cert :
+                Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex)) =>
+            And
+              (@Membership.mem.{0, 0}
+                (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex))
+                (List.{0}
+                  (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex)))
+                (@List.instMembership.{0}
+                  (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex)))
+                JSP690.edgeCertificates cert)
+              (And
+                (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex) cert)
+                  e)
+                (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction
+                    e)
+                  (JSP690.binaryColor
+                    (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                      (List.{0} JSP690.Vertex) cert))))) =>
+      @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+        (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e))
+    (JSP690.edge_certificates_checked e he)
+    fun
+      (cert :
+        Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+          (List.{0} JSP690.Vertex))
+      (h :
+        And
+          (@Membership.mem.{0, 0}
+            (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex))
+            (List.{0}
+              (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex)))
+            (@List.instMembership.{0}
+              (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex)))
+            JSP690.edgeCertificates cert)
+          (And
+            (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex) cert)
+              e)
+            (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+              (JSP690.binaryColor
+                (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex) cert))))) =>
+    @And.casesOn.{0}
+      (@Membership.mem.{0, 0}
+        (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+          (List.{0} JSP690.Vertex))
+        (List.{0}
+          (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex)))
+        (@List.instMembership.{0}
+          (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex)))
+        JSP690.edgeCertificates cert)
+      (And
+        (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+          (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex) cert)
+          e)
+        (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+          (JSP690.binaryColor
+            (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex) cert))))
+      (fun
+          (x :
+            And
+              (@Membership.mem.{0, 0}
+                (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex))
+                (List.{0}
+                  (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex)))
+                (@List.instMembership.{0}
+                  (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex)))
+                JSP690.edgeCertificates cert)
+              (And
+                (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex) cert)
+                  e)
+                (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction
+                    e)
+                  (JSP690.binaryColor
+                    (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                      (List.{0} JSP690.Vertex) cert))))) =>
+        @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+          (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e))
+      h
+      fun
+        (left :
+          @Membership.mem.{0, 0}
+            (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex))
+            (List.{0}
+              (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex)))
+            (@List.instMembership.{0}
+              (Prod.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex)))
+            JSP690.edgeCertificates cert)
+        (right :
+          And
+            (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex) cert)
+              e)
+            (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+              (JSP690.binaryColor
+                (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex) cert)))) =>
+      @And.casesOn.{0}
+        (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+          (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+            (List.{0} JSP690.Vertex) cert)
+          e)
+        (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+          (JSP690.binaryColor
+            (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex) cert)))
+        (fun
+            (x :
+              And
+                (@Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                    (List.{0} JSP690.Vertex) cert)
+                  e)
+                (@JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction
+                    e)
+                  (JSP690.binaryColor
+                    (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                      (List.{0} JSP690.Vertex) cert)))) =>
+          @JSP690.Colorable (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e))
+        right
+        fun
+          (left :
+            @Eq.{1} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (@Prod.fst.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                (List.{0} JSP690.Vertex) cert)
+              e)
+          (hc :
+            @JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+              (JSP690.binaryColor
+                (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+                  (List.{0} JSP690.Vertex) cert))) =>
+        @Exists.intro.{1}
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) →
+            Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (fun
+              (c :
+                Fin (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) →
+                  Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) =>
+            @JSP690.ProperColoring (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@JSP690.deleteEdge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))) JSP690.construction e)
+              c)
+          (JSP690.binaryColor
+            (@Prod.snd.{0, 0} (JSP690.Edge (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9))))
+              (List.{0} JSP690.Vertex) cert))
+          hc
+'JSP690.construction_edge_critical' depends on axioms: [propext, Quot.sound]

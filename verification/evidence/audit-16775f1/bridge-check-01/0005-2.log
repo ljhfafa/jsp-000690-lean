@@ -1,0 +1,41 @@
+@AuditBridge.chromatic_number_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n)
+  (h : @JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H),
+  And
+    (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) (@AuditBridge.family n H))
+    (∀ (j : Nat),
+      @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+        Not (@AuditBridge.HasColoring n j (@AuditBridge.family n H)))
+theorem AuditBridge.chromatic_number_bridge : ∀ {n : Nat} (H : JSP690.Hypergraph n)
+  (h : @JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H),
+  And
+    (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) (@AuditBridge.family n H))
+    (∀ (j : Nat),
+      @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+        Not (@AuditBridge.HasColoring n j (@AuditBridge.family n H))) :=
+fun {n : Nat} (H : JSP690.Hypergraph n)
+    (h : @JSP690.ChromaticNumberEq n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H) =>
+  @And.intro
+    (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) (@AuditBridge.family n H))
+    (∀ (j : Nat),
+      @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+        Not (@AuditBridge.HasColoring n j (@AuditBridge.family n H)))
+    (@Iff.mpr
+      (@AuditBridge.HasColoring n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+        (@AuditBridge.family n H))
+      (@JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+      (@AuditBridge.hasColoring_iff n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+      (@And.left (@JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+        (∀ (j : Nat),
+          @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+            Not (@JSP690.Colorable n j H))
+        h))
+    fun (j : Nat) (hj : @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (hjcolor : @AuditBridge.HasColoring n j (@AuditBridge.family n H)) =>
+    @And.right (@JSP690.Colorable n (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) H)
+      (∀ (j : Nat),
+        @LT.lt.{0} Nat instLTNat j (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) →
+          Not (@JSP690.Colorable n j H))
+      h j hj
+      (@Iff.mp (@AuditBridge.HasColoring n j (@AuditBridge.family n H)) (@JSP690.Colorable n j H)
+        (@AuditBridge.hasColoring_iff n j H) hjcolor)
+'AuditBridge.chromatic_number_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]

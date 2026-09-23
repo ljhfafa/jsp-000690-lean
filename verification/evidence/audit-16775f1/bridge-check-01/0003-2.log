@@ -1,0 +1,133 @@
+@AuditBridge.family_selected_iff : ∀ {n : Nat} (H : JSP690.Hypergraph n) (F : AuditBridge.EdgeFamily n)
+  (hsub : ∀ (S : AuditBridge.VertexSet n), F S → @AuditBridge.family n H S) (S : AuditBridge.VertexSet n),
+  Iff (@AuditBridge.family n (@AuditBridge.selected n H F) S) (F S)
+theorem AuditBridge.family_selected_iff : ∀ {n : Nat} (H : JSP690.Hypergraph n) (F : AuditBridge.EdgeFamily n)
+  (hsub : ∀ (S : AuditBridge.VertexSet n), F S → @AuditBridge.family n H S) (S : AuditBridge.VertexSet n),
+  Iff (@AuditBridge.family n (@AuditBridge.selected n H F) S) (F S) :=
+fun {n : Nat} (H : JSP690.Hypergraph n) (F : AuditBridge.EdgeFamily n)
+    (hsub : ∀ (S : AuditBridge.VertexSet n), F S → @AuditBridge.family n H S) (S : AuditBridge.VertexSet n) =>
+  @Iff.intro (@AuditBridge.family n (@AuditBridge.selected n H F) S) (F S)
+    (fun (hS : @AuditBridge.family n (@AuditBridge.selected n H F) S) =>
+      @Exists.casesOn.{1} (JSP690.Edge n)
+        (fun (e : JSP690.Edge n) =>
+          And
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+              (@AuditBridge.selected n H F) e)
+            (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)))
+        (fun (x : @AuditBridge.family n (@AuditBridge.selected n H F) S) => F S) hS
+        fun (e : JSP690.Edge n)
+          (h :
+            And
+              (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                (@AuditBridge.selected n H F) e)
+              (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+        @And.casesOn.{0}
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+            (@AuditBridge.selected n H F) e)
+          (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))
+          (fun
+              (x :
+                And
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) (@AuditBridge.selected n H F) e)
+                  (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+            F S)
+          h
+          fun
+            (he :
+              @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                (@AuditBridge.selected n H F) e)
+            (hSe : @Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) =>
+          @Eq.casesOn.{0, 1} (AuditBridge.VertexSet n) S
+            (fun (a : AuditBridge.VertexSet n) (t : @Eq.{1} (AuditBridge.VertexSet n) S a) =>
+              ∀ (h : @Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) a)
+                (h :
+                  @HEq.{0} (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) hSe
+                    (@Eq.{1} (AuditBridge.VertexSet n) S a) t),
+                F S)
+            (@AuditBridge.edgeSet n e) hSe
+            (fun (h : @Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) S) =>
+              @Eq.ndrec.{0, 1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e)
+                (fun (S : AuditBridge.VertexSet n) =>
+                  ∀ (hSe : @Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))
+                    (h :
+                      @HEq.{0} (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) hSe
+                        (@Eq.{1} (AuditBridge.VertexSet n) S S) (@Eq.refl.{1} (AuditBridge.VertexSet n) S)),
+                    F S)
+                (fun (hSe : @Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e))
+                    (h :
+                      @HEq.{0} (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e))
+                        hSe (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e))
+                        (@Eq.refl.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e))) =>
+                  @And.right
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (F (@AuditBridge.edgeSet n e))
+                    (@Iff.mp
+                      (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                        (@List.instMembership.{0} (JSP690.Edge n)) (@AuditBridge.selected n H F) e)
+                      (And
+                        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                          (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                        (F (@AuditBridge.edgeSet n e)))
+                      (@AuditBridge.mem_selected_iff n H F e) he))
+                S h hSe)
+            (@Eq.refl.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e))
+            (@HEq.refl.{0} (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) hSe))
+    fun (hS : F S) =>
+    @Exists.casesOn.{1} (JSP690.Edge n)
+      (fun (e : JSP690.Edge n) =>
+        And
+          (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+          (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)))
+      (fun (x : @AuditBridge.family n H S) => @AuditBridge.family n (@AuditBridge.selected n H F) S) (hsub S hS)
+      fun (e : JSP690.Edge n)
+        (h :
+          And
+            (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H
+              e)
+            (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+      @And.casesOn.{0}
+        (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+        (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))
+        (fun
+            (x :
+              And
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  H e)
+                (@Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e))) =>
+          @AuditBridge.family n (@AuditBridge.selected n H F) S)
+        h
+        fun
+          (he :
+            @Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n)) H e)
+          (right : @Eq.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e)) =>
+        @Eq.ndrec.{0, 1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e)
+          (fun (S : AuditBridge.VertexSet n) => ∀ (hS : F S), @AuditBridge.family n (@AuditBridge.selected n H F) S)
+          (fun (hS : F (@AuditBridge.edgeSet n e)) =>
+            @Exists.intro.{1} (JSP690.Edge n)
+              (fun (e_1 : JSP690.Edge n) =>
+                And
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) (@AuditBridge.selected n H F) e_1)
+                  (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e_1)))
+              e
+              (@And.intro
+                (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n) (@List.instMembership.{0} (JSP690.Edge n))
+                  (@AuditBridge.selected n H F) e)
+                (@Eq.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e) (@AuditBridge.edgeSet n e))
+                (@Iff.mpr
+                  (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                    (@List.instMembership.{0} (JSP690.Edge n)) (@AuditBridge.selected n H F) e)
+                  (And
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (F (@AuditBridge.edgeSet n e)))
+                  (@AuditBridge.mem_selected_iff n H F e)
+                  (@And.intro
+                    (@Membership.mem.{0, 0} (JSP690.Edge n) (JSP690.Hypergraph n)
+                      (@List.instMembership.{0} (JSP690.Edge n)) H e)
+                    (F (@AuditBridge.edgeSet n e)) he hS))
+                (@rfl.{1} (AuditBridge.VertexSet n) (@AuditBridge.edgeSet n e))))
+          S (@Eq.symm.{1} (AuditBridge.VertexSet n) S (@AuditBridge.edgeSet n e) right) hS
+'AuditBridge.family_selected_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

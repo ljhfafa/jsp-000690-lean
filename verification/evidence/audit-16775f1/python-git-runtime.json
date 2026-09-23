@@ -1,0 +1,41 @@
+{
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-D",
+    "TOOLCHAIN=/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64",
+    "-D",
+    "SOURCE=/Users/jiahongli/workspace/justinsun/tools/sandbox-source",
+    "-D",
+    "RUN=/Users/jiahongli/workspace/justinsun/tools/audit-sandbox-smoke",
+    "-D",
+    "AUDIT_ROOT=/Users/jiahongli/workspace/justinsun/official-awards/skills/lean-verify",
+    "-f",
+    "/Users/jiahongli/workspace/justinsun/tools/lean-audit-sandbox.sb",
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-c",
+    "import sys, pathlib, subprocess, hashlib, json; print(sys.version); print(subprocess.check_output([\"git\", \"--version\"],text=True).strip()); print(pathlib.Path(\"/Users/jiahongli/workspace/justinsun/official-awards/skills/lean-verify/scripts/audit.py\").is_file())"
+  ],
+  "cwd": "/Users/jiahongli/workspace/justinsun/tools/audit-sandbox-smoke",
+  "environment": {
+    "PATH": "/Users/jiahongli/workspace/justinsun/tools/lean-4.32.0-darwin_aarch64/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/bin:/bin",
+    "HOME": "/nonexistent",
+    "TMPDIR": "/Users/jiahongli/workspace/justinsun/tools/audit-sandbox-smoke",
+    "LANG": "C",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "profile_sha256": "f41d10e9973d0e41523ed8f39013b02a4d60ec3cfb7b2348e73331ccc0b8c461",
+  "started_unix": 1790147756.872097,
+  "elapsed_seconds": 0.13265585899353027,
+  "returncode": 0,
+  "timed_out": false,
+  "limits": {
+    "wall_seconds": 30,
+    "cpu_seconds_per_process": 30,
+    "file_bytes": 1073741824,
+    "open_files": 256,
+    "memory_note": "Specify Lean -M separately; no OS-level RAM cap is claimed."
+  },
+  "log": "/Users/jiahongli/workspace/justinsun/tools/audit-sandbox-smoke/python-git-runtime.log"
+}
