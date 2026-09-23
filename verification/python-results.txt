@@ -1,0 +1,50 @@
+Independent verification of JSP-000690 (chromatic interpretation)
+Source: https://arxiv.org/html/2512.24850v1
+Data file: /Users/jiahongli/workspace/justinsun/jsp-000690-lean/verification/construction.json
+Data SHA256: f53f519bdededc113db0b3b100f2636867d04355696bbfe697de3c17dbc560c8
+Verifier SHA256: fc882a961ae3663261b74aecc67ecc2cf514bcd941facfc9e584109fa818fc8d
+Python: 3.13.3
+Vertices: 9; distinct 3-element edges: 22
+Degrees in vertex order: [10, 7, 7, 7, 7, 7, 7, 7, 7]
+Minimum degree: 7; incidence sum: 66
+All 512 binary colorings checked; proper 2-colorings: 0
+Source proper 3-coloring verified; chromatic number exactly 3
+H - [1, 2, 3]: source certificate PASS; 2 proper 2-colorings / 512
+H - [1, 2, 9]: source certificate PASS; 4 proper 2-colorings / 512
+H - [1, 3, 8]: source certificate PASS; 4 proper 2-colorings / 512
+H - [1, 4, 6]: source certificate PASS; 4 proper 2-colorings / 512
+H - [1, 4, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [1, 4, 9]: source certificate PASS; 2 proper 2-colorings / 512
+H - [1, 5, 7]: source certificate PASS; 4 proper 2-colorings / 512
+H - [1, 5, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [1, 5, 9]: source certificate PASS; 2 proper 2-colorings / 512
+H - [1, 6, 7]: source certificate PASS; 2 proper 2-colorings / 512
+H - [2, 3, 6]: source certificate PASS; 2 proper 2-colorings / 512
+H - [2, 3, 7]: source certificate PASS; 2 proper 2-colorings / 512
+H - [2, 4, 9]: source certificate PASS; 2 proper 2-colorings / 512
+H - [2, 5, 9]: source certificate PASS; 2 proper 2-colorings / 512
+H - [2, 6, 7]: source certificate PASS; 2 proper 2-colorings / 512
+H - [3, 4, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [3, 5, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [3, 6, 7]: source certificate PASS; 2 proper 2-colorings / 512
+H - [4, 6, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [4, 6, 9]: source certificate PASS; 2 proper 2-colorings / 512
+H - [5, 7, 8]: source certificate PASS; 2 proper 2-colorings / 512
+H - [5, 7, 9]: source certificate PASS; 2 proper 2-colorings / 512
+All 22 edge deletions verified (11,264 full binary-coloring checks)
+H - vertex 1: source certificate PASS; 12 retained edges; 16 proper 2-colorings / 256
+H - vertex 2: source certificate PASS; 15 retained edges; 10 proper 2-colorings / 256
+H - vertex 3: source certificate PASS; 15 retained edges; 10 proper 2-colorings / 256
+H - vertex 4: source certificate PASS; 15 retained edges; 8 proper 2-colorings / 256
+H - vertex 5: source certificate PASS; 15 retained edges; 8 proper 2-colorings / 256
+H - vertex 6: source certificate PASS; 15 retained edges; 10 proper 2-colorings / 256
+H - vertex 7: source certificate PASS; 15 retained edges; 10 proper 2-colorings / 256
+H - vertex 8: source certificate PASS; 15 retained edges; 8 proper 2-colorings / 256
+H - vertex 9: source certificate PASS; 15 retained edges; 8 proper 2-colorings / 256
+All 9 vertex deletions verified (2,304 full binary-coloring checks)
+All 511 proper induced vertex subhypergraphs checked; 19171 binary colorings enumerated
+Independent transversal number (context only): 5
+Every proper subhypergraph is 2-colorable by restriction of a verified
+edge-deletion or vertex-deletion coloring; no edge-shrinking notion is used.
+PASS: 3-uniform, minimum degree 7, chromatic number 3,
+edge-critical and vertex-critical, with all 31 source certificates verified.

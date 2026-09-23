@@ -18,18 +18,31 @@ acceptance and award prospects are separate and may be defeated by earlier sourc
 ## Architecture
 Lean core/Std; finite vertices; canonical sorted edge lists; explicit certificates;
 ordinary `decide` and kernel proof terms. No native evaluation trust assumption.
-Final target planned: `JSP690.exists_three_uniform_three_chromatic_critical`.
+Final target: `JSP690.exists_three_uniform_three_chromatic_critical`.
 
 ## Completed
-Initialized independent Git project and pinned official Lean 4.32.0.
-Primary-source transcription and independent Python verifier underway.
+- Initialized independent Git project, pinned official Lean 4.32.0 and empty external-dependency lockfile.
+- Transcribed all edges and certificates from the primary paper; independently verified Python enumeration.
+- Implemented generic coloring monotonicity, exact chromatic number, and every-proper-subhypergraph bridge.
+- Proved all concrete properties and final existence theorem; actual default `lake build` passed (7 jobs).
+- Executed `verification/Check.lean`; final theorem axioms `[propext, Quot.sound]`.
+- Added mathematical specification, source attribution, and honest AI disclosure.
 
 ## Next
-Encode construction, prove finite certificates, bridge certificates to all
-colorings and all proper subhypergraphs. Build, clean rebuild, official audit.
+Pin proof commit A. Perform credential-isolated clean rebuild, official audit automation,
+fresh kernel replay, independent statement challenge, and full source scan. Save reports
+at later commit B without changing proof A. Prepare exact official catalog PR and claim
+draft. GitHub publishing requires owner authentication; gh is installed but logged out.
 
 ## Validation
-None yet. No PASS claim.
+Local complete build and axiom audit passed. Isolated fixed-commit verification pending;
+no overall PASS claim yet. Independent Python outputs are in verification/python-results.txt.
 
 ## Git
-Initial checkpoint pending. Preserve actual timestamps; never rewrite for priority.
+Initial checkpoint d03ea06. Complete proof checkpoint pending. Preserve actual timestamps;
+never rewrite for priority. The official submission must refer to a real public repository
+and the complete immutable proof commit, not an invented URL.
+
+## Resume
+Inspect git status/log, this file, README and Lean tree, then run lake build with the
+pinned toolchain. Continue current work; do not restart or discard source.
