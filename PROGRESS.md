@@ -28,30 +28,36 @@ Final target: `JSP690.exists_three_uniform_three_chromatic_critical`.
 - Executed `verification/Check.lean`; final theorem axioms `[propext, Quot.sound]`.
 - Added mathematical specification, source attribution, and honest AI disclosure.
 
-## Fixed-commit verification and publication
-- Complete immutable proof A: 16775f11a809a49fcd6822add9895eb104966994.
-- Strict credential-isolated clean clone and full build passed.
-- Official audit.py preflight/prepare/run passed: 12 proof targets and 9 semantic
-  bridge targets, standard_axioms_only, stable tracked inputs.
-- Fresh Lean kernel replay passed for Main (58.56s) and semantic bridge (56.15s).
-- Full external semantic formulation proved from A: actual edge sets, three distinct
-  vertices, seven distinct incident sets, exact χ3, all proper retained-vertex subgraphs.
-- Main axioms [propext, Quot.sound]; semantic bridge also Classical.choice.
-- No separate checker implementation run; Lean4Lean exact4.32.0 ref not identified.
-- GitHub owner authenticated as ljhfafa; original public repository created and A
-  pushed to main: https://github.com/ljhfafa/jsp-000690-lean . Remote SHA confirmed.
-- Awards fork https://github.com/ljhfafa/awards created. Catalog-only patch on local
-  codex/jsp-000690-independent-lean branch; PR submission next after report checkpoint B.
+## Completed verification and publication
+- Complete proof A: 16775f11a809a49fcd6822add9895eb104966994.
+- Report B: 6bf387b9a8ff779090453aaad181170fcd782f43.
+- Credential-isolated clean clone and full build passed; official audit.py checked
+  12 proof targets and 9 semantic bridge targets, standard_axioms_only, stable inputs.
+- Fresh replay passed: Main 58.56s; AuditBridge 56.15s. Main axioms propext/Quot.sound;
+  bridge additionally Classical.choice. All 164 retained evidence hashes verified.
+- Independent predicate-edge semantics derives exactly3 distinct vertices, 7 distinct
+  incident sets, exactχ3 and every proper subgraph on actual retained vertices.
+- No independent external checker run; exact Lean4Lean4.32.0 compatibility absent.
+- Public original repository: https://github.com/ljhfafa/jsp-000690-lean , branch main.
+- Proof A and report B pushed. GitHub API confirmed A is ancestor of public main.
+- Awards catalog-only commit: eafd63361cef854bcf9bd1ff18ad79f893c6d6b9,
+  branch codex/jsp-000690-independent-lean on ljhfafa/awards.
+- Official PR created: https://github.com/TheJustinSunPrize/awards/pull/4233 .
+  No claim issue has been filed. PR not yet merged at creation.
+- Intermittent Git network timeout resolved with a verified GitHub IP for that
+  command only; TLS verification remained enabled. No global network setting changed.
 
-## Next
-Commit verification report/evidence and correspondence as report B; preserve A proof
-sources unchanged. Push B, pin report links in the PR, commit and push the catalog-only
-branch, create real PR, inspect status, and record actual URL. Do not file an award
-claim before merge. Prepared claim is not an assertion of eligibility or priority.
+## Next allowed action
+Await maintainer review. Respond to concrete review requests against the fixed proof.
+If and only if the contribution PR is merged and current rules/attribution/priority
+permit a claim, refresh records and complete the prepared claim. Any owner-only
+identity, contact, payment, tax or legal action remains unfilled. Do not claim an
+award, eligibility or first-formalization priority from successful technical checks.
 
-## Git
-Proof initial d03ea06; complete proof A 16775f11a809a49fcd6822add9895eb104966994
-published on main. Report checkpoint pending. Do not amend or backdate public history.
+## Git and recovery
+Proof A and report B are immutable published checkpoints. This later checkpoint records
+actual submission status and complete PR text, leaving all proof sources and pins
+unchanged. Preserve original timestamps and public history; never amend for priority.
 
 ## Resume
 Inspect git status/log, this file, README and Lean tree, then run lake build with the

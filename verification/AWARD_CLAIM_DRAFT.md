@@ -1,6 +1,6 @@
 # Award claim preparation — JSP-000690
 
-**LOCAL DRAFT ONLY. NOT SUBMITTED. DO NOT FILE NOW.** There is no merged contribution PR for this work. The public original repository is https://github.com/ljhfafa/jsp-000690-lean and the authenticated submitting account is ljhfafa. An earlier complete Lean proof in [Issue #15](https://github.com/TheJustinSunPrize/awards/issues/15) has been successfully replayed. This project makes no priority or award-entitlement claim. A later independent proof does not by itself establish entitlement to the formalization award.
+**LOCAL DRAFT ONLY. NOT SUBMITTED. DO NOT FILE NOW.** Contribution [PR #4233](https://github.com/TheJustinSunPrize/awards/pull/4233) has been opened but has not merged. The public original repository is https://github.com/ljhfafa/jsp-000690-lean and the authenticated submitting account is ljhfafa. An earlier complete Lean proof in [Issue #15](https://github.com/TheJustinSunPrize/awards/issues/15) has been successfully replayed. This project makes no priority or award-entitlement claim. A later independent proof does not by itself establish entitlement to the formalization award.
 
 Prepared from the official [claim form](https://github.com/TheJustinSunPrize/awards/blob/bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2/.github/ISSUE_TEMPLATE/claim-award.yml), [contribution rules](https://github.com/TheJustinSunPrize/awards/blob/bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2/CONTRIBUTING.md), and [award process](https://github.com/TheJustinSunPrize/awards/blob/bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2/docs/award-process.md), read on 2026-09-23. The current live rules and records must be checked again before any future action.
 
@@ -16,7 +16,7 @@ This file is retained for preparation only. Do not submit it unless maintainers 
 | --- | --- |
 | Suggested issue title | `[Award claim] JSP-000690` — only if the conditions above are met |
 | Problem link | [JSP-000690 catalog entry](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0601-0700.md#JSP-000690) |
-| Merged submission PR | **NOT AVAILABLE — no merged contribution PR; required before a Lean claim** |
+| Merged submission PR | [PR #4233](https://github.com/TheJustinSunPrize/awards/pull/4233) — **OPEN, NOT MERGED; not yet usable as a merged-PR claim prerequisite** |
 | Contribution being claimed | **Lean formalization only**, conditional on maintainer acceptance and accurate contributor attribution; not mathematical solution |
 | Original Lean proof repository | [ljhfafa/jsp-000690-lean](https://github.com/ljhfafa/jsp-000690-lean); must be the original repository actually accepted and recorded by maintainers |
 | Applicant GitHub account | [ljhfafa](https://github.com/ljhfafa); apply only for the applicant's own documented role, never on behalf of another contributor |

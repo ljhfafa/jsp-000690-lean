@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-23",
+  "proof_repository": "https://github.com/ljhfafa/jsp-000690-lean",
+  "proof_branch": "main",
+  "proof_commit": "16775f11a809a49fcd6822add9895eb104966994",
+  "report_commit": "6bf387b9a8ff779090453aaad181170fcd782f43",
+  "pr": "https://github.com/TheJustinSunPrize/awards/pull/4233",
+  "awards_base": "bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2",
+  "awards_head": "eafd63361cef854bcf9bd1ff18ad79f893c6d6b9",
+  "status_at_creation": "OPEN",
+  "award_claim_submitted": false,
+  "priority_claim": false,
+  "ai_technical_role": "Substantially all technical work by OpenAI Codex under the repository owner direction",
+  "verified_pr_state": "OPEN",
+  "merged_at": null,
+  "review_decision": "REVIEW_REQUIRED",
+  "mergeable": "MERGEABLE",
+  "changed_files": [
+    {
+      "path": "problems/catalog-0601-0700.md",
+      "additions": 2,
+      "deletions": 1
+    }
+  ]
+}

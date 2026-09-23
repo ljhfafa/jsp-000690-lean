@@ -55,3 +55,7 @@ Earlier complete public formalizations of JSP-000690 exist. This repository make
 **AI disclosure:** OpenAI Codex autonomously performed substantially all technical research, implementation, debugging, and verification under the direction of the repository owner. Repository owner [ljhfafa](https://github.com/ljhfafa) commissioned and directed the project. No manual proof authorship or mathematical discovery by the owner is claimed. The source construction and certificates were transcribed from Li's paper, and no earlier Lean proof was copied into this implementation. Separate Codex agents provided mathematical and statement reviews; they are not independent human reviewers.
 
 Public submission and any later award remain subject to the official rules and maintainer review. A claim must not be filed before the contribution PR is merged.
+
+## Official submission
+
+The catalog-only contribution is [awards PR #4233](https://github.com/TheJustinSunPrize/awards/pull/4233). It was opened on 2026-09-23 and is subject to maintainer review. No award claim has been filed; merging and award eligibility are separate questions. The selected proof remains commit A above, with the [report pinned at commit B](https://github.com/ljhfafa/jsp-000690-lean/blob/6bf387b9a8ff779090453aaad181170fcd782f43/verification/VERIFICATION_REPORT.md).
